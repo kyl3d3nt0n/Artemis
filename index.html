@@ -65,10 +65,12 @@
 
 <!---MIDDLE-CENTER------------------------------------------------------------->
     <div class="middle-center">
-      <!---GREETING--->
-      <h1 ng-controller="Greeting" ng-bind="greeting" ng-cloak ng-show="focus == 'default' || focus == 'traffic' || focus == 'weather' || focus == 'stocks' || focus == 'calendar' || focus == 'shows'"></h1>
-      <!---APP-BAR--->
-      <div ng-include="'plugins/apps/index.html'"></div>
+      <div class="greeting-apps" ng-show="focus == 'default'">
+        <!---GREETING--->
+        <h1 ng-controller="Greeting" ng-bind="greeting" ng-cloak></h1>
+        <!---APP-BAR--->
+        <div ng-include="'plugins/apps/index.html'"></div>
+      </div>
       <!---REMOTE--->
       <div ng-include="'plugins/remote/index.html'"></div>
       <!---SOUNDCLOUD--->
@@ -87,37 +89,49 @@
       <div ng-include="'plugins/reminder/index.html'"></div>
       <!---TIMER--->
       <div ng-include="'plugins/timer/index.html'"></div>
+      <!-- Command list -->
+      <div ng-include="'plugins/commands/index.html'"></div>
     </div><!---END-OF-MIDDLE-CENTER-------------------------------------------->
   </div><!---END-OF-MIDDLE-CONTAINER------------------------------------------->
 
 <!---BOTTOM-CONTAINER---------------------------------------------------------->
 <div class="bottom row navbar-fixed-bottom">
-<!---BOTTOM-LEFT--------------------------------------------------------------->
-    <div class="bottom-left col-sm-1">
+<!---TOP-BOTTOM-ROW------------------------------------------------------------>
+<div class="top-bottom row">
+
+<!---TOP-BOTTOM-LEFT----------------------------------------------------------->
+    <div class="top-bottom-left col-sm-3">
       <!---FITBIT--->
       <div ng-include="'plugins/fitbit/index.html'" ng-if="fitbit"></div>
       <!---SCROBBLER--->
       <div ng-include="'plugins/scrobbler/index.html'"></div>
-    </div><!---END-OF-BOTTOM-LEFT---------------------------------------------->
+    </div><!---END-OF-MIDDLE-BOTTOM-LEFT--------------------------------------->
 
-
-    <div class="bottom-center col-sm-10 fade-away" ng-hide="focus== 'map' || focus == 'video'">
+<!---TOP-BOTTOM-CENTER--------------------------------------------------------->
+    <div class="top-bottom-center col-sm-6 fade-away" ng-hide="focus== 'map' || focus == 'video'">
       <!---SUN-MOON--->
       <div ng-include="'plugins/sun-moon/index.html'"></div>
+    </div><!---END-OF-TOP-BOTTOM-CENTER---------------------------------------->
 
-      <!-- Command list -->
-      <div ng-include="'plugins/commands/index.html'"></div>
+<!---TOP-BOTTOM-RIGHT---------------------------------------------------------->
+    <div class="top-bottom-right col-sm-3">
+      <!--- Someday something will live here --->
+    </div><!---END-OF-TOP-BOTTOM-RIGHT----------------------------------------->
+
+</div><!---END-OF-TOP-BOTTOM-ROW----------------------------------------------->
+
+<!---BOTTOM-BOTTOM-CONTAINER--------------------------------------------------->
+  <div class="bottom-bottom row">
+
+    <div class="col-sm-12">
       <div ng-include="'plugins/rss/index.html'"></div>
 
       <div class="error" ng-bind="speechError" ng-show="speechError"></div>
       <div class="partial-result" ng-bind="partialResult" ng-hide="speechError"></div>
-    </div><!---END-OF-BOTTOM-CENTER-------------------------------------------->
+    </div>
+  </div><!---END-OF-BOTTOM-BOTTOM-ROW------------------------------------------>
 
-<!---BOTTOM-RIGHT-------------------------------------------------------------->
-    <div class="bottom-right col-sm-1">
-      <!-- Someday something will live here -->
-    </div><!---END-OF-BOTTOM-RIGHT--------------------------------------------->
-</div><!---END-OF-BOTTOM------------------------------------------------------->
+</div><!---END-OF-BOTTOM-CONTAINER--------------------------------------------->
 
 
   <div ng-controller="Maker"></div>
@@ -126,7 +140,7 @@
   <!---SLEEP-COVER--->
   <div ng-show="focus == 'sleep'" class="sleep-cover fade"></div>
 
-  <script>
+  <!---<script>
   //POKEMON BACKGROUND PICS
   document.write('<div class="Pokemon_Pics">');
   for (i = 1; i <= 649; i++) {
@@ -134,7 +148,7 @@
     document.write('<img class="Pokemon" src=' + '"' + source + '"' + "width='56'" + '/>');
   }
   document.write('</div>');
-  </script>
+</script>--->
 
   <!-- Artemis JS
   ==========================================================================

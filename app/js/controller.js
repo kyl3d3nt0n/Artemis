@@ -102,7 +102,8 @@
                 console.debug("Here is a list of commands...");
                 console.log(SpeechService.commands);
                 $scope.commands = SpeechService.getCommands();
-                $scope.focus = "commands";
+                $rootScope.focus = "commands";
+                console.log("Scope is: " + $rootScope.focus);
             });
 
             // Go back to default view

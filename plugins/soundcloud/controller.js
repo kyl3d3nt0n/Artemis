@@ -1,4 +1,4 @@
-function Soundcloud($scope, $http, SoundCloudService, SpeechService) {
+function Soundcloud($rootScope, $scope, $http, SoundCloudService, SpeechService) {
 
     //Initialize SoundCloud
     var playing = false, sound;
@@ -7,6 +7,9 @@ function Soundcloud($scope, $http, SoundCloudService, SpeechService) {
     //SoundCloud search and play
     SpeechService.addCommand('sc_play', function (query) {
         SoundCloudService.searchSoundCloud(query).then(function (response) {
+            $rootScope.focus = 'sc';
+            console.log("Scope is " + $rootScope.focus);
+
             if (response[0].artwork_url) {
                 $scope.scThumb = response[0].artwork_url.replace("-large.", "-t500x500.");
             } else {
@@ -14,25 +17,28 @@ function Soundcloud($scope, $http, SoundCloudService, SpeechService) {
             }
             $scope.scWaveform = response[0].waveform_url;
             $scope.scTrack = response[0].title;
-            $scope.$parent.focus = "sc";
+            //$scope.$parent.focus = "sc";
             SoundCloudService.play();
         });
     });
 
     //SoundCloud stop
     SpeechService.addCommand('sc_pause', function () {
+        $rootScope.focus = 'default';
         SoundCloudService.pause();
-        $scope.$parent.focus = "default";
+        //$scope.$parent.focus = "default";
     });
     //SoundCloud resume
     SpeechService.addCommand('sc_resume', function () {
+        $rootScope.focus = 'sc';
         SoundCloudService.play();
-        $scope.$parent.focus = "sc";
+        //$scope.$parent.focus = "sc";
     });
     //SoundCloud replay
     SpeechService.addCommand('sc_replay', function () {
+        $rootScope.focus = 'sc';
         SoundCloudService.replay();
-        $scope.$parent.focus = "sc";
+        //$scope.$parent.focus = "sc";
     });
 }
 

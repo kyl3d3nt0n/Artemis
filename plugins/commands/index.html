@@ -1,4 +1,4 @@
-<div class="commands animate-grow" ng-if="focus == 'commands'">
+<div class="commands animate-grow fade-away" ng-show="focus == 'commands'">
     <h2 ng-bind="'commands.title' | translate"></h2>
     <dl>
         <dt ng-repeat-start="command in commands" ng-bind="command['text']"></dt>
