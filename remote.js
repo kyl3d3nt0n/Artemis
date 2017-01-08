@@ -14,7 +14,7 @@ remote.start = function () {
   let configJSON = ""
   let configPath = __dirname + "/config.json"
   let configDefaultPath = __dirname + "/config.default.json"
- 
+
   function getFiles() {
     configDefault = JSON.parse(fs.readFileSync(configDefaultPath, "utf8"))
 

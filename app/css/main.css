@@ -151,6 +151,9 @@ ul.calendar {
   width: 50px;
   margin-left: 5%;
 }
+#icon_weather_current {
+  margin-right: 5%;
+}
 /*.weather-block .weather-today canvas,
 .weather-block .weather-week-day canvas {
   display: none;

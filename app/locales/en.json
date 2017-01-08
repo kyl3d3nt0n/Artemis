@@ -60,6 +60,11 @@
             "voice": "Go to sleep",
             "description": "Go to sleep."
         },
+        "wake_up": {
+            "text": "Wake Up",
+            "voice": "Wake up",
+            "description": "Wake Artemis Up."
+        },
         "debug": {
             "text": "Show debug information",
             "voice": "Show debug information",

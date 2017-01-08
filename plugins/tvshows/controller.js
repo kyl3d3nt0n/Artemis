@@ -15,7 +15,7 @@ function TVShows($scope, $http, $interval) {
                 })
                 .then(function (response) {
                     if (response != "") {
-                        $scope.tvshows.push(response)
+                        $scope.tvshows.push(response);
                     }
                 })
         });

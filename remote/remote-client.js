@@ -10,7 +10,7 @@ $(function () {
   })
 
   socket.on('disconnect', function () {
-    
+
     $connectionBar.removeClass('connected').addClass('disconnected')
     $connectionText.html('Disconnected :(')
   })
@@ -44,11 +44,11 @@ $(function () {
   $('#reload').click(function () {
     socket.emit('reload')
   })
-  
+
   $('#wakeUp').click(function () {
     socket.emit('clickWakeUp')
   })
-  
+
   $('#sleep').click(function () {
     socket.emit('clickSleep')
   })
