@@ -1,5 +1,7 @@
-<div ng-controller="Traffic">
-    <div class="traffic" ng-repeat="traffic in trips">
+<!---TRAFFIC------------------------------------------------------------------->
+<div ng-controller="Traffic" class="traffic-block app fade-away" ng-show="focus == 'traffic'">
+    <h2>Traffic</h2>
+    <div ng-repeat="traffic in trips">
         <div ng-show="!traffic.error" class="traffic-information">
             <span class="time-to" ng-bind="'traffic.time_to' | translate:traffic"></span>
             <span ng-bind="traffic.duration.humanize()"></span>

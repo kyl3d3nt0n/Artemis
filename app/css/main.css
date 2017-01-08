@@ -3,7 +3,9 @@
     src: url("../fonts/HelveticaNeue-UltraLight.ttf");
     /* EOT file for IE */
 }
-
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
 body {
     background-color: black;
     color: #fff;
@@ -11,503 +13,513 @@ body {
     font-weight: 300;
     position: relative;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-    font-weight: 300;
+h1, h2, h3, h4, h5 {
+  font-weight: 300;
 }
-
 h1 {
-    font-size: 120px;
+  font-size: 120px;
 }
-
 dt {
-    font-weight: 600;
+  font-size: 18px;
+  font-weight: 600;
 }
-
-/* Colors */
-.light-grey {
-    color: #ccc;
+dd {
+  font-size: 12px;
+  margin-bottom: 1%;
 }
-
-.grey {
-    color: #999;
+.container-fluid {
+  padding: 0;
 }
-
-.first-run h1{
-    font-size: 48px;
+.row {
+  margin: 0;
+  padding: 0;
 }
-
-/* Displays */
-.sleep-cover {
-    background-color: black;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
+/******************************Pokemon Background *****************************/
+body {
+  overflow: hidden;
 }
-
-.container {
-    z-index: -1;
-    /* so things are still selectable */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    transition: all 0.3s ease;
+.Pokemon {
+  /*filter: grayscale(100%);*/
+  opacity: .25;
+  filter: blur(2px);
 }
-
-.listening {
-    box-shadow: inset 0px -40px 40px -40px #fff
+.Pokemon_Pics {
+  position: absolute;
+  top: 0;
+  z-index: -900;
 }
-
-.not-listening {
-    box-shadow: inset 0px 0px 0px 0px #fff
-}
-
-.partial-result {
-    font-family: 'Open Sans', sans-serif;
-}
-
-.top-left {
-    float: left;
-}
-
+/********************************* Date & Time ********************************/
 .date {
-    font-size: 42px;
+  font-size: 42px;
+  font-weight: 600;
 }
-
 .time {
-    font-size: 110px;
+  font-size: 110px;
 }
 
-.top-right {
-    float: right;
+/************************************ Calendar ********************************/
+.calendar {
+  letter-spacing: 1px;
 }
-
-.middle-center {
-    display: flex;
-    flex: 1;
-    align-items: stretch;
-    align-self: flex-start;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-}
-
-.bottom-center {
-    font-family: 'Open Sans', sans-serif;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.bottom-left, .bottom-right {
-    font-family: 'Open Sans', sans-serif;
-    position: absolute;
-    bottom: 50px;
-    width: 50%;
-}
-
-.bottom-left {
-    left: 20px;
-}
-
-.bottom-right {
-    right: 20px;
-}
-
-.commands {
-    width: 450px;
-    text-align: left;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 ul.calendar {
-    list-style: none;
-    font-size: 22px;
-    margin-left: 10px;
-    padding: 0;
+  list-style: none;
+  font-size: 20px;
+  margin-left: .5em;
+  padding: 0;
 }
-
 .calendar .event {
-    margin-bottom: 10px;
+  margin-bottom: 1em;
 }
-
-.calendar span {
-	display: inline-block;
-}
-
 .calendar .day {
-    display: none;
-    font-weight: bold;
-    vertical-align: top;
+  font-size: 14px;
 }
 
-.calendar span.summary {
-  font-size: 25px;
-  max-width: 400px;
+/******************************App & Icons ************************************/
+.app_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-top: 2px solid white;
+  margin-top: 2%;
+  padding-top: 1%;
+}
+.app_list li {
+  font-size: 14px;
+  margin-left: 1%;
+  margin-right: 1%;
+  display: inline-block;
+  transition: all .5s;
+  width: 5em;
+  height: 5em;
+  text-align: center;
+  margin-top: 1em;
+  border: 2px solid white;
+  border-radius: 1em;
+}
+.app_list li img {
+  width: 4em;
+}
+.active_app {
+  transition: all .5s;
+  background-color: white;
+  color: black;
 }
 
-.calendar .event-details .details {
-    font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: lighter;
+/******************************** Weather & Icon ******************************/
+.weather-block {
+  margin-left: auto;
+  display: inline-block;
+  width: 20em;
+  float: right;
+  margin-right: 5%;
 }
-
-.calendar-name {
+.temperature-block {
+  width: 30em;
+}
+.weather-today .temperature {
+  font-size: 100px;
+  vertical-align: top;
+}
+.weather-today {
+  text-align: right;
+}
+.weather-week-descriptor {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+.weather-week {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: .3em;
+}
+.weather-week .day {
+  display: inline-block;
+  margin-left: 10%;
+  width: 20%;
+}
+.weather-week .temperature {
+  display: inline-block;
+  width: 50px;
+  margin-left: 5%;
+}
+/*.weather-block .weather-today canvas,
+.weather-block .weather-week-day canvas {
   display: none;
 }
+.icon {
+  position: relative;
+  display: inline-block;
+  font-size: 55px;
+  padding-right: .2em;
+  font-weight: 100;
+  margin-right: .2em;
+}
+.icon-small {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  padding-left: 0px;
+  padding-right: -10px;
+  font-weight: 100;
+  width: 22px;
+}
+.icon {
+  position: relative;
+  display: inline-block;
+  font-size: 55px;
+  padding-right: .2em;
+  font-weight: 100;
+  margin-right: .2em;
+}*/
 
-.show-calendar-names .calendar-name {
+/******************** Traffic, Stocks, TV Shows, & Calendar ********************/
+.traffic-block, .stocks-block, .shows-block, .calendar-block {
+  float: right;
+  clear: both;
+  width: 16.5em;
+}
+.calendar-block, .shows-block {
+  width: 20em;
+}
+
+
+/********************* Center Greeting, Video, Map, SoundCloud, etc ***********/
+.middle-container {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+/*.middle-center {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+  align-self: flex-start;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}*/
+.middle-center {
+  width: 100%;
+}
+/******************************* SoundCloud ***********************************/
+#visualizer {
+  width: 65%;
+}
+.sc {
+  text-align: center;
+  margin-bottom: 5%;
+  font-family: HelveticaNeue-UltraLight;
+  font-size: 35px;
+  font-weight: 100;
+}
+.sc-container {
+  text-align: center;
+  margin: auto;
+  -webkit-filter: grayscale(70%);
+  filter: grayscale(70%);
+}
+.scWaveform {
+  background-color: #000000;
+  width: 500px;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+/*.playing-track img {
+  float: left;
+  margin-right: 5px;
+}*/
+
+/**********************************VIDEO***************************************/
+.video {
+  width: 100%;
+  height: 680px;
+  border: none;
+  /* If you want to make the video black and white
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);*/
+}
+
+/************************************TIMER*************************************/
+.timer {
+  font-size: 120px;
+  position: relative;
+}
+.timer-circle {
+  width: 3.25em;
+  height: 3.25em;
+  transform: rotate(-90deg) scaleY(-1);
+  margin: 20px auto;
   display: block;
 }
-
-.day-marker {
-	margin-top: 30px;
+.timer-circle .background,
+.timer-circle .progress {
+  r: 1.525em;
+  cx: 1.625em;
+  cy: 1.625em;
+  stroke-width: 0.1em;
+  fill: none;
+  stroke: #222;
+}
+.timer-circle .progress {
+  stroke-dasharray: 10.2101761239em;
+  stroke-dashoffset: 10.2101761239em;
+  stroke-linecap: round;
+  animation-name: increase-dashoffset;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  stroke: white;
+}
+.timer-countdown,
+.timer-duration {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+.timer-duration {
+  top: 75%;
+  font-size: 25%;
 }
 
-.day-marker .day {
-	display: block;
-  font-size: 15px;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
+/************************************REMINDERS********************************/
+/*.reminders-container {
+  width: 250px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}*/
+
+/*********************************** Bottom ***********************************/
+.sun-moon-blocks {
+  text-align: center;
+}
+.sun-moon {
+  display: inline-block;
+  text-align: center;
+}
+.sun-moon h6 {
+  margin-top: -1em;
+  font-family: Helvetica;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 
-.weather {
-    margin-left: auto;
-    display: block;
-    text-align: right;
-    width: 230px;
+/**************************** News - Error - Commands *************************/
+.news-error-commands {
+  text-align: center;
+  margin-top: 2em;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.news {
+  text-align: center;
+  margin-bottom: 2em;
+}
+.news-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+.news-content {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+}
+.partial-result {
+  margin-bottom: 1em;
+  font-family: Helvetica;
+  text-align: center;
+}
+.commands {
+  columns: 3;
+  background-color: black;
+  z-index: 2;
+  width: 80%;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+  margin-top: 5em;
+  border: 2px solid white;
+  padding: 5%;
+}
+.commands h2 {
+  font-size: 30px;
+  column-span: all;
+  text-align: center;
+  margin-top: 1.5em;
+}
+dl {
+  width: 80%;
+  margin: auto;
+}
+dt {
+  margin-top: 5%;
 }
 
-.weather-today .temperature {
-    font-size: 60px;
+/**************************FADE-AWAY & ANIMATE-GROW****************************/
+.fade-away.ng-hide {
+    opacity: 0;
+}
+.fade-away.ng-hide-remove,
+.fade-away.ng-hide-add {
+  display: block !important;
+}
+.fade-away.ng-hide-remove {
+  transition: all ease 1500ms;
+}
+.fade-away.ng-hide-add {
+  transition: all ease 500ms;
+}
+/*.animate-grow {
+  max-height: 1280px !important;
+}*/
+.animate-grow.ng-hide-add,
+.animate-grow.ng-hide-remove {
+  transition: all linear 500ms;
+}
+.animate-grow.ng-hide {
+  max-height: 0 !important;
 }
 
-.weather-week-descriptor {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
-    margin-left: auto;
-    margin-bottom: 10px;
-    text-align: justify;
+/************************SLEEP-COVER******************************************/
+.sleep-cover {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
 }
 
-.weather-week {
-    margin-right: 10px;
-    font-size: 22px;
+/*************************LISTENING-OR-NOT-LISTENING***************************/
+.listening {
+  box-shadow: inset 0px -40px 40px -40px #fff
 }
-
-.weather-week .day {
-    display: inline-block;
-    margin-right: 10px;
-    width: 40px;
+.not-listening {
+  box-shadow: inset 0px 0px 0px 0px #fff
 }
-
-.weather-week .temperature {
-    display: inline-block;
-    width: 50px;
+.interim-result {
+  font-family: 'Open Sans', sans-serif;
 }
-
-.weather .weather-today canvas,
-.weather .weather-week-day canvas {
-    display: none;
+.color-block {
+  height: 200px;
+  width: 200px;
+  display: inline-block;
+  margin: 10px;
+  margin-bottom: 20px;
 }
-
-.fitbit {
-    height: 100%;
+/***************************FITBIT*********************************************/
+/*.fitbit {
+  height: 100%;
 }
-
 .fitbit-title {
-    margin-right: 10px;
-    font-size: 24px;
+  margin-right: 10px;
+  font-size: 24px;
 }
-
 .fitbit-subtitle {
-    margin-right: 10px;
-    font-size: 20px;
+  margin-right: 10px;
+  font-size: 20px;
 }
-
 .fitbit-item {
-    color: #ccc;
-    margin-right: 10px;
-    font-size: 16px;
+  color: #ccc;
+  margin-right: 10px;
+  font-size: 16px;
 }
-
 .fitbit-badge {
-    width: 16px;
-    height: 16px;
+  width: 16px;
+  height: 16px;
 }
-
 .fitbit-main {
-    display: inline-block;
-    margin-right: 10px;
-    width: 450px;
-}
+  display: inline-block;
+  margin-right: 10px;
+  width: 450px;
+}*/
 
-.playing-track img {
-    float: left;
-    margin-right: 5px;
+/************************************OTHER************************************/
+/*
+.light-grey {
+  color: #ccc;
 }
-
-.traffic-information, .stock-information, .tv-information {
-    text-align: right;
-    margin-top: 10px;
-    margin-right: 10px;
+.grey {
+  color: #999;
 }
-
-.time-to {
-    font-weight: bold;
+.top-left {
+  float: left;
 }
 
 @keyframes reduce-dashoffset {
     to {
         stroke-dashoffset: 0;
     }
-
 }
-
 @keyframes increase-dashoffset {
     from {
         stroke-dashoffset: 0;
     }
-
 }
-
-.timer {
-    font-size: 120px;
-    position: relative;
-}
-
-.timer-circle {
-    width: 3.25em;
-    height: 3.25em;
-    transform: rotate(-90deg) scaleY(-1);
-    margin: 20px auto;
-    display: block;
-}
-
-.timer-circle .background,
-.timer-circle .progress {
-    r: 1.525em;
-    cx: 1.625em;
-    cy: 1.625em;
-    stroke-width: 0.1em;
-    fill: none;
-    stroke: #222;
-}
-
-.timer-circle .progress {
-    stroke-dasharray: 10.2101761239em;
-    stroke-dashoffset: 10.2101761239em;
-    stroke-linecap: round;
-    animation-name: increase-dashoffset;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-    stroke: white;
-}
-
-.timer-countdown,
-.timer-duration {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-}
-
-.timer-duration {
-    top: 75%;
-    font-size: 25%;
-}
-
-.contents {
-    max-width: 100%;
-}
-
-.gif {
-    height: 100%;
-}
-
 .map {
-    height: 1080px;
+  height: 1080px;
 }
-
-.reminders-container {
-    width: 250px;
-    text-align: left;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .contents-box {
-    text-align: center;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
-
 .contents-box:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-box-shadow: inset 0 0 10px 10px #000;
-    -moz-box-shadow: inset 0 0 10px 10px #000;
-    box-shadow: inset 0 0 10px 10px #000;
-    overflow: hidden;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: inset 0 0 10px 10px #000;
+  -moz-box-shadow: inset 0 0 10px 10px #000;
+  box-shadow: inset 0 0 10px 10px #000;
+  overflow: hidden;
 }
-
-.video {
-    width: 100%;
-    height: 680px;
-    border: none;
-    /* If you want to make the video black and white
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    */}
-
-.sc-container {
-    margin: auto;
-    -webkit-filter: grayscale(70%);
-    filter: grayscale(70%);
-    font-family: bold;
-}
-
-.scWaveform {
-    background-color: #000000;
-    width: 500px;
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
-}
-
-.color-block {
-    height: 200px;
-    width: 200px;
-    display: inline-block;
-    margin: 10px;
-    margin-bottom: 20px;
-}
+/*
 
 .debug-info {
-    width: 500px;
+  width: 500px;
 }
-
-/* Animations */
-.fade.ng-hide {
-    opacity: 0;
-}
-
-.fade.ng-hide-remove,
-.fade.ng-hide-add {
-    display: block !important;
-}
-
-.fade.ng-hide-remove {
-    transition: all ease 1500ms;
-}
-
-.fade.ng-hide-add {
-    transition: all ease 500ms;
-}
-
-.animate-grow {
-    max-height: 1280px !important;
-}
-
-.animate-grow.ng-hide-add,
-.animate-grow.ng-hide-remove {
-    transition: all linear 500ms;
-}
-
-.animate-grow.ng-hide {
-    max-height: 0 !important;
-}
-
 .dimmed {
-    color: #aaa;
+  color: #aaa;
 }
-
-.xxsmall,
-.xsmall,
-.small {
-    font-family: "HelveticaNeue-Medium", sans-serif;
-    letter-spacing: 0;
+.xxsmall, .xsmall, .small {
+  font-family: "HelveticaNeue-Medium", sans-serif;
+  letter-spacing: 0;
 }
-
 .xxsmall {
-    font-size: 15px;
+  font-size: 15px;
 }
-
 .xxsmall .wi {
-    line-height: 15px;
+  line-height: 15px;
 }
-
 .xsmall {
-    font-size: 20px;
+  font-size: 20px;
 }
-
 .small {
-    font-size: 25px;
+  font-size: 25px;
 }
-
-.icon {
-    position: relative;
-    top: -10px;
-    display: inline-block;
-    font-size: 45px;
-    padding-right: 5px;
-    font-weight: 100;
-    margin-right: 10px;
-}
-
-.icon-small {
-    position: relative;
-    display: inline-block;
-    font-size: 20px;
-    padding-left: 0px;
-    padding-right: -10px;
-    font-weight: 100;
-    width: 20px;
-}
-
 .xkcd {
-    -webkit-filter: invert(100%);
-    max-width: 100%;
+  -webkit-filter: invert(100%);
+  max-width: 100%;
 }
-
-.qrImage {
-    -webkit-filter: invert(100%);
-    max-width: 100%;
-}
-
-.news {
-    height: 75px; 
-    margin-bottom: 5px;
-}
-
-.news-title {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
-    margin-bottom: 5px;
-}
-
-.news-content {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-    margin-bottom: 55px;
-}
+*/

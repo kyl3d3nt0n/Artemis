@@ -27,10 +27,21 @@ function Weather($scope, $interval, $http, GeolocationService) {
         if (weather.forecast === null) {
             return null;
         }
+
         weather.forecast.data.currently.day = moment.unix(weather.forecast.data.currently.time).format('ddd');
         weather.forecast.data.currently.temperature = parseFloat(weather.forecast.data.currently.temperature).toFixed(0);
         weather.forecast.data.currently.wi = "wi-forecast-io-" + weather.forecast.data.currently.icon;
         weather.forecast.data.currently.iconAnimation = weather.forecast.data.currently.icon;
+
+        //Weather Animation Icons
+        var skycons = new Skycons({ "color": "#aaa" });
+        skycons.add("icon_weather_current", weather.forecast.data.currently.iconAnimation);
+        skycons.play();
+
+        $scope.iconLoad = function (elementId, iconAnimation) {
+            skycons.add(document.getElementById(elementId), iconAnimation);
+            skycons.play();
+        };
         return weather.forecast.data.currently;
     }
 

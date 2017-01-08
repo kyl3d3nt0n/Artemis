@@ -1,6 +1,6 @@
-function Map($scope, $http, GeolocationService, SpeechService) {
+function Map($rootScope, $scope, $http, GeolocationService, SpeechService) {
     var map = {};
-    map.center = "Seattle, WA"; //default map locaiton
+    map.center = "Rockville, MD"; //default map locaiton
     map.zoom = 13; //default zoom is 13
 
     // Get the current location of the mirror
@@ -9,6 +9,9 @@ function Map($scope, $http, GeolocationService, SpeechService) {
     });
 
     generateMap = function (targetCenter, targetZoom) {
+        $rootScope.focus = 'map';
+        console.log("Scope is: " + $rootScope.focus);
+
         if (targetCenter === undefined) {
             targetCenter = map.center;
         } else {
@@ -21,7 +24,9 @@ function Map($scope, $http, GeolocationService, SpeechService) {
         return "https://maps.googleapis.com/maps/api/staticmap?center=" + targetCenter + "&zoom=" + targetZoom +
             "&format=png&sensor=false&scale=2&size=" + window.innerWidth +
             "x1200&maptype=roadmap&style=visibility:on|weight:1|invert_lightness:true|saturation:-100|lightness:1";
+
     };
+
 
     // Show map
     SpeechService.addCommand('map_show', function () {
@@ -59,7 +64,6 @@ function Map($scope, $http, GeolocationService, SpeechService) {
         map.zoom = value;
         $scope.map = generateMap();
     });
-
 }
 
 angular.module('SmartMirror')

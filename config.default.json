@@ -15,10 +15,6 @@
      "wakeCmd": "sudo ./scripts/raspi-monitor.sh on > /dev/null 2>&1",
      "sleepCmd": "sudo ./scripts/raspi-monitor.sh off > /dev/null 2>&1"
   },
-  "motion": {
-     "enabled": false,
-     "pin": "GPIO26"
-  },
   "speech": {
     "keyFilename": "./keyfile.json",
     "hotwords": [
@@ -42,22 +38,22 @@
         },
         "setup" : []
     },
-   
+
     "calendar": {
       "icals" : [""],
       "maxResults": 9,
       "maxDays": 9,
       "showCalendarNames": true
     },
-   
+
     "giphy": {
       "key" : "dc6zaTOxFJmzC"
     },
-   
+
     "youtube": {
       "key" : ""
     },
-   
+
     "soundcloud": {
         "key" : ""
     },
@@ -65,11 +61,11 @@
       "key" : "",
 
       "refreshInterval" : 5,
-     
+
       "trips" : []
     },
     "rss": {
-        "feeds" : [], 
+        "feeds" : [],
         "refreshInterval" : 120
     },
     "stock": {

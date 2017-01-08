@@ -1,5 +1,5 @@
 function Soundcloud($scope, $http, SoundCloudService, SpeechService) {
-    
+
     //Initialize SoundCloud
     var playing = false, sound;
     SoundCloudService.init();

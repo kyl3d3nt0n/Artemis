@@ -50,7 +50,7 @@ function createWindow() {
     }
   }
 
-  var browserWindowOptions = { width: 800, height: 600, icon: 'favicon.ico', kiosk: true, autoHideMenuBar: true, darkTheme: true }
+  var browserWindowOptions = { width: 800, height: 600, icon: 'favicon.ico', kiosk: false, autoHideMenuBar: true, darkTheme: true }
   if (externalDisplay) {
     browserWindowOptions.x = externalDisplay.bounds.x + 50
     browserWindowOptions.y = externalDisplay.bounds.y + 50
@@ -175,7 +175,7 @@ if (config.remote && config.remote.enabled) {
   remote.on('reload', function () {
     mainWindow.reload()
   })
-    
+
   remote.on('wakeUp', function () {
     mainWindow.webContents.send('remoteWakeUp', true)
   })
@@ -235,7 +235,7 @@ app.on('will-quit', function () {
   if (kwsProcess) {
     kwsProcess.kill()
   }
-  // While cleaning up we should turn the screen back on in the event 
+  // While cleaning up we should turn the screen back on in the event
   // the program exits before the screen is woken up
   if (mtnProcess) {
     mtnProcess.kill()

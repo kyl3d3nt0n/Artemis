@@ -11,7 +11,7 @@ $(function () {
   })
 
   socket.on('disconnect', function () {
-    
+
     $connectionBar.removeClass('connected').addClass('disconnected')
     $connectionText.html('Disconnected :(')
 
@@ -35,6 +35,7 @@ $(function () {
       data.configJSON.onSubmit = function (errors, values) {
         if (errors) {
           console.log('Validation errors', errors);
+          console.log('Validation values', values);
           return false;
         }
         return true;

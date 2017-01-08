@@ -11,7 +11,7 @@
         var _this = this;
         $scope.listening = false;
         $scope.debug = false;
-        $scope.focus = "default";
+        $rootScope.focus = "default";
         $scope.commands = [];
         $scope.partialResult = $translate.instant('home.commands');
         $scope.layoutName = 'main';
@@ -89,7 +89,12 @@
 
             var defaultView = function () {
                 console.debug("Ok, going to default view...");
-                $scope.focus = "default";
+                $rootScope.focus = 'default';
+                console.log("Scope is: " + $rootScope.focus);
+
+                //Adjust background color off app icons
+                var non_active_app = angular.element(document.getElementsByClassName('app_icon'));
+                non_active_app.removeClass('active_app');
             }
 
             // List commands
@@ -128,6 +133,7 @@
     function themeController($scope) {
         $scope.layoutName = (typeof config.layout !== 'undefined' && config.layout) ? config.layout : 'main';
     }
+
 
     angular.module('SmartMirror')
         .controller('Theme', themeController);

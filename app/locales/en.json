@@ -189,6 +189,16 @@
             "text": "Show Remote Link",
             "voice": "Show remote (QR code) (QR) (link)",
             "description": "Show the local IP of the Remote App URL"
+        },
+        "open_app": {
+          "text": "Open _______",
+          "voice": "Open *app",
+          "description": "Open additional applications"
+        },
+        "close_app": {
+          "text": "Close _______",
+          "voice": "Close *app",
+          "description": "Close current application"
         }
     }
 }

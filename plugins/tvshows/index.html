@@ -1,7 +1,9 @@
-<div class="tvshows" ng-controller="TVShows">
+<!---TVSHOWS------------------------------------------------------------------->
+<div ng-controller="TVShows" class="shows-block app fade-away" ng-show="focus == 'shows'">
+    <h2>TV Shows</h2>
     <div class="tv-information time-to" ng-repeat="show in tvshows">
         <span><i class="fa fa-rss fade" style="margin-right: 5px";></i></span>
-        <span fade><span style="font-weight: bold" ng-bind="show.data.episode.show.title"></span> – 
+        <span fade><span style="font-weight: bold" ng-bind="show.data.episode.show.title"></span> –
         <span ng-bind="show.data.episode.release_date"></span></span>
     </div>
 </div>

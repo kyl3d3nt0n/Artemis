@@ -81,7 +81,7 @@ var BING_MAPS = "http://dev.virtualearth.net/REST/V1/Routes/"
         });
     }
 
-    refreshTrafficData()
+    refreshTrafficData();
     $interval(refreshTrafficData, config.traffic.refreshInterval * 60000 || 900000)
 
 }

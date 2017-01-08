@@ -20,11 +20,31 @@
         }
     },
     "form": [
-        {
-            "type": "fieldset",
-            "key": "tvshows",
-            "expandable": true,
-            "order":0
-        }
+      {
+          "type": "fieldset",
+          "title": "TV Show Settings",
+          "expandable": true,
+          "order":0,
+          "items":[
+            {
+              "type":"tabarray",
+              "title":"TV Show Names",
+              "items":[
+                  {
+                    "type":"section",
+                    "legend":"{{value}}",
+                    "items": [
+                      {
+                        "key":"tvshows.shows[]",
+                        "notitle":true,
+                        "valueInLegend":true
+                      }
+                    ]
+                  }
+              ]
+            },
+            "tvshows.refreshInterval"
+        ]
+      }
     ]
 }
