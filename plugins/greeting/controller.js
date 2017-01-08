@@ -1,7 +1,7 @@
 function Greeting($rootScope, $scope, $http, $interval) {
 
     var greetingUpdater = function () {
-        if (typeof config.greeting !== 'undefined' && !Array.isArray(config.greeting) && typeof config.greeting.midday !== 'undefined') {
+        if (config.greeting.option == 'time') {
             var hour = moment().hour();
             var greetingTime = "midday"; //11am - 3pm MIDDAY
 
@@ -23,8 +23,8 @@ function Greeting($rootScope, $scope, $http, $interval) {
             var nextIndex = Math.floor(Math.random() * config.greeting[greetingTime].length);
             var nextGreeting = config.greeting[greetingTime][nextIndex]
             $scope.greeting = nextGreeting;
-        } else if (Array.isArray(config.greeting)) {
-            $scope.greeting = config.greeting[Math.floor(Math.random() * config.greeting.length)];
+        } else if (config.greeting.allDay) {
+            $scope.greeting = config.greeting.allDay[Math.floor(Math.random() * config.greeting.allDay.length)];
         }
     };
 
