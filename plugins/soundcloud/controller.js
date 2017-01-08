@@ -8,6 +8,10 @@ function Soundcloud($rootScope, $scope, $http, SoundCloudService, SpeechService)
     SpeechService.addCommand('sc_play', function (query) {
         SoundCloudService.searchSoundCloud(query).then(function (response) {
             $rootScope.focus = 'sc';
+            //Stop Youtube Video
+            var iframe = document.getElementsByTagName("iframe")[0].contentWindow;
+            iframe.postMessage('{"event":"command","func":"' + 'stopVideo' +   '","args":""}', '*');
+            
             console.log("Scope is " + $rootScope.focus);
 
             if (response[0].artwork_url) {

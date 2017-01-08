@@ -89,15 +89,19 @@ ul.calendar {
   margin-right: 1%;
   display: inline-block;
   transition: all .5s;
-  width: 5em;
-  height: 5em;
+  width: 6.5em;
+  height: 6.5em;
   text-align: center;
   margin-top: 1em;
   border: 2px solid white;
   border-radius: 1em;
+  padding-top: .5em;
+  padding-bottom: .5em;
 }
 .app_list li img {
   width: 4em;
+  height: 3.8em;
+  margin-bottom: .5em;
 }
 .active_app {
   transition: all .5s;

@@ -1,5 +1,5 @@
 <!---APPS---------------------------------------------------------------------->
-<div ng-controller="Apps" class="row fade-away" ng-show="focus == 'default' || focus == 'traffic' || focus == 'weather' || focus == 'stocks' || focus == 'calendar' || focus == 'shows'">
+<div ng-controller="Apps" class="row fade-away">
   <div class="app_bar col-sm-8 col-sm-offset-2">
     <ul class="app_list">
       <!---STOCKS--->
@@ -11,6 +11,11 @@
       <li class='shows_app app_icon'>
         <img ng-src= "{{focus == 'shows' && './img/Apps/tv_black.png' || './img/Apps/tv_white.png'}}" alt="TV Shows"/>
         <span>Shows</span>
+      </li>
+      <!---REMINDERS--->
+      <li class='reminders_app app_icon'>
+        <img ng-src= "{{focus == 'reminders' && './img/Apps/reminders_black.png' || './img/Apps/reminders_white.png'}}" alt="Reminders"/>
+        <span>Reminders</span>
       </li>
       <!---TRAFFIC--->
       <li class='traffic_app app_icon'>

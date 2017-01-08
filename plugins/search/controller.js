@@ -19,6 +19,8 @@ function Search($rootScope, $scope, $http, SpeechService) {
     //Search for a video
     SpeechService.addCommand('video_search', function (query) {
         searchYouTube(query).then(function (results) {
+            //Stop SoundCloud
+            document.getElementById('player').pause();
             //Set cc_load_policy=1 to force captions
             $scope.video = 'https://www.youtube.com/embed/' + results.data.items[0].id.videoId + '?autoplay=1&controls=0&iv_load_policy=3&enablejsapi=1&showinfo=0';
             //$scope.$parent.focus = "video";

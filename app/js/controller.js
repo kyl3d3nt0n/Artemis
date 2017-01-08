@@ -88,7 +88,18 @@
             updateTime();
             restCommand();
 
+            var stopMedia = function() {
+              console.log("Stopping all playing media...");
+                //Stop Youtube Video
+                var iframe = document.getElementsByTagName("iframe")[0].contentWindow;
+                iframe.postMessage('{"event":"command","func":"' + 'stopVideo' +   '","args":""}', '*');
+
+                //Stop SoundCloud
+                document.getElementById('player').pause();
+            }
+
             var defaultView = function () {
+                stopMedia();
                 console.debug("Ok, going to default view...");
                 $rootScope.focus = 'default';
                 console.log("Scope is: " + $rootScope.focus);

@@ -57,21 +57,21 @@ function Reminder($rootScope, $scope, SpeechService, $translate) {
     SpeechService.addCommand('reminder_insert', function (task) {
         $scope.reminders = remind.insertReminder(task);
         //$scope.$parent.focus = "reminders";
-        $rootScope.focus = 'reminders';
+        $rootScope.focus = "reminders";
     });
 
     // Clear reminders
     SpeechService.addCommand('reminder_clear', function () {
         $scope.reminders = remind.clearReminder();
         //$scope.$parent.focus = "default";
-        $rootScope.focus  = 'reminders';
+        $rootScope.focus  = "reminders";
     });
 
-    // Clear reminders
+    // Show reminders
     SpeechService.addCommand('reminder_show', function () {
         $scope.reminders = remind.getReminders();
         //$scope.$parent.focus = "reminders";
-        $rootScope.focus = 'reminders';
+        $rootScope.focus = "reminders";
     });
 }
 
