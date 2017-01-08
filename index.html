@@ -93,7 +93,7 @@
 <!---BOTTOM-CONTAINER---------------------------------------------------------->
 <div class="bottom row navbar-fixed-bottom">
 <!---BOTTOM-LEFT--------------------------------------------------------------->
-    <div class="bottom-left col-sm-2">
+    <div class="bottom-left col-sm-1">
       <!---FITBIT--->
       <div ng-include="'plugins/fitbit/index.html'" ng-if="fitbit"></div>
       <!---SCROBBLER--->
@@ -101,7 +101,7 @@
     </div><!---END-OF-BOTTOM-LEFT---------------------------------------------->
 
 
-    <div class="bottom-center col-sm-8 fade-away" ng-hide="focus== 'map' || focus == 'video'">
+    <div class="bottom-center col-sm-10 fade-away" ng-hide="focus== 'map' || focus == 'video'">
       <!---SUN-MOON--->
       <div ng-include="'plugins/sun-moon/index.html'"></div>
 
@@ -114,7 +114,7 @@
     </div><!---END-OF-BOTTOM-CENTER-------------------------------------------->
 
 <!---BOTTOM-RIGHT-------------------------------------------------------------->
-    <div class="bottom-right">
+    <div class="bottom-right col-sm-1">
       <!-- Someday something will live here -->
     </div><!---END-OF-BOTTOM-RIGHT--------------------------------------------->
 </div><!---END-OF-BOTTOM------------------------------------------------------->
