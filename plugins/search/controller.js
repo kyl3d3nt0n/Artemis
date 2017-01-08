@@ -1,4 +1,4 @@
-function Search($scope, $http, SpeechService) {
+function Search($rootScope, $scope, $http, SpeechService) {
     searchYouTube = function (query) {
         return $http({
             url: 'https://www.googleapis.com/youtube/v3/search',
@@ -21,7 +21,9 @@ function Search($scope, $http, SpeechService) {
         searchYouTube(query).then(function (results) {
             //Set cc_load_policy=1 to force captions
             $scope.video = 'https://www.youtube.com/embed/' + results.data.items[0].id.videoId + '?autoplay=1&controls=0&iv_load_policy=3&enablejsapi=1&showinfo=0';
-            $scope.$parent.focus = "video";
+            //$scope.$parent.focus = "video";
+            $rootScope.focus = 'video';
+            console.log('Scope is: ' + $rootScope.focus);
         });
     });
 
@@ -29,7 +31,8 @@ function Search($scope, $http, SpeechService) {
     SpeechService.addCommand('video_stop', function () {
         var iframe = document.getElementsByTagName("iframe")[0].contentWindow;
         iframe.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-        $scope.$parent.focus = "default";
+        //$scope.$parent.focus = "default";
+        $rootScope.focus = 'default';
     });
 
 }

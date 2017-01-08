@@ -1,4 +1,4 @@
-function MoonSun($rootScope, $scope, $interval) {
+function MoonSun($scope, $interval) {
     //SunCalc
     var SunCalc = require('suncalc');
     var now = new Date();

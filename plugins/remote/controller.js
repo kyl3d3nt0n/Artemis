@@ -1,4 +1,4 @@
-function Remote($scope, SpeechService) {
+function Remote($rootScope, $scope, SpeechService) {
 
     function showRemote() {
         const interfaces = require('os').networkInterfaces()
@@ -13,7 +13,8 @@ function Remote($scope, SpeechService) {
         }
         $scope.remoteText = addresses[0] + ":" + config.remote.port;
         $scope.remoteImage = "https://chart.googleapis.com/chart?cht=qr&chs=400x400&chl=http://" + $scope.remoteText;
-        $scope.$parent.focus = "remote";
+        //$scope.$parent.focus = "remote";
+        $rootScope.focus = 'remote';
     }
 
     if (config.remote && config.remote.enabled) {

@@ -111,8 +111,8 @@
             "description": "Shows a Giphy image."
         },
         "image_comic": {
-            "text": "Show xkcd",
-            "voice": "Show xkcd",
+            "text": "Show xkcd comic",
+            "voice": "Show xkcd (comic)",
             "description": "Shows the most recent xkcd comic."
         },
         "image_comic_dilbert": {

@@ -178,7 +178,7 @@ ul.calendar {
 }*/
 
 /******************** Traffic, Stocks, TV Shows, & Calendar ********************/
-.traffic-block, .stocks-block, .shows-block, .calendar-block {
+.traffic-block, .stocks-block, .shows-block, .calendar-block, .reminder-block {
   float: right;
   clear: both;
   width: 16.5em;

@@ -1,4 +1,4 @@
-function Traffic($scope, $http, $interval, $q, TimeboxService) {
+function Traffic($rootScope, $scope, $http, $interval, $q, TimeboxService) {
 var BING_MAPS = "http://dev.virtualearth.net/REST/V1/Routes/"
 
     getDurationForTrips = function () {
@@ -83,7 +83,6 @@ var BING_MAPS = "http://dev.virtualearth.net/REST/V1/Routes/"
 
     refreshTrafficData();
     $interval(refreshTrafficData, config.traffic.refreshInterval * 60000 || 900000)
-
 }
 
 angular.module('Artemis')

@@ -43,20 +43,22 @@
     <div class="top-left col-sm-8">
       <!---DATE & TIME--->
       <div ng-include="'plugins/datetime/index.html'"></div>
-      <!---CALENDAR--->
-      <div ng-include="'plugins/calendar/index.html'"></div>
     </div><!---END-OF-TOP-LEFT------------------------------------------------->
 
 <!---TOP-RIGHT----------------------------------------------------------------->
     <div class="top-right col-sm-4">
       <!---WEATHER--->
       <div ng-include="'plugins/weather/index.html'"></div>
-      <!---TRAFFIC--->
-      <div ng-include="'plugins/traffic/index.html'"></div>
       <!---STOCKS--->
       <div ng-include="'plugins/stock/index.html'"></div>
       <!---TV-SHOWS--->
       <div ng-include="'plugins/tvshows/index.html'"></div>
+      <!---TRAFFIC--->
+      <div ng-include="'plugins/traffic/index.html'"></div>
+      <!---CALENDAR--->
+      <div ng-include="'plugins/calendar/index.html'"></div>
+      <!---REMINDERS--->
+      <div ng-include="'plugins/reminder/index.html'"></div>
     </div><!---END-OF-TOP-RIGHT------------------------------------------------>
   </div><!---END-OF-TOP-------------------------------------------------------->
 
@@ -65,7 +67,7 @@
 
 <!---MIDDLE-CENTER------------------------------------------------------------->
     <div class="middle-center">
-      <div class="greeting-apps" ng-show="focus == 'default'">
+      <div class="greeting-apps" ng-show="focus == 'default' || focus == 'stocks' || focus == 'shows' || focus == 'traffic' || focus == 'weather' || focus == 'calendar'">
         <!---GREETING--->
         <h1 ng-controller="Greeting" ng-bind="greeting" ng-cloak></h1>
         <!---APP-BAR--->
@@ -85,8 +87,6 @@
       <div ng-include="'plugins/search/index.html'"></div>
       <!---GIPHY--->
       <div ng-include="'plugins/giphy/index.html'"></div>
-      <!---REMINDER--->
-      <div ng-include="'plugins/reminder/index.html'"></div>
       <!---TIMER--->
       <div ng-include="'plugins/timer/index.html'"></div>
       <!-- Command list -->

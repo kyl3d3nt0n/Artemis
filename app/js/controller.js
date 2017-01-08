@@ -17,6 +17,7 @@
         $scope.layoutName = 'main';
         $scope.config = config;
 
+
         //set lang
         moment.locale(
             (typeof config.general.language !== 'undefined') ? config.general.language.substring(0, 2).toLowerCase() : 'en',
@@ -100,7 +101,7 @@
             // List commands
             SpeechService.addCommand('list', function () {
                 console.debug("Here is a list of commands...");
-                console.log(SpeechService.commands);
+                //console.log(SpeechService.commands);
                 $scope.commands = SpeechService.getCommands();
                 $rootScope.focus = "commands";
                 console.log("Scope is: " + $rootScope.focus);
@@ -124,7 +125,6 @@
                 LightService.performUpdate(state + " " + action);
             });
         };
-
         _this.init();
     }
 
@@ -134,7 +134,6 @@
     function themeController($scope) {
         $scope.layoutName = (typeof config.layout !== 'undefined' && config.layout) ? config.layout : 'main';
     }
-
 
     angular.module('Artemis')
         .controller('Theme', themeController);
