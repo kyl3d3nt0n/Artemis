@@ -22,5 +22,5 @@ function Apps($rootScope, $scope, SpeechService) {
   });
 
 }
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('Apps', Apps);

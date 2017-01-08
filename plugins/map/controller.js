@@ -66,5 +66,5 @@ function Map($rootScope, $scope, $http, GeolocationService, SpeechService) {
     });
 }
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('Map', Map);

@@ -52,7 +52,7 @@
         return service;
     }
 
-    angular.module('SmartMirror')
+    angular.module('Artemis')
         .factory('GeolocationService', GeolocationService);
 
 } ());

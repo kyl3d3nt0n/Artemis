@@ -10,5 +10,5 @@ function Giphy($scope, $http, SpeechService) {
     });
 }
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('Giphy', Giphy);

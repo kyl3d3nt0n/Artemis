@@ -9,7 +9,7 @@ const {ipcRenderer} = require('electron');
         var commandList = []
 
         service.init = function (cb) {
-            // workaround so we can trigger requests at any time 
+            // workaround so we can trigger requests at any time
             annyang.isListening = () => { return true }
             // Set lenguage and debug state
             annyang.setLanguage((typeof config.general.language != 'undefined') ? config.general.language : 'en-US')
@@ -95,7 +95,7 @@ const {ipcRenderer} = require('electron');
         return service;
     }
 
-    angular.module('SmartMirror')
+    angular.module('Artemis')
         .factory('SpeechService', SpeechService)
 
 } (window.annyang));

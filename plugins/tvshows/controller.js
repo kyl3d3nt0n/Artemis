@@ -22,5 +22,5 @@ function TVShows($scope, $http, $interval) {
     }
 }
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('TVShows', TVShows);

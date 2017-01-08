@@ -20,8 +20,8 @@ function Remote($scope, SpeechService) {
         SpeechService.addCommand('show_remoteQR', function () {
             showRemote()
         });
-    } 
-    
+    }
+
     // First Run
     if (config.remote.firstRun) {
         $scope.firstRun = true;
@@ -29,5 +29,5 @@ function Remote($scope, SpeechService) {
     }
 }
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('Remote', Remote);

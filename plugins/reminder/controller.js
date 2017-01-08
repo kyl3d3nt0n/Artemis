@@ -72,6 +72,5 @@ function Reminder($scope, SpeechService, $translate) {
     });
 }
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('Reminder', Reminder);
-

@@ -34,5 +34,5 @@ function Greeting($rootScope, $scope, $http, $interval) {
     }
 }
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('Greeting', Greeting);

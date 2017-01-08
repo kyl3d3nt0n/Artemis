@@ -24,5 +24,5 @@ function Maker($http, SpeechService) {
     }
 }
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('Maker', Maker);

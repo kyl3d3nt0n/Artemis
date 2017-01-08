@@ -250,7 +250,7 @@
         return service;
     }
 
-    angular.module('SmartMirror')
+    angular.module('Artemis')
         .factory('FitbitService', FitbitService);
 
 } ());

@@ -36,5 +36,5 @@ function Soundcloud($scope, $http, SoundCloudService, SpeechService) {
     });
 }
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('Soundcloud', Soundcloud);

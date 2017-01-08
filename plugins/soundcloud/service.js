@@ -109,7 +109,7 @@
     canvasCtx.stroke();
   }
 
-  angular.module('SmartMirror')
+  angular.module('Artemis')
     .factory('SoundCloudService', SoundCloudService);
 
 } ());

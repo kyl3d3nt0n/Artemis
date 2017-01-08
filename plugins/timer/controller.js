@@ -48,6 +48,5 @@ function Timer($scope, TimerService, SpeechService) {
 }
 
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('Timer', Timer);
-

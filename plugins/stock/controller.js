@@ -33,5 +33,5 @@ function Stock($scope, $http, $q, $interval) {
     $interval(getStocks, config.stock.refreshInterval * 60000 || 1800000)
 }
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('Stock', Stock);

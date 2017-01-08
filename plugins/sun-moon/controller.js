@@ -80,5 +80,5 @@ function MoonSun($rootScope, $scope, $interval) {
   $interval(Sunset_Sunrise, 360000)
   }
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('MoonSun', MoonSun);

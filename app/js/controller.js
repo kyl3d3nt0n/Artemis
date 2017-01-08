@@ -127,7 +127,7 @@
         _this.init();
     }
 
-    angular.module('SmartMirror')
+    angular.module('Artemis')
         .controller('MirrorCtrl', MirrorCtrl);
 
     function themeController($scope) {
@@ -135,7 +135,7 @@
     }
 
 
-    angular.module('SmartMirror')
+    angular.module('Artemis')
         .controller('Theme', themeController);
 
 } (window.angular));

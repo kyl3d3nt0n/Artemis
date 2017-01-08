@@ -10,7 +10,7 @@ function Search($scope, $http, SpeechService) {
                 'type': 'video',
                 'videoEmbeddable': 'true',
                 'videoSyndicated': 'true',
-                //Sharing this key in the hopes that it wont be abused 
+                //Sharing this key in the hopes that it wont be abused
                 'key': config.youtube.key
             }
         });
@@ -34,5 +34,5 @@ function Search($scope, $http, SpeechService) {
 
 }
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('Search', Search);

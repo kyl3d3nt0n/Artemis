@@ -23,10 +23,10 @@ function Dilbert($scope, $http, $q, SpeechService) {
         getDilbertFeed().then(function(feed){
             $scope.dilbert = feed.entries[0]
             $scope.$parent.focus = "dilbert";
-        })  
+        })
     });
 
 }
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('Dilbert', Dilbert);

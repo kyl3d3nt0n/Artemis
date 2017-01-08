@@ -48,5 +48,5 @@ function Rss($scope, $http, $q, $interval, CalendarService) {
 }
 
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('Rss', Rss);

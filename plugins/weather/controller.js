@@ -87,5 +87,5 @@ function Weather($scope, $interval, $http, GeolocationService) {
     }
 }
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('Weather', Weather);

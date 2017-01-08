@@ -5,11 +5,11 @@ function Scrobbler($scope, $interval, ScrobblerService) {
             $scope.track = track;
         });
     }
-    
+
     if (typeof config.lastfm !== 'undefined' && typeof config.lastfm.key !== 'undefined' && config.lastfm.user !== 'undefined') {
         $interval(getScrobblingTrack, config.lastfm.refreshInterval * 60000 || 1800000)
     }
 }
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('Scrobbler', Scrobbler);

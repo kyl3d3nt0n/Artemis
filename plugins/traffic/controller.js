@@ -86,5 +86,5 @@ var BING_MAPS = "http://dev.virtualearth.net/REST/V1/Routes/"
 
 }
 
-angular.module('SmartMirror')
+angular.module('Artemis')
     .controller('Traffic', Traffic);

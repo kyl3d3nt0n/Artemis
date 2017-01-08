@@ -9,7 +9,7 @@
         service.exec = require('child_process').exec;
 
         service.startAutoSleepTimer = function () {
-            
+
             var milliConversion = 60000
             if (typeof config.autoTimer !== 'undefined' && typeof config.autoTimer.autoSleep !== 'undefined' && typeof config.autoTimer.autoWake !== 'undefined') {
                 service.stopAutoSleepTimer();
@@ -30,7 +30,7 @@
 
         service.wake = function () {
 	        service.woke = true;
-            if (config.autoTimer.mode == "monitor"){ 
+            if (config.autoTimer.mode == "monitor"){
                 service.exec(config.autoTimer.wakeCmd, service.puts);
                 service.scope = "default"
             } else if (config.autoTimer.mode == "tv"){
@@ -60,7 +60,7 @@
             console.debug('autosleep stdout:', stdout)
         };
 
-	
+
 	ipcRenderer.on('motionstart', (event, spotted) => {
 	    $rootScope.$broadcast("autoSleep.wak", true);
         console.debug('motion start detected');
@@ -75,7 +75,7 @@
 	    $rootScope.$broadcast("autoSleep.sleep", true);
 	    console.debug('remote sleep detected');
 	    });
-        
+
 	ipcRenderer.on('motionend', (event, spotted) => {
 	    console.debug('motion end detected');
 	    service.startAutoSleepTimer();
@@ -84,7 +84,7 @@
 	ipcRenderer.on('calibrated', (event, spotted) => {
 	    console.debug('motion.js Calibrated');
         });
-    
+
     ipcRenderer.on('Error', (event, spotted) => {
 	    console.debug("Motion",spotted);
         });
@@ -92,7 +92,7 @@
         return service;
     }
 
-    angular.module('SmartMirror')
+    angular.module('Artemis')
         .factory('AutoSleepService', AutoSleepService);
 
 } ());
