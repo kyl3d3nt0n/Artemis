@@ -30,7 +30,8 @@ function Greeting($rootScope, $scope, $http, $interval) {
 
     if (typeof config.greeting !== 'undefined') {
         greetingUpdater();
-        $interval(greetingUpdater, config.greeting.refreshInterval * 6000 || 360000)
+        //Update every 5 minutes
+        $interval(greetingUpdater, config.greeting.refreshInterval * 5000 || 300000)
     }
 }
 
