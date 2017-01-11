@@ -12,6 +12,9 @@ body {
 nav {
   height:20px;
 }
+button {
+  margin-top: 3%;
+}
 
 .footer {
   position: absolute;
