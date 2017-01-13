@@ -59,7 +59,7 @@
 
 	ipcRenderer.on('motionstart', (event, spotted) => {
 	    service.wake()
-        console.debug('motion start detected');
+      console.debug('motion start detected');
 	    });
 
 	ipcRenderer.on('remoteWakeUp', (event, spotted) => {

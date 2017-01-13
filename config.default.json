@@ -9,11 +9,15 @@
     "port": 8080
   },
   "autoTimer": {
-     "mode":"disabled",
-     "autoSleep": 40,
+     "mode":"enabled",
+     "autoSleep": 1,
      "autoWake": "07:00:00",
      "wakeCmd": "sudo ./scripts/raspi-monitor.sh on > /dev/null 2>&1",
      "sleepCmd": "sudo ./scripts/raspi-monitor.sh off > /dev/null 2>&1"
+  },
+  "motion": {
+   "enabled": true,
+   "pin": "GPIO26"
   },
   "speech": {
     "keyFilename": "./keyfile.json",
