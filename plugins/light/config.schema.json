@@ -84,7 +84,7 @@
                     {
                       "type":"section",
                       "legend":"{{value}}",
-                      "items":[   
+                      "items":[
                           {
                             "key":"light.setup[].name",
                             "valueInLegend":true
@@ -112,7 +112,7 @@
                                         ]
                                       }
                                   ]
-                                  
+
                               }
                             ]
                           }
