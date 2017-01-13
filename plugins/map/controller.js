@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-function Map($rootScope, $scope, $http, GeolocationService, SpeechService) {
-=======
 function Map($scope, $http, GeolocationService, SpeechService, Focus) {
->>>>>>> evancohen/master
     var map = {};
     map.center = "Rockville, MD"; //default map locaiton
     map.zoom = 13; //default zoom is 13
@@ -13,9 +9,6 @@ function Map($scope, $http, GeolocationService, SpeechService, Focus) {
     });
 
     generateMap = function (targetCenter, targetZoom) {
-        $rootScope.focus = 'map';
-        console.log("Scope is: " + $rootScope.focus);
-
         if (targetCenter === undefined) {
             targetCenter = map.center;
         } else {

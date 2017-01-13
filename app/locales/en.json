@@ -105,11 +105,6 @@
             "voice": "show me (a video)(of)(about) *query",
             "description": "Will show you a video of the requested item."
         },
-        "video_stop": {
-            "text": "Stop video",
-            "voice": "stop (the) video",
-            "description": "Stops the playback of video content."
-        },
         "image_giphy": {
             "text": "Giphy ________",
             "voice": "giphy *img",

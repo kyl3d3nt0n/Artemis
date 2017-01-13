@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-function Dilbert($rootScope, $scope, $http, $q, SpeechService) {
-=======
 function Dilbert($scope, $http, $q, SpeechService, Focus) {
->>>>>>> evancohen/master
     var dilbertFeed
 
     getDilbertFeed = function () {
@@ -26,14 +22,8 @@ function Dilbert($scope, $http, $q, SpeechService, Focus) {
     SpeechService.addCommand('image_comic_dilbert', function (state, action) {
         getDilbertFeed().then(function(feed){
             $scope.dilbert = feed.entries[0]
-<<<<<<< HEAD
-            //$scope.$parent.focus = "dilbert";
-            $rootScope.focus = 'dilbert';
-        })
-=======
             Focus.change("dilbert");
-        })  
->>>>>>> evancohen/master
+        })
     });
 
 }

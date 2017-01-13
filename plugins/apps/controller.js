@@ -1,10 +1,8 @@
-function Apps($rootScope, $scope, SpeechService) {
+function Apps($scope, SpeechService, Focus) {
 
   //Open Applications
   SpeechService.addCommand('open_app', function(query) {
-    $rootScope.focus = query;
-    console.log("Scope is: " + $rootScope.focus);
-
+    Focus.change(query);
     var non_active_app = angular.element(document.getElementsByClassName('app_icon'));
     non_active_app.removeClass('active_app');
 
@@ -14,8 +12,7 @@ function Apps($rootScope, $scope, SpeechService) {
 
   //Close applications
   SpeechService.addCommand('close_app', function(query) {
-    $rootScope.focus = 'default';
-    console.log("Scope is: " + $rootScope.focus);
+    Focus.change(query);
     //Adjust background color
     var non_active_app = angular.element(document.getElementsByClassName('app_icon'));
     non_active_app.removeClass('active_app');

@@ -63,7 +63,7 @@ var BING_MAPS = "http://dev.virtualearth.net/REST/V1/Routes/"
         if (trip.mode == "Driving") {
             endpoint += "&avoid=minimizeTolls";
         } else if (trip.mode == "Transit") {
-            endpoint += "&timeType=Departure&dateTime=" + moment().lang("en").format('h:mm:ssa').toUpperCase();
+            endpoint += "&timeType=Departure&dateTime=" + moment().locale("en").format('h:mm:ssa').toUpperCase();
         } else if (trip.mode == "Walking") {
             endpoint += "&optmz=distance";
         }

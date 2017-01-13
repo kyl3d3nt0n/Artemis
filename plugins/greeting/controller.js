@@ -19,7 +19,7 @@ function Greeting($rootScope, $scope, $http, $interval) {
               greetingTime = "night";
             }
 
-            console.log(greetingTime);
+            console.log("Current greeting time is: " + greetingTime);
             var nextIndex = Math.floor(Math.random() * config.greeting[greetingTime].length);
             var nextGreeting = config.greeting[greetingTime][nextIndex]
             $scope.greeting = nextGreeting;

@@ -85,7 +85,8 @@ const {ipcRenderer} = require('electron');
 
             // Add the commands to annyang
             annyang.addCommands(service.commands)
-            console.debug('added command "' + phrase + '"', service.commands)
+            //Uncomment to show commands in debug console
+            //console.debug('added command "' + phrase + '"', service.commands)
         }
 
         service.getCommands = function () {

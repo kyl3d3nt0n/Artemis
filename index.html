@@ -67,12 +67,6 @@
 
 <!---MIDDLE-CENTER------------------------------------------------------------->
     <div class="middle-center">
-      <div class="greeting-apps" ng-show="focus == 'default' || focus == 'stocks' || focus == 'shows' || focus == 'traffic' || focus == 'weather' || focus == 'calendar' || focus == 'reminders'">
-        <!---GREETING--->
-        <h1 ng-controller="Greeting" ng-bind="greeting" ng-cloak></h1>
-        <!---APP-BAR--->
-        <div ng-include="'plugins/apps/index.html'"></div>
-      </div>
       <!---REMOTE--->
       <div ng-include="'plugins/remote/index.html'"></div>
       <!---SOUNDCLOUD--->
@@ -89,6 +83,14 @@
       <div ng-include="'plugins/giphy/index.html'"></div>
       <!---TIMER--->
       <div ng-include="'plugins/timer/index.html'"></div>
+
+      <!---GREETING & APPS--->
+      <div class="greeting-apps" ng-hide="focus== 'map' || focus == 'video' || focus == 'commands'">
+        <!---GREETING--->
+        <h1 ng-controller="Greeting" ng-bind="greeting" ng-cloak></h1>
+        <!---APP-BAR--->
+        <div ng-include="'plugins/apps/index.html'"></div>
+      </div>
       <!-- Command list -->
       <div ng-include="'plugins/commands/index.html'"></div>
     </div><!---END-OF-MIDDLE-CENTER-------------------------------------------->
@@ -150,11 +152,11 @@
   document.write('</div>');
 </script>
 
-  <!-- Artemis JS
+  <!--- Artemis JS
   ==========================================================================
-  The good stuff. -->
+  The good stuff. --->
 
-  <!-- bower:js -->
+  <!--- bower:js --->
   <script src="bower_components/moment/min/moment-with-locales.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -162,20 +164,16 @@
   <script src="bower_components/angular-translate/angular-translate.js"></script>
   <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
   <script src="bower_components/rrule/lib/rrule.js"></script>
-  <!-- endbower -->
+  <!--- endbower --->
 
   <script src="app/js/skycons.js"></script>
   <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
 
-  <!-- App -->
+  <!--- App --->
   <script src="app/js/app.js"></script>
-<<<<<<< HEAD
-
-=======
   <script src="app/js/focus.js"></script>
->>>>>>> evancohen/master
 
-  <!-- Services -->
+  <!--- Services --->
   <script src="plugins/calendar/service.js"></script>
   <script src="plugins/timebox/service.js"></script>
   <script src="plugins/soundcloud/service.js"></script>
@@ -187,7 +185,7 @@
   <script src="plugins/scrobbler/service.js"></script>
   <script src="plugins/timer/service.js"></script>
 
-  <!-- Controllers -->
+  <!--- Controllers --->
   <script src="app/js/controller.js"></script>
   <script src="plugins/apps/controller.js"></script>
   <script src="plugins/soundcloud/controller.js"></script>
