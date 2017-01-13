@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 function Timer($rootScope, $scope, TimerService, SpeechService) {
+=======
+function Timer($scope, TimerService, SpeechService, Focus) {
+>>>>>>> evancohen/master
 
     // Start timer
     SpeechService.addCommand('timer_start', function (duration) {
         console.debug("Starting timer");
+<<<<<<< HEAD
         //$scope.$parent.focus = "timer";
         $rootScope.focus = 'timer';
+=======
+        Focus.change("timer");
+>>>>>>> evancohen/master
         $scope.timer = TimerService;
         TimerService.start(duration);
 
@@ -27,8 +35,12 @@ function Timer($rootScope, $scope, TimerService, SpeechService) {
                 TimerService.start();
             }
 
+<<<<<<< HEAD
             //$scope.$parent.focus = "timer";
             $rootScope.focus = 'timer';
+=======
+            Focus.change("timer");
+>>>>>>> evancohen/master
         }
     });
 
@@ -43,8 +55,12 @@ function Timer($rootScope, $scope, TimerService, SpeechService) {
     SpeechService.addCommand('timer_resume', function () {
         if (TimerService.running && TimerService.paused) {
             TimerService.start();
+<<<<<<< HEAD
             //$scope.$parent.focus = "timer";
             $rootScope.focus = 'timer';
+=======
+            Focus.change("timer");
+>>>>>>> evancohen/master
         }
     });
 

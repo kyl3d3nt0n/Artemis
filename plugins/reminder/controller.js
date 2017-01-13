@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 function Reminder($rootScope, $scope, SpeechService, $translate) {
+=======
+function Reminder($scope, SpeechService, $translate, Focus) {
+>>>>>>> evancohen/master
     const storage = require('electron-json-storage');
     // Service variable
     var remind = {};
@@ -56,22 +60,34 @@ function Reminder($rootScope, $scope, SpeechService, $translate) {
     // Set a reminder
     SpeechService.addCommand('reminder_insert', function (task) {
         $scope.reminders = remind.insertReminder(task);
+<<<<<<< HEAD
         //$scope.$parent.focus = "reminders";
         $rootScope.focus = "reminders";
+=======
+        Focus.change("reminders");
+>>>>>>> evancohen/master
     });
 
     // Clear reminders
     SpeechService.addCommand('reminder_clear', function () {
         $scope.reminders = remind.clearReminder();
+<<<<<<< HEAD
         //$scope.$parent.focus = "default";
         $rootScope.focus  = "reminders";
+=======
+        Focus.change("default");
+>>>>>>> evancohen/master
     });
 
     // Show reminders
     SpeechService.addCommand('reminder_show', function () {
         $scope.reminders = remind.getReminders();
+<<<<<<< HEAD
         //$scope.$parent.focus = "reminders";
         $rootScope.focus = "reminders";
+=======
+        Focus.change("reminders");
+>>>>>>> evancohen/master
     });
 }
 

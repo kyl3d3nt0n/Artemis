@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 function AutoSleep($rootScope, $scope, $http, $q, SpeechService,AutoSleepService) {
+=======
+function AutoSleep($http, $q, SpeechService,AutoSleepService) {
+>>>>>>> evancohen/master
 
 
     // Hide everything and "sleep"
     SpeechService.addCommand('sleep', function () {
         console.debug("Ok, going to sleep...");
         AutoSleepService.sleep();
+<<<<<<< HEAD
         //$scope.$parent.focus = AutoSleepService.scope;
         $rootScope.focus = "sleep";
 
@@ -40,6 +45,10 @@ function AutoSleep($rootScope, $scope, $http, $q, SpeechService,AutoSleepService
         console.log($rootScope.focus);
 	      console.debug('Controller Sleep');
     });
+=======
+    });
+
+>>>>>>> evancohen/master
 }
 
 angular.module('Artemis')

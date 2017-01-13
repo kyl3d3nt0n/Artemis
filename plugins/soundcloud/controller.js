@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 function Soundcloud($rootScope, $scope, $http, SoundCloudService, SpeechService) {
 
+=======
+function Soundcloud($scope, $http, SoundCloudService, SpeechService, Focus) {
+    
+>>>>>>> evancohen/master
     //Initialize SoundCloud
     var playing = false, sound;
     SoundCloudService.init();
@@ -21,7 +26,11 @@ function Soundcloud($rootScope, $scope, $http, SoundCloudService, SpeechService)
             }
             $scope.scWaveform = response[0].waveform_url;
             $scope.scTrack = response[0].title;
+<<<<<<< HEAD
             //$scope.$parent.focus = "sc";
+=======
+            Focus.change("sc");
+>>>>>>> evancohen/master
             SoundCloudService.play();
         });
     });
@@ -30,19 +39,31 @@ function Soundcloud($rootScope, $scope, $http, SoundCloudService, SpeechService)
     SpeechService.addCommand('sc_pause', function () {
         $rootScope.focus = 'default';
         SoundCloudService.pause();
+<<<<<<< HEAD
         //$scope.$parent.focus = "default";
+=======
+        Focus.change("default");
+>>>>>>> evancohen/master
     });
     //SoundCloud resume
     SpeechService.addCommand('sc_resume', function () {
         $rootScope.focus = 'sc';
         SoundCloudService.play();
+<<<<<<< HEAD
         //$scope.$parent.focus = "sc";
+=======
+        Focus.change("sc");
+>>>>>>> evancohen/master
     });
     //SoundCloud replay
     SpeechService.addCommand('sc_replay', function () {
         $rootScope.focus = 'sc';
         SoundCloudService.replay();
+<<<<<<< HEAD
         //$scope.$parent.focus = "sc";
+=======
+        Focus.change("sc");
+>>>>>>> evancohen/master
     });
 }
 

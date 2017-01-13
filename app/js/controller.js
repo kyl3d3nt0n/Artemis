@@ -2,6 +2,7 @@
     'use strict';
 
     function MirrorCtrl(
+        Focus,
         SpeechService,
         AutoSleepService,
         LightService,
@@ -11,16 +12,28 @@
         var _this = this;
         $scope.listening = false;
         $scope.debug = false;
+<<<<<<< HEAD
         $rootScope.focus = "default";
+=======
+>>>>>>> evancohen/master
         $scope.commands = [];
         $scope.partialResult = $translate.instant('home.commands');
         $scope.layoutName = 'main';
         $scope.config = config;
 
+<<<<<<< HEAD
+=======
+        // Set up our Focus
+        $rootScope.$on('focus', function(targetScope, newFocus, oldFocus){
+            $scope.focus = newFocus;
+        })
+
+        Focus.change("default");
+>>>>>>> evancohen/master
 
         //set lang
         moment.locale(
-            (typeof config.general.language !== 'undefined') ? config.general.language.substring(0, 2).toLowerCase() : 'en',
+            (typeof config.general.language !== 'undefined') ? config.general.language : 'en-US',
             {
                 calendar: {
                     lastWeek: '[Last] dddd',
@@ -101,12 +114,16 @@
             var defaultView = function () {
                 stopMedia();
                 console.debug("Ok, going to default view...");
+<<<<<<< HEAD
                 $rootScope.focus = 'default';
                 console.log("Scope is: " + $rootScope.focus);
 
                 //Adjust background color off app icons
                 var non_active_app = angular.element(document.getElementsByClassName('app_icon'));
                 non_active_app.removeClass('active_app');
+=======
+                Focus.change("default");
+>>>>>>> evancohen/master
             }
 
             // List commands
@@ -114,8 +131,12 @@
                 console.debug("Here is a list of commands...");
                 //console.log(SpeechService.commands);
                 $scope.commands = SpeechService.getCommands();
+<<<<<<< HEAD
                 $rootScope.focus = "commands";
                 console.log("Scope is: " + $rootScope.focus);
+=======
+                Focus.change("commands");
+>>>>>>> evancohen/master
             });
 
             // Go back to default view
