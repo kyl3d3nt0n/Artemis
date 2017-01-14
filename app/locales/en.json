@@ -192,7 +192,7 @@
         },
         "open_app": {
           "text": "Open _______",
-          "voice": "Open *app",
+          "voice": "Open *app app",
           "description": "Open additional applications"
         },
         "close_app": {

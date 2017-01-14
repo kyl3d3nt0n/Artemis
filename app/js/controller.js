@@ -1,7 +1,7 @@
 (function (angular) {
     'use strict';
 
-    function MirrorCtrl(
+    function ArtemisCtrl(
         Focus,
         SpeechService,
         AutoSleepService,
@@ -147,7 +147,7 @@
     }
 
     angular.module('Artemis')
-        .controller('MirrorCtrl', MirrorCtrl);
+        .controller('ArtemisCtrl', ArtemisCtrl);
 
     function themeController($scope) {
         $scope.layoutName = (typeof config.layout !== 'undefined' && config.layout) ? config.layout : 'main';

@@ -35,7 +35,7 @@
 
 </head>
 
-<body ng-controller="MirrorCtrl" ng-cloak>
+<body ng-controller="ArtemisCtrl" ng-cloak>
   <div class="container-fluid fade-away" ng-hide="focus == 'sleep'">
 <!---TOP----------------------------------------------------------------------->
   <div class="top row">
@@ -110,7 +110,7 @@
     </div><!---END-OF-MIDDLE-BOTTOM-LEFT--------------------------------------->
 
 <!---TOP-BOTTOM-CENTER--------------------------------------------------------->
-    <div class="top-bottom-center col-sm-6 fade-away" ng-hide="focus== 'map' || focus == 'video'">
+    <div class="top-bottom-center col-sm-6 fade-away" ng-hide="focus== 'map'">
       <!---SUN-MOON--->
       <div ng-include="'plugins/sun-moon/index.html'"></div>
     </div><!---END-OF-TOP-BOTTOM-CENTER---------------------------------------->

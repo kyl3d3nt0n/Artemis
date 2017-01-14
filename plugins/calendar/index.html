@@ -1,7 +1,7 @@
 <!---CALENDAR------------------------------------------------------------------>
 <div class="calendar-block app fade-away" ng-show="focus =='calendar'">
-  <ul ng-controller="Calendar" class="calendar fade-away" ng-hide="focus == 'map' || focus == 'video'" ng-class="config.calendar.showCalendarNames ? 'show-calendar-names' : ''">
-      <h2>Upcoming Events</h2>
+  <ul ng-controller="Calendar" class="calendar fade-away" ng-class="config.calendar.showCalendarNames ? 'show-calendar-names' : ''">
+      <h2>Calendar</h2>
       <li class="event day-marker" ng-repeat="event in calendar" ng-class="(calendar[$index - 1].label != event.label) ? 'day-marker' : ''">
           <div class="event-details">
               <span class="day">
