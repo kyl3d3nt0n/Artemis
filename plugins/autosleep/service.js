@@ -33,7 +33,11 @@
             if (config.autoTimer.mode == "monitor"){
                 service.exec(config.autoTimer.wakeCmd, service.puts);
             }
-            Focus.change("default");
+
+            //If sleeping change to default
+            if(Focus.get() === "sleep") {
+              Focus.change("default");
+            }
         };
 
         service.sleep = function () {
@@ -56,12 +60,6 @@
             console.debug('autosleep stdout:', stdout)
         };
 
-
-	ipcRenderer.on('motionstart', (event, spotted) => {
-	    service.wake()
-      console.debug('motion start detected');
-	    });
-
 	ipcRenderer.on('remoteWakeUp', (event, spotted) => {
 	    service.wake()
 	    console.debug('remote wakeUp detected');
@@ -71,6 +69,11 @@
 	    service.sleep()
 	    console.debug('remote sleep detected');
 	    });
+
+  ipcRenderer.on('motionstart', (event, spotted) => {
+    	service.wake()
+      console.debug('motion start detected');
+    	});
 
 	ipcRenderer.on('motionend', (event, spotted) => {
 	    console.debug('motion end detected');
