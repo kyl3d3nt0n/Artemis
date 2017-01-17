@@ -1,3 +1,5 @@
+/* global $, io */
+
 $(function () {
 
   var socket = io()
@@ -11,12 +13,13 @@ $(function () {
     })
   }
 
-  $connectionBar = $('#connection-bar')
-  $connectionText = $('#connection-text')
-  $speak = $('#speak')
-  $command = $('#command')
-  $commandBox = $('#command-box')
-  $commandBttn = $('#command-bttn')
+  var $connectionBar = $('#connection-bar')
+  var $connectionText = $('#connection-text')
+  var $speak = $('#speak')
+  var $command = $('#command')
+  var $commandBox = $('#command-box')
+  var $commandBttn = $('#command-bttn')
+
   socket.on('connected', function () {
     $connectionBar.removeClass('disconnected').addClass('connected')
     $connectionText.html('Connected!')

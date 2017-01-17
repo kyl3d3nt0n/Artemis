@@ -1,7 +1,8 @@
+/* global ipcRenderer */
 (function () {
     'use strict';
 
-    function AutoSleepService($interval,Focus) {
+    function AutoSleepService($interval, Focus) {
         var service = {};
         var autoSleepTimer;
         service.woke = true;
@@ -14,12 +15,17 @@
             if (typeof config.autoTimer !== 'undefined' && typeof config.autoTimer.autoSleep !== 'undefined' && typeof config.autoTimer.autoWake !== 'undefined') {
                 service.stopAutoSleepTimer();
                 // assume if autoSleep is greater than 1 minute in milliseconds the value is already converted. if not convert
-                if (config.autoTimer.autoSleep>60000){
+                if (config.autoTimer.autoSleep > 60000) {
                     milliConversion = 1
                     console.info('ProTip: Change your config so that config.autoTimer.autoSleep is in minutes not milliseconds.');
                 }
+<<<<<<< HEAD
                 autoSleepTimer = $interval(service.sleep, config.autoTimer.autoSleep*milliConversion);
                 console.debug('Starting auto-sleep timer', config.autoTimer.autoSleep*milliConversion);
+=======
+                autoSleepTimer = $interval(service.sleep, config.autoTimer.autoSleep * milliConversion);
+                console.debug('Starting auto-sleep timer', config.autoTimer.autoSleep * milliConversion);
+>>>>>>> evancohen/master
             }
         };
 
@@ -29,6 +35,7 @@
         };
 
         service.wake = function () {
+<<<<<<< HEAD
 	        service.woke = true;
             if (config.autoTimer.mode == "monitor"){
                 service.exec(config.autoTimer.wakeCmd, service.puts);
@@ -42,14 +49,21 @@
               var non_active_app = angular.element(document.getElementsByClassName('app_icon'));
               non_active_app.removeClass('active_app');
             }
+=======
+            service.woke = true;
+            if (config.autoTimer.mode == "monitor") {
+                service.exec(config.autoTimer.wakeCmd, service.puts);
+            }
+            Focus.change("default");
+>>>>>>> evancohen/master
         };
 
         service.sleep = function () {
-	        service.woke = false;
-            if (config.autoTimer.mode == "monitor"){
+            service.woke = false;
+            if (config.autoTimer.mode == "monitor") {
                 service.exec(config.autoTimer.sleepCmd, service.puts);
                 Focus.change("sleep");
-            } else if (config.autoTimer.mode == "tv"){
+            } else if (config.autoTimer.mode == "tv") {
                 Focus.change("sleep");
             } else {
                 Focus.change("sleep");
@@ -62,8 +76,10 @@
                 console.debug('auto-sleep error', error);
             }
             console.debug('autosleep stdout:', stdout)
+            console.debug('autosleep stderr:', stderr)
         };
 
+<<<<<<< HEAD
 	ipcRenderer.on('remoteWakeUp', (event, spotted) => {
 	    service.wake()
 	    console.debug('remote wakeUp detected');
@@ -82,14 +98,40 @@
 	ipcRenderer.on('motionend', (event, spotted) => {
 	    console.debug('motion end detected');
 	    service.startAutoSleepTimer();
+=======
+
+        ipcRenderer.on('motionstart', () => {
+            service.wake()
+            console.debug('motion start detected');
         });
 
-	ipcRenderer.on('calibrated', (event, spotted) => {
-	    console.debug('motion.js Calibrated');
+        ipcRenderer.on('remoteWakeUp', () => {
+            service.wake()
+            console.debug('remote wakeUp detected');
+>>>>>>> evancohen/master
         });
 
+        ipcRenderer.on('remoteSleep', () => {
+            service.sleep()
+            console.debug('remote sleep detected');
+        });
+
+<<<<<<< HEAD
     ipcRenderer.on('Error', (event, spotted) => {
 	    console.debug("Motion",spotted);
+=======
+        ipcRenderer.on('motionend', () => {
+            console.debug('motion end detected');
+            service.startAutoSleepTimer();
+        });
+
+        ipcRenderer.on('calibrated', () => {
+            console.debug('motion.js Calibrated');
+        });
+
+        ipcRenderer.on('Error', (event, error) => {
+            console.debug("Motion", error);
+>>>>>>> evancohen/master
         });
 
         return service;
