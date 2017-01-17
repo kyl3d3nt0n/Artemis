@@ -23,7 +23,7 @@
     }
 
     return service;
-  };
+  }
 
   angular.module('Artemis')
     .factory('TimeboxService', TimeboxService);

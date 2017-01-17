@@ -1,4 +1,4 @@
-(function (annyang) {
+(function () {
   'use strict';
 
   function ScrobblerService($http, $q) {
@@ -37,4 +37,4 @@
 
   angular.module('Artemis')
     .factory('ScrobblerService', ScrobblerService);
-} (window.annyang));
+} ());

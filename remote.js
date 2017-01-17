@@ -86,7 +86,7 @@ remote.start = function () {
       })
     })
 
-    socket.on('getForm', function (clicked) {
+    socket.on('getForm', function () {
       getFiles()
       socket.emit("json", { "configJSON": configJSON, "configDefault": configDefault, "config": config })
     })
