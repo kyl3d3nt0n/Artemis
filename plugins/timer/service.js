@@ -4,7 +4,7 @@
   /**
    * Factory function for the timer service
    */
-  var TimerService = function ($rootScope, $interval, $filter) {
+  var TimerService = function ($rootScope, $interval, $filter, LightService) {
     var service = {};
     service.running = false;
     service.paused = true;
@@ -74,6 +74,9 @@
         intervalId = undefined;
         service.paused = true;
 
+        //Call Lights to blink
+        LightService.blink();
+        
         $rootScope.$broadcast("timer:stop", service.countdown);
       }
     };

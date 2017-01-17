@@ -50,7 +50,6 @@ const {ipcRenderer} = require('electron');
                 annyang.trigger(text)
                 callbacks.listening(false)
             })
-
         }
 
         // Ensure callback is a valid function

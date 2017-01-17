@@ -71,6 +71,7 @@ remote.start = function () {
     socket.on('clickWakeUp', function () {
       remote.emit('wakeUp')
     })
+
     socket.on('clickSleep', function () {
       remote.emit('sleep')
     })

@@ -11,7 +11,6 @@ $(function () {
   })
 
   socket.on('disconnect', function () {
-
     $connectionBar.removeClass('connected').addClass('disconnected')
     $connectionText.html('Disconnected :(')
 

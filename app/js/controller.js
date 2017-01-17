@@ -22,7 +22,6 @@
         $rootScope.$on('focus', function(targetScope, newFocus, oldFocus){
             $scope.focus = newFocus;
         })
-
         Focus.change("default");
 
         //set lang

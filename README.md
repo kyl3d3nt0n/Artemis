@@ -1,4 +1,4 @@
-<h1 align="center">Smart Mirror</h1>
+<h1 align="center">Smart Mirror - Artemis</h1>
 
 <p align="center">
 <a href="https://discord.gg/EMb4ynW"><img src="https://discordapp.com/api/guilds/258802311298547713/widget.png" alt="Discord Chat"/></a>
@@ -18,7 +18,7 @@ curl -sL https://raw.githubusercontent.com/evancohen/smart-mirror/master/scripts
 ### [Documentation](http://docs.smart-mirror.io)
 Check out the documentation for more information:
 - [Manual installation](https://docs.smart-mirror.io/docs/installation.html)
-- [Configuration](https://docs.smart-mirror.io/docs/configuration.html) 
+- [Configuration](https://docs.smart-mirror.io/docs/configuration.html)
 - [Troubleshooting](https://docs.smart-mirror.io/docs/troubleshooting.html)
 
 ### Discord
@@ -35,7 +35,7 @@ For more information see the [Development and Contributing](http://docs.smart-mi
 
 ### Current Feature Requests/Suggestions
 Please use feathub.com to add Feature Requests and Suggestions. We also recommend looking through the already existing requests to help in ranking the most popular and useful Features to Smart-Mirror users.  
-  
+
 <p align="center">
 <a href="http://feathub.com/evancohen/smart-mirror"><img src="http://feathub.com/evancohen/smart-mirror?format=svg" alt="[Feature Requests"/></a>
 </p>

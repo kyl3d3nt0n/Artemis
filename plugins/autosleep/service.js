@@ -37,6 +37,10 @@
             //If sleeping change to default
             if(Focus.get() === "sleep") {
               Focus.change("default");
+
+              //Adjust background color of apps
+              var non_active_app = angular.element(document.getElementsByClassName('app_icon'));
+              non_active_app.removeClass('active_app');
             }
         };
 

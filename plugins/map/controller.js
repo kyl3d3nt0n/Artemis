@@ -30,7 +30,7 @@ function Map($scope, $http, GeolocationService, SpeechService, Focus) {
         $scope.map = generateMap();
     });
 
-    // Hide everything and "sleep"
+    
     SpeechService.addCommand('map_location', function (location) {
         $scope.map = generateMap(location);
         Focus.change("map");

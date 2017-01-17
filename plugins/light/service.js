@@ -6,6 +6,13 @@
     function LightService($http, $translate) {
         var service = {};
 
+        //blink ALL lights when timer goes off
+        service.blink = function blink() {
+          var update = {};
+          console.log('Timer has triggered blink in LightService');
+          update['alert'] = "select";
+          $http.put('http://' + config.light.settings.hueIp + '/api/' + config.light.settings.hueUsername + "/groups/0/action", update)
+        }
         // update lights
         service.performUpdate = function (spokenWords) {
             // split string into separate words and remove empty ones
