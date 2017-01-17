@@ -52,7 +52,6 @@ function createWindow() {
     }
   }
 
-
   var browserWindowOptions = { width: 800, height: 600, icon: 'favicon.ico', kiosk: false, autoHideMenuBar: true, darkTheme: true }
   if (externalDisplay) {
     browserWindowOptions.x = externalDisplay.bounds.x + 50

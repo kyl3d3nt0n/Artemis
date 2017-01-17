@@ -19,7 +19,7 @@ $(function () {
   var $command = $('#command')
   var $commandBox = $('#command-box')
   var $commandBttn = $('#command-bttn')
-
+  
   socket.on('connected', function () {
     $connectionBar.removeClass('disconnected').addClass('connected')
     $connectionText.html('Connected!')

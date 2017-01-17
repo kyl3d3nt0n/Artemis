@@ -17,8 +17,8 @@ function Search($scope, $http, SpeechService, $rootScope, Focus) {
         });
     }
 
-    //Stop Video
-    var stopVideo = function() {s
+
+    var stopVideo = function() {
         var iframe = document.getElementsByTagName("iframe")[0].contentWindow;
         iframe.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
     }

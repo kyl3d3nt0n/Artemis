@@ -19,7 +19,6 @@
                     milliConversion = 1
                     console.info('ProTip: Change your config so that config.autoTimer.autoSleep is in minutes not milliseconds.');
                 }
-
                 autoSleepTimer = $interval(service.sleep, config.autoTimer.autoSleep * milliConversion);
                 console.debug('Starting auto-sleep timer', config.autoTimer.autoSleep * milliConversion);
             }
