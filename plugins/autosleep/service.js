@@ -19,13 +19,9 @@
                     milliConversion = 1
                     console.info('ProTip: Change your config so that config.autoTimer.autoSleep is in minutes not milliseconds.');
                 }
-<<<<<<< HEAD
-                autoSleepTimer = $interval(service.sleep, config.autoTimer.autoSleep*milliConversion);
-                console.debug('Starting auto-sleep timer', config.autoTimer.autoSleep*milliConversion);
-=======
+
                 autoSleepTimer = $interval(service.sleep, config.autoTimer.autoSleep * milliConversion);
                 console.debug('Starting auto-sleep timer', config.autoTimer.autoSleep * milliConversion);
->>>>>>> evancohen/master
             }
         };
 
@@ -35,7 +31,6 @@
         };
 
         service.wake = function () {
-<<<<<<< HEAD
 	        service.woke = true;
             if (config.autoTimer.mode == "monitor"){
                 service.exec(config.autoTimer.wakeCmd, service.puts);
@@ -49,13 +44,6 @@
               var non_active_app = angular.element(document.getElementsByClassName('app_icon'));
               non_active_app.removeClass('active_app');
             }
-=======
-            service.woke = true;
-            if (config.autoTimer.mode == "monitor") {
-                service.exec(config.autoTimer.wakeCmd, service.puts);
-            }
-            Focus.change("default");
->>>>>>> evancohen/master
         };
 
         service.sleep = function () {
@@ -79,60 +67,34 @@
             console.debug('autosleep stderr:', stderr)
         };
 
-<<<<<<< HEAD
-	ipcRenderer.on('remoteWakeUp', (event, spotted) => {
+
+	ipcRenderer.on('remoteWakeUp', () => {
 	    service.wake()
 	    console.debug('remote wakeUp detected');
 	    });
 
-	ipcRenderer.on('remoteSleep', (event, spotted) => {
+	ipcRenderer.on('remoteSleep', () => {
 	    service.sleep()
 	    console.debug('remote sleep detected');
 	    });
 
-  ipcRenderer.on('motionstart', (event, spotted) => {
+  ipcRenderer.on('motionstart', () => {
     	service.wake()
       console.debug('motion start detected');
     	});
 
-	ipcRenderer.on('motionend', (event, spotted) => {
+	ipcRenderer.on('motionend', () => {
 	    console.debug('motion end detected');
 	    service.startAutoSleepTimer();
-=======
+      });
 
-        ipcRenderer.on('motionstart', () => {
-            service.wake()
-            console.debug('motion start detected');
-        });
+  ipcRenderer.on('calibrated', () => {
+      console.debug('motion.js Calibrated');
+      });
 
-        ipcRenderer.on('remoteWakeUp', () => {
-            service.wake()
-            console.debug('remote wakeUp detected');
->>>>>>> evancohen/master
-        });
-
-        ipcRenderer.on('remoteSleep', () => {
-            service.sleep()
-            console.debug('remote sleep detected');
-        });
-
-<<<<<<< HEAD
-    ipcRenderer.on('Error', (event, spotted) => {
-	    console.debug("Motion",spotted);
-=======
-        ipcRenderer.on('motionend', () => {
-            console.debug('motion end detected');
-            service.startAutoSleepTimer();
-        });
-
-        ipcRenderer.on('calibrated', () => {
-            console.debug('motion.js Calibrated');
-        });
-
-        ipcRenderer.on('Error', (event, error) => {
-            console.debug("Motion", error);
->>>>>>> evancohen/master
-        });
+    ipcRenderer.on('Error', () => {
+	    console.debug("Motion", error);
+      });
 
         return service;
     }
