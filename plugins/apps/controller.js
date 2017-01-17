@@ -12,7 +12,7 @@ function Apps($scope, SpeechService, Focus) {
 
   //Close applications
   SpeechService.addCommand('close_app', function(query) {
-    Focus.change(query);
+    Focus.change('default');
     //Adjust background color
     var non_active_app = angular.element(document.getElementsByClassName('app_icon'));
     non_active_app.removeClass('active_app');

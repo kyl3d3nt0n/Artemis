@@ -15,11 +15,11 @@ $(function () {
 
   var $connectionBar = $('#connection-bar')
   var $connectionText = $('#connection-text')
-  var $speak = $('#speak')
+  var $speak = $('.speak-commands')
   var $command = $('#command')
   var $commandBox = $('#command-box')
   var $commandBttn = $('#command-bttn')
-  
+
   socket.on('connected', function () {
     $connectionBar.removeClass('disconnected').addClass('connected')
     $connectionText.html('Connected!')

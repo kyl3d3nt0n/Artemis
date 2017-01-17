@@ -145,7 +145,11 @@ form.jsonform-hasrequired:after {
 #command-bttn, #speak {
   position: absolute;
   bottom: 0;
+}
+#command-bttn, #speak, #command-box {
   width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .input-lg {
   height: 50px;
@@ -162,6 +166,9 @@ p.lead {
 #command {
   width: 90%;
 }
+#connection-text {
+  margin: 0;
+}
 
 @media (max-width: 768px) {
   .command_icons {
@@ -172,10 +179,13 @@ p.lead {
   .command_text {
     display: none;
   }
-  .speech-commands {
-    display: none;
-  }
   .commands {
+    height: 12em;
+  }
+  .speak-commands {
     height: 10em;
+  }
+  .text_speech_form {
+    margin: auto;
   }
 }

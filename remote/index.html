@@ -61,23 +61,29 @@
 
     <div class="row">
       <!---SPEECH COMMANDS--->
-      <div class="col-sm-6 commands speech-commands">
-        <h3>Speech Commands</h3>
-        <p class="lead">Press the button below to begin issuing a voice command to <code>Artemis</code>.</p>
-        <button id="speak" type="button" class="btn btn-primary btn-lg btn-block glyphicons">
-          <img class="command_icons" src="/img/speech.png" alt="Speech"/>
-        </button>
-      </div>
-      <!---TEXT COMMANDS--->
-      <div class="col-sm-6 commands text-commands">
-        <h3>Text Commands</h3>
-        <div class="form-group" id="command">
-          <input type="text" id="command-box" class="input-lg form-control" placeholder="Type command...">
-          <button id="command-bttn" type="button" class="btn btn-primary btn-lg btn-block glyphicons"><img class="command_icons" src="/img/text.png" alt="Text"/></button>
+      <div class="col-sm-6 commands speak-commands">
+        <div class="speech-commands">
+          <h3>Speech Commands</h3>
+            <p class="lead">Press the button below to begin issuing a voice command to <code>Artemis</code>.</p>
+            <button id="speak" type="button" class="btn btn-primary btn-lg btn-block glyphicons">
+              <img class="command_icons" src="/img/speech.png" alt="Speech"/>
+            </button>
         </div>
       </div>
-      <div class="col-sm-12">
-        <p id="speech-error" class="alert alert-danger" style="display:none"></p>
+      <!---TEXT COMMANDS--->
+      <div class="col-sm-6 commands">
+        <div class="text-commands">
+          <h3>Text Commands</h3>
+          <div class="text_speech_form">
+            <input type="text" id="command-box" class="input-lg form-control" placeholder="Type command...">
+            <button id="command-bttn" type="button" class="btn btn-primary btn-lg btn-block glyphicons">
+              <img class="command_icons" src="/img/text.png" alt="Text"/>
+            </button>
+          </div>
+          <div class="col-sm-12">
+            <p id="speech-error" class="alert alert-danger" style="display:none"></p>
+          </div>
+        </div>
       </div>
     </div>
 

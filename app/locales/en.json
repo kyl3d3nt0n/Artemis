@@ -197,7 +197,7 @@
         },
         "close_app": {
           "text": "Close _______",
-          "voice": "Close *app",
+          "voice": "Close *app app",
           "description": "Close current application"
         }
     }
