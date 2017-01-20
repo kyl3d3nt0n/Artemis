@@ -1,6 +1,9 @@
 function Search($scope, $http, SpeechService, $rootScope, Focus) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> evancohen/master
 =======
 >>>>>>> evancohen/master
     var searchYouTube = function (query) {
@@ -21,7 +24,10 @@ function Search($scope, $http, SpeechService, $rootScope, Focus) {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> evancohen/master
 =======
 >>>>>>> evancohen/master
     var stopVideo = function() {

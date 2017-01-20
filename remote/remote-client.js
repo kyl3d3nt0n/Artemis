@@ -21,6 +21,11 @@ $(function () {
   var $commandBttn = $('#command-bttn')
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  var $connectionBar = $('#connection-bar')
+  var $connectionText = $('#connection-text')
+>>>>>>> evancohen/master
 =======
   var $connectionBar = $('#connection-bar')
   var $connectionText = $('#connection-text')

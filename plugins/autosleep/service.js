@@ -31,6 +31,7 @@
 
         service.wake = function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	        service.woke = true;
             if (config.autoTimer.mode == "monitor"){
                 service.exec(config.autoTimer.wakeCmd, service.puts);
@@ -45,11 +46,16 @@
               non_active_app.removeClass('active_app');
             }
 =======
+=======
+>>>>>>> evancohen/master
             service.woke = true;
             if (config.autoTimer.mode == "monitor") {
                 service.exec(config.autoTimer.wakeCmd, service.puts);
             }
             Focus.change("default");
+<<<<<<< HEAD
+>>>>>>> evancohen/master
+=======
 >>>>>>> evancohen/master
         };
 
@@ -75,6 +81,7 @@
         };
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	ipcRenderer.on('remoteWakeUp', () => {
 	    service.wake()
@@ -104,6 +111,8 @@
 	    console.debug("Motion", error);
       });
 =======
+=======
+>>>>>>> evancohen/master
         ipcRenderer.on('motionstart', () => {
             service.wake()
             console.debug('motion start detected');
