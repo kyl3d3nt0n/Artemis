@@ -19,17 +19,6 @@ $(function () {
   var $command = $('#command')
   var $commandBox = $('#command-box')
   var $commandBttn = $('#command-bttn')
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  var $connectionBar = $('#connection-bar')
-  var $connectionText = $('#connection-text')
->>>>>>> evancohen/master
-=======
-  var $connectionBar = $('#connection-bar')
-  var $connectionText = $('#connection-text')
->>>>>>> evancohen/master
   socket.on('connected', function () {
     $connectionBar.removeClass('disconnected').addClass('connected')
     $connectionText.html('Connected!')

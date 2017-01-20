@@ -85,12 +85,5 @@ function Weather($scope, $interval, $http, GeolocationService) {
     }
 }
 
-<<<<<<< HEAD
 angular.module('Artemis')
-=======
-angular.module('SmartMirror')
-<<<<<<< HEAD
->>>>>>> evancohen/master
-=======
->>>>>>> evancohen/master
     .controller('Weather', Weather);

@@ -30,8 +30,6 @@
         };
 
         service.wake = function () {
-<<<<<<< HEAD
-<<<<<<< HEAD
 	        service.woke = true;
             if (config.autoTimer.mode == "monitor"){
                 service.exec(config.autoTimer.wakeCmd, service.puts);
@@ -45,18 +43,6 @@
               var non_active_app = angular.element(document.getElementsByClassName('app_icon'));
               non_active_app.removeClass('active_app');
             }
-=======
-=======
->>>>>>> evancohen/master
-            service.woke = true;
-            if (config.autoTimer.mode == "monitor") {
-                service.exec(config.autoTimer.wakeCmd, service.puts);
-            }
-            Focus.change("default");
-<<<<<<< HEAD
->>>>>>> evancohen/master
-=======
->>>>>>> evancohen/master
         };
 
         service.sleep = function () {
@@ -81,8 +67,6 @@
         };
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 	ipcRenderer.on('remoteWakeUp', () => {
 	    service.wake()
 	    console.debug('remote wakeUp detected');
@@ -110,39 +94,8 @@
     ipcRenderer.on('Error', () => {
 	    console.debug("Motion", error);
       });
-=======
-=======
->>>>>>> evancohen/master
-        ipcRenderer.on('motionstart', () => {
-            service.wake()
-            console.debug('motion start detected');
-        });
 
-        ipcRenderer.on('remoteWakeUp', () => {
-            service.wake()
-            console.debug('remote wakeUp detected');
-        });
-
-        ipcRenderer.on('remoteSleep', () => {
-            service.sleep()
-            console.debug('remote sleep detected');
-        });
-
-        ipcRenderer.on('motionend', () => {
-            console.debug('motion end detected');
-            service.startAutoSleepTimer();
-        });
-
-        ipcRenderer.on('calibrated', () => {
-            console.debug('motion.js Calibrated');
-        });
-
-        ipcRenderer.on('Error', (event, error) => {
-            console.debug("Motion", error);
-        });
->>>>>>> evancohen/master
-
-        return service;
+      return service;
     }
 
     angular.module('Artemis')

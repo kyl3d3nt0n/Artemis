@@ -34,15 +34,9 @@
     "angular-i18n": "^1.5.5",
     "bower": "^1.7.9",
     "electron": "^1.4.4",
-<<<<<<< HEAD
-<<<<<<< HEAD
     "install": "^0.8.1",
     "npm": "^3.8.8",
     "suncalc": "^1.8.0",
-=======
->>>>>>> evancohen/master
-=======
->>>>>>> evancohen/master
     "eslint": "^3.13.1",
     "wiredep-cli": "^0.1.0"
   },
