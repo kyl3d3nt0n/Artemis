@@ -1,5 +1,8 @@
 function Search($scope, $http, SpeechService, $rootScope, Focus) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> evancohen/master
     var searchYouTube = function (query) {
         return $http({
             url: 'https://www.googleapis.com/youtube/v3/search',
@@ -17,7 +20,10 @@ function Search($scope, $http, SpeechService, $rootScope, Focus) {
         });
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> evancohen/master
     var stopVideo = function() {
         var iframe = document.getElementsByTagName("iframe")[0].contentWindow;
         iframe.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');

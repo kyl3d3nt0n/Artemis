@@ -6,6 +6,7 @@ function TVShows($scope, $http, $interval) {
     function getTVShows() {
         $scope.tvshows = [];
 
+<<<<<<< HEAD
         // for each show in config, create http request
         angular.forEach(config.tvshows.shows, function (show) {
             $http.get('http://epguides.frecar.no/show/' + show.replace(/\s|\./g, '') + '/next/')
@@ -20,6 +21,8 @@ function TVShows($scope, $http, $interval) {
                 })
         });
 
+=======
+>>>>>>> evancohen/master
         if (config.tvshows) {
             // for each show in config, create http request
             angular.forEach(config.tvshows.shows, function (show) {

@@ -41,8 +41,13 @@ $(function () {
           console.log('Validation errors', errors);
           let buildInner=""
           errors.forEach(function(errItem) {
+<<<<<<< HEAD
             let errSchemaUri = errItem.schemaUri.replace(/.+\/properties\//, "").replace("/"," >> ")
             buildInner += `<p><strong style="font-color:red">Error: ` + errItem.message +
+=======
+            let errSchemaUri = errItem.schemaUri.replace(/.+\/properties\//, "").replace("/"," >> ")  
+            buildInner += `<p><strong style="font-color:red">Error: ` + errItem.message + 
+>>>>>>> evancohen/master
             "</strong></br>Location: " +
             errSchemaUri +
             "</p>"
@@ -74,7 +79,11 @@ var timeoutID
   }
   function showElm(element,timeOutMins=1){
     var timeOutMillis = timeOutMins*60000
+<<<<<<< HEAD
     $(element).fadeIn()
+=======
+    $(element).fadeIn() 
+>>>>>>> evancohen/master
     timeoutID=setTimeout(function(){
       hideElm(element);
       },timeOutMillis)
