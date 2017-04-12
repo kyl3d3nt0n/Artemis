@@ -12,7 +12,7 @@ if (config.motion.enabled == true && require.resolve('johnny-five').length > 0 &
 	var Raspi = require("raspi-io");
 	var board = new five.Board({
 	io: new Raspi()
-	});
+  });
 
 	board.on("ready",function() {
 
@@ -36,5 +36,5 @@ if (config.motion.enabled == true && require.resolve('johnny-five').length > 0 &
 			});
 	});
 } else if ( config.motion.enabled == true){
-	console.error("!E:","Motion Dependencies are missing! Therefore despite my best efforts I'll have to disable motion, Dave. This is most embarrassing for us both.")
+	console.error("!E:","Motion Dependencies are missing! Therefore despite my best efforts I'll have to disable motion, Kyle. This is most embarrassing for us both.")
 }

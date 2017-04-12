@@ -116,7 +116,6 @@
                 non_active_app.removeClass('active_app');
 
                 Focus.change("default");
-
             }
 
             // List commands

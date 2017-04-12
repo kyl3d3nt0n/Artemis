@@ -34,7 +34,7 @@ dd {
   margin: 0;
   padding: 0;
 }
-/******************************Pokemon Background *****************************/
+/***************************** Pokemon Background *****************************/
 body {
   overflow: hidden;
 }
@@ -74,7 +74,7 @@ ul.calendar {
   font-size: 14px;
 }
 
-/******************************App & Icons ************************************/
+/***************************** App & Icons ************************************/
 .app_list {
   list-style-type: none;
   margin: 0;
@@ -190,7 +190,7 @@ ul.calendar {
   margin-right: .2em;
 }*/
 
-/******************** Traffic, Stocks, TV Shows, & Calendar ********************/
+/******************** Traffic, Stocks, TV Shows, & Calendar *******************/
 .traffic-block, .stocks-block, .shows-block, .calendar-block, .reminder-block, .calendar-block {
   float: right;
   clear: both;
@@ -224,6 +224,7 @@ ul.calendar {
   transition: all 0.3s ease;
   text-align: center;
 }
+
 /*.middle-center {
   display: flex;
   flex: 1;
@@ -234,6 +235,7 @@ ul.calendar {
   text-align: center;
   justify-content: center;
 }*/
+
 .middle-center {
   width: 100%;
 }
@@ -265,7 +267,7 @@ ul.calendar {
   margin-right: 5px;
 }*/
 
-/**********************************VIDEO***************************************/
+/********************************** Video *************************************/
 .video {
   width: 100%;
   height: 680px;
@@ -275,7 +277,7 @@ ul.calendar {
   filter: grayscale(100%);*/
 }
 
-/************************************TIMER*************************************/
+/************************************ Timer ***********************************/
 .timer {
   font-size: 120px;
   position: relative;
@@ -317,7 +319,7 @@ ul.calendar {
   font-size: 25%;
 }
 
-/************************************REMINDERS********************************/
+/*********************************** Reminders ********************************/
 /*.reminders-container {
   width: 250px;
   text-align: left;
@@ -391,7 +393,7 @@ dt {
   margin-top: 5%;
 }
 
-/**************************FADE-AWAY & ANIMATE-GROW****************************/
+/************************* Fade-Away & Animate-Grow ***************************/
 .fade-away.ng-hide {
     opacity: 0;
 }
@@ -416,7 +418,7 @@ dt {
   max-height: 0 !important;
 }
 
-/************************SLEEP-COVER******************************************/
+/********************************* Sleep Cover ********************************/
 .sleep-cover {
   background-color: black;
   position: fixed;
@@ -427,7 +429,7 @@ dt {
   z-index: 998;
 }
 
-/*************************LISTENING-OR-NOT-LISTENING***************************/
+/************************ Listening Or Not Listening **************************/
 .listening {
   box-shadow: inset 0px -40px 40px -40px #fff
 }
@@ -445,7 +447,7 @@ dt {
   margin-bottom: 20px;
 }
 
-/***************************FITBIT*********************************************/
+/********************************* Fitbit *************************************/
 /*.fitbit {
   height: 100%;
 }
@@ -472,7 +474,7 @@ dt {
   width: 450px;
 }*/
 
-/************************************OTHER************************************/
+/*********************************** Other ************************************/
 /*
 .light-grey {
   color: #ccc;
