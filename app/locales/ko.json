@@ -185,5 +185,31 @@
             "voice": "불 :state *action (해)줘",
             "description": "불 :state *action (해)줘."
         }
+    },
+    "fitbit": {
+        "user": "사용자: ",
+        "averageSteps": "평균 단계: ",
+        "batteryStatus": "배터리 상태: ",
+        "today": "오늘",
+        "steps": "계단",
+        "averageSteps": "하루 만에",
+        "caloriesBurned": "칼로리 구운",
+        "lastSync": "마지막 동기화",
+        "average": "평균",
+        "activeMinutes": "활성 분",
+        "distance": "킬로미터",
+        "floors": "바닥",
+        "topBadges": "탑 배지",
+        "sleep": "자다",
+        "lastNight": "지난 밤",
+        "awake": "깨다",
+        "restless": "불안한",
+        "hours": "시",
+        "km": "킬로미터",
+        "miles": "마일",
+        "minutes": "의사록",
+        "times": "x",
+        "restingHR": "휴식 심박수",
+        "bpm": "bpm"
     }
 }

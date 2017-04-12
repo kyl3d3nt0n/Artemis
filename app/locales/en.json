@@ -190,6 +190,7 @@
             "voice": "Show remote (QR code) (QR) (link)",
             "description": "Show the local IP of the Remote App URL"
         },
+<<<<<<< HEAD
         "open_app": {
           "text": "Open _______",
           "voice": "Open *app app",
@@ -199,6 +200,48 @@
           "text": "Close _______",
           "voice": "Close *app app",
           "description": "Close current application"
+=======
+        "todoist_show": {
+            "text": "Show (my) ________ list",
+            "voice": "Show (my) *project list",
+            "description": "Show requested list."
+        },
+        "todoist_add": {
+            "text": "Add ________ to (my) ________ list",
+            "voice": "Add *element to (my) *project list",
+            "description": "Add item to requested list."
+        },
+        "todoist_remove": {
+            "text": "Remove ________ from (my) ________ list",
+            "voice": "Remove *element from (my) *project list",
+            "description": "Remove item from requested list."
+>>>>>>> evancohen/master
         }
+    },
+    "fitbit": {
+        "user": "User: ",
+        "averageSteps": "Average Steps: ",
+        "batteryStatus": "Battery Status: ",
+        "today": "Today",
+        "steps": "steps",
+        "averageSteps": "steps a day",
+        "caloriesBurned": "calories burned",
+        "lastSync": "Last Sync",
+        "average": "Average",
+        "activeMinutes": "active minutes",
+        "distance": "km",
+        "floors": "floors",
+        "topBadges": "Top Badges",
+        "sleep": "Sleep",
+        "lastNight": "Last Night",
+        "awake": "Awake",
+        "restless": "Restless",
+        "hours": "hrs",
+        "km": "km",
+        "miles": "mi",
+        "minutes": "min",
+        "times": "x",
+        "restingHR": "resting heart rate",
+        "bpm": "bpm"
     }
 }
