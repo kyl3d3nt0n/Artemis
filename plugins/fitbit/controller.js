@@ -5,7 +5,7 @@ function Fitbit($scope, $interval, FitbitService, SpeechService) {
 	// Check if the fitbit configuration exists before initializing the service.
 	if (typeof config.fitbit !== 'undefined') {
 		FitbitService.init(function () {
-			refreshFitbitData();			
+			refreshFitbitData();
 			$interval(cycleFitbitStats, 10000); // 10 secs
 			$interval(refreshTodaySummary, 1800000); // 30 mins
 			$interval(refreshDeviceSummary, 3600000); // 1 hour
@@ -105,10 +105,5 @@ function Fitbit($scope, $interval, FitbitService, SpeechService) {
 
 }
 
-<<<<<<< HEAD
 angular.module('Artemis')
-    .controller('Fitbit', Fitbit);
-=======
-angular.module('SmartMirror')
 	.controller('Fitbit', Fitbit);
->>>>>>> evancohen/master

@@ -2,62 +2,12 @@
 
 $(function () {
 
-<<<<<<< HEAD
-  var socket = io()
-  function isIosDevice(){
-  var iosDeviceList = [
-    "iPhone", "iPod", "iPad", "iPhone Simulator", "iPod Simulator",
-    "iPad Simulator", "Pike v7.6 release 92", "Pike v7.8 release 517"
-  ]
-  return iosDeviceList.some(function(device){
-    return device == navigator.platform
-    })
-  }
-
-  var $connectionBar = $('#connection-bar')
-  var $connectionText = $('#connection-text')
-  var $speak = $('.speak-commands')
-  var $command = $('#command')
-  var $commandBox = $('#command-box')
-  var $commandBttn = $('#command-bttn')
-  socket.on('connected', function () {
-    $connectionBar.removeClass('disconnected').addClass('connected')
-    $connectionText.html('Connected!')
-    if (isIosDevice()){
-      $speak.addClass('hidden')
-      $command.removeClass('hidden')
-    }else{
-      $speak.removeClass('hidden')
-      //$command.addClass('hidden')
-      $command.removeClass('hidden')
-    }
-  })
-
-  socket.on('disconnect', function () {
-    $connectionBar.removeClass('connected').addClass('disconnected')
-    $connectionText.html('Disconnected :(')
-  })
-
-  if (annyang) {
-    // Let's define our first command. First the text we expect, and then the function it should call
-    var command = {
-      '*command': function (command) {
-        socket.emit('command', command)
-      }
-    }
-
-    annyang.addCallback('error', function(error){
-      console.log(error)
-      $('#speech-error').text('Unsupported on iOS/Safari');
-      $('#speech-error').show()
-    })
-=======
 // global vars
 	var pos = window.location.href.substr(window.location.href.lastIndexOf("/")+1)
 	var socket = io()
 	var $connectionBar = $('#connection-bar')
 	var $connectionText = $('#connection-text')
-// index vars	
+// index vars
 	var $speak = $('#speak')
 	var $nospeak = $('#no-speak')
 	var $commandBox = $('#command-box')
@@ -66,14 +16,14 @@ $(function () {
 
 /*
 
-   _____ _ _      _         _______ _                            
-  / ____| (_)    | |       / / ____| |                           
- | |    | |_  ___| | __   / / |    | |__   __ _ _ __   __ _  ___ 
+   _____ _ _      _         _______ _
+  / ____| (_)    | |       / / ____| |
+ | |    | |_  ___| | __   / / |    | |__   __ _ _ __   __ _  ___
  | |    | | |/ __| |/ /  / /| |    | '_ \ / _` | '_ \ / _` |/ _ \
  | |____| | | (__|   <  / / | |____| | | | (_| | | | | (_| |  __/
   \_____|_|_|\___|_|\_\/_/   \_____|_| |_|\__,_|_| |_|\__, |\___|
-                                                       __/ |     
-                                                      |___/      
+                                                       __/ |
+                                                      |___/
 
 */
 
@@ -85,7 +35,7 @@ $(function () {
 		socket.emit('clickWakeUp')
 		socket.emit('command', x)
 	})
-  
+
 	$('#devtools').change(function () {
 		socket.emit('devtools', $(this).is(":checked"))
 	});
@@ -97,11 +47,11 @@ $(function () {
 	$('#reload').click(function () {
 		socket.emit('reload')
 	})
-  
+
 	$('#wakeUp').click(function () {
 		socket.emit('clickWakeUp')
 	})
-  
+
 	$('#sleep').click(function () {
 		socket.emit('clickSleep')
 	})
@@ -114,14 +64,14 @@ $(function () {
 
 /*
 
-   _____            _        _     ______               _       
-  / ____|          | |      | |   |  ____|             | |      
- | (___   ___   ___| | _____| |_  | |____   _____ _ __ | |_ ___ 
+   _____            _        _     ______               _
+  / ____|          | |      | |   |  ____|             | |
+ | (___   ___   ___| | _____| |_  | |____   _____ _ __ | |_ ___
   \___ \ / _ \ / __| |/ / _ \ __| |  __\ \ / / _ \ '_ \| __/ __|
   ____) | (_) | (__|   <  __/ |_  | |___\ V /  __/ | | | |_\__ \
  |_____/ \___/ \___|_|\_\___|\__| |______\_/ \___|_| |_|\__|___/
-                                                                
-                                                                
+
+
 
 */
 
@@ -149,7 +99,7 @@ $(function () {
 		annyang.debug(false)
 		$nospeak.addClass('hidden')
 		$speak.removeClass('hidden')
-    
+
 		var command = {
 			'*command': function (command) {
 				socket.emit('clickWakeUp')
@@ -163,53 +113,11 @@ $(function () {
 			$('#speech-error').text('Unsupported on iOS/Safari');
 			$('#speech-error').show()
 		})
->>>>>>> evancohen/master
 
     // Add our commands to annyang
 		annyang.addCommands(command)
 
     // Start listening. You can call this here, or attach this call to an event, button, etc.
-<<<<<<< HEAD
-    $('#speak').click(function () {
-      $('#speech-error').hide()
-      console.log('listening...')
-      annyang.start({ autoRestart: false, continuous: false })
-    })
-
-    $('#command-bttn').click(function () {
-      $('#speech-error').hide()
-      var x = $commandBox.val();
-      socket.emit('command', x)
-    })
-  } else {
-    $('#command-bttn').click(function () {
-      $('#speech-error').hide()
-      var x = $commandBox.val();
-      socket.emit('command', x)
-    })
-  }
-
-  $('#devtools').change(function () {
-    socket.emit('devtools', $(this).is(":checked"))
-  });
-
-  $('#kiosk').click(function () {
-    socket.emit('kiosk')
-  });
-
-  $('#reload').click(function () {
-    socket.emit('reload')
-  })
-
-  $('#wakeUp').click(function () {
-    socket.emit('clickWakeUp')
-  })
-
-  $('#sleep').click(function () {
-    socket.emit('clickSleep')
-  })
-})
-=======
 		$('#speak').click(function () {
 			$('#speech-error').hide()
 			console.log('listening...')
@@ -241,8 +149,8 @@ $(function () {
 					console.log('Validation errors', errors);
 					let buildInner=""
 					errors.forEach(function(errItem) {
-						let errSchemaUri = errItem.schemaUri.replace(/.+\/properties\//, "").replace("/"," >> ")  
-						buildInner += `<p><strong style="font-color:red">Error: ` + errItem.message + 
+						let errSchemaUri = errItem.schemaUri.replace(/.+\/properties\//, "").replace("/"," >> ")
+						buildInner += `<p><strong style="font-color:red">Error: ` + errItem.message +
             "</strong></br>Location: " +
             errSchemaUri +
             "</p>"
@@ -269,14 +177,14 @@ $(function () {
 
 /*
 
-  ______                _   _                 
- |  ____|              | | (_)                
- | |__ _   _ _ __   ___| |_ _  ___  _ __  ___ 
+  ______                _   _
+ |  ____|              | | (_)
+ | |__ _   _ _ __   ___| |_ _  ___  _ __  ___
  |  __| | | | '_ \ / __| __| |/ _ \| '_ \/ __|
  | |  | |_| | | | | (__| |_| | (_) | | | \__ \
  |_|   \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
-                                              
-                                              
+
+
 
 */
 
@@ -295,13 +203,13 @@ $(function () {
 		if (isIosDevice()){
 			$speak.addClass('hidden')
 			$nospeak.removeClass('hidden')
-		} 
+		}
 		if (annyang) {
 			socket.emit('getAnnyAng')
-		}  
+		}
 	}
 
-	function config_init () {				
+	function config_init () {
 		socket.emit('getForm',true)
 	}
 
@@ -311,7 +219,7 @@ $(function () {
 	}
 	function showElm(element,timeOutMins=1){
 		var timeOutMillis = timeOutMins*60000
-		$(element).fadeIn() 
+		$(element).fadeIn()
 		timeoutID=setTimeout(function(){
 			hideElm(element);
 		},timeOutMillis)
@@ -321,4 +229,3 @@ $(function () {
 
 
 })
->>>>>>> evancohen/master

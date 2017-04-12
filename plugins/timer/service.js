@@ -4,21 +4,12 @@
   /**
    * Factory function for the timer service
    */
-<<<<<<< HEAD
-  var TimerService = function ($rootScope, $interval, $filter, LightService) {
-    var service = {};
-    service.running = false;
-    service.paused = true;
-    service.duration = 0;
-    service.countdown = -1;
-=======
 	var TimerService = function ($rootScope, $interval, $filter) {
 		var service = {};
 		service.running = false;
 		service.paused = true;
 		service.duration = 0;
 		service.countdown = -1;
->>>>>>> evancohen/master
 
     /**
      * Parse spoken duration into seconds
@@ -32,74 +23,6 @@
         .replace(new RegExp($filter('translate')('timer.minute'), 'i'), 'minutes')
         .replace(new RegExp($filter('translate')('timer.second'), 'i'), 'seconds');
 
-<<<<<<< HEAD
-      console.log(string);
-      var pattern = '([0-9]+) ?(minutes|seconds)';
-      var matches = string.match(new RegExp(pattern, 'ig'));
-      var duration = moment.duration(0);
-      for (var i = 0; i < matches.length; i++) {
-        var match = matches[i].match(pattern);
-        if (match.length) {
-          duration.add(parseInt(match[1], 10), match[2]);
-        }
-      }
-      return duration.asSeconds();
-    };
-
-    var intervalId;
-    var startTimer = function () {
-      service.running = true;
-      return $interval(function () {
-        service.countdown--;
-      }, 1000);
-    };
-
-    service.start = function (duration) {
-      if (angular.isDefined(duration)) {
-        if (isNaN(duration)) {
-          duration = parseDuration(duration);
-        }
-        if (service.running) {
-          service.reset();
-        }
-        service.countdown = duration;
-        service.duration = duration;
-
-        $rootScope.$broadcast("timer:init", duration);
-      }
-      if (service.countdown > 0) {
-        if (angular.isDefined(intervalId)) {
-          service.stop();
-        }
-        intervalId = startTimer();
-        service.paused = false;
-
-        $rootScope.$broadcast("timer:start", service.countdown);
-      }
-    };
-
-    service.stop = function () {
-      if (angular.isDefined(intervalId)) {
-        $interval.cancel(intervalId);
-        intervalId = undefined;
-        service.paused = true;
-
-        //Call Lights to blink
-        LightService.blink();
-        
-        $rootScope.$broadcast("timer:stop", service.countdown);
-      }
-    };
-
-    service.reset = function () {
-      service.running = false;
-      service.countdown = -1;
-      service.stop();
-    };
-
-    return service;
-  }
-=======
 			console.log(string);
 			var pattern = '([0-9]+) ?(minutes|seconds)';
 			var matches = string.match(new RegExp(pattern, 'ig'));
@@ -163,7 +86,6 @@
 
 		return service;
 	}
->>>>>>> evancohen/master
 
   /**
    * Filter for parsing seconds to date
@@ -203,38 +125,6 @@
 					});
 
           // trigger reflow to reset the animation
-<<<<<<< HEAD
-          circle[0].getBoundingClientRect();
-
-          setTimeout(function () {
-            circle.css({
-              display: ''
-            });
-          }, 0);
-
-          console.debug('timer:start');
-        });
-
-        scope.$on('timer:stop', function (event, countdown) {
-          if (countdown > 0) {
-            circle.css({
-              animationPlayState: 'paused'
-            });
-          } else {
-            circle.css({
-              animationDuration: '',
-              animationDelay: ''
-            });
-          }
-
-          console.debug('timer:stop');
-        });
-      }
-    };
-  };
-
-  angular.module('Artemis')
-=======
 					circle[0].getBoundingClientRect();
 
 					setTimeout(function () {
@@ -264,8 +154,7 @@
 		};
 	};
 
-	angular.module('SmartMirror')
->>>>>>> evancohen/master
+	angular.module('Artemis')
     .factory('TimerService', TimerService)
     .filter('secondsToDateTime', secondsToDateTime)
     .directive('timerCircle', TimerCircle);

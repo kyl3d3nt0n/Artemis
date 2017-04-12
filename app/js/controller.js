@@ -1,11 +1,7 @@
 (function (angular) {
 	'use strict';
 
-<<<<<<< HEAD
     function ArtemisCtrl(
-=======
-	function MirrorCtrl(
->>>>>>> evancohen/master
         Focus,
         SpeechService,
         AutoSleepService,
@@ -23,18 +19,11 @@
 
 
         // Set up our Focus
-<<<<<<< HEAD
         $rootScope.$on('focus', function(targetScope, newFocus){
             $scope.focus = newFocus;
         })
         Focus.change("default");
-=======
-		$rootScope.$on('focus', function(targetScope, newFocus){
-			$scope.focus = newFocus;
-		})
 
-		Focus.change("default");
->>>>>>> evancohen/master
 
         //set lang
 		if (config.general.language.substr(0, 2) == 'en') {
@@ -109,7 +98,7 @@
 			updateTime();
 			restCommand();
 
-<<<<<<< HEAD
+
             var stopMedia = function() {
               console.log("Stopping all playing media...");
                 //Stop Youtube Video
@@ -138,36 +127,22 @@
                 $scope.commands = SpeechService.getCommands();
                 Focus.change("commands");
             });
-=======
-			var defaultView = function () {
-				console.debug("Ok, going to default view...");
-				Focus.change("default");
-			}
 
-            // List commands
-			SpeechService.addCommand('list', function () {
-				console.debug("Here is a list of commands...");
-				console.log(SpeechService.commands);
-				$scope.commands = SpeechService.getCommands();
-				Focus.change("commands");
-			});
->>>>>>> evancohen/master
 
             // Go back to default view
-			SpeechService.addCommand('home', defaultView);
+						SpeechService.addCommand('home', defaultView);
 
-			SpeechService.addCommand('debug', function () {
-				console.debug("Boop Boop. Showing debug info...");
-				$scope.debug = true;
-			});
+						SpeechService.addCommand('debug', function () {
+							console.debug("Boop Boop. Showing debug info...");
+							$scope.debug = true;
+						});
 
             // Check the time
-			SpeechService.addCommand('time_show', function () {
-				console.debug("It is", moment().format('h:mm:ss a'));
-			});
+						SpeechService.addCommand('time_show', function () {
+							console.debug("It is", moment().format('h:mm:ss a'));
+						});
 
             // Control light
-<<<<<<< HEAD
             SpeechService.addCommand('light_action', function (state, action) {
                 LightService.performUpdate(state + " " + action);
             });
@@ -177,28 +152,13 @@
 
     angular.module('Artemis')
         .controller('ArtemisCtrl', ArtemisCtrl);
-=======
-			SpeechService.addCommand('light_action', function (state, action) {
-				LightService.performUpdate(state + " " + action);
-			});
-		};
 
-		_this.init();
-	}
-
-	angular.module('SmartMirror')
-        .controller('MirrorCtrl', MirrorCtrl);
->>>>>>> evancohen/master
 
 	function themeController($scope) {
 		$scope.layoutName = (typeof config.layout !== 'undefined' && config.layout) ? config.layout : 'main';
 	}
 
-<<<<<<< HEAD
     angular.module('Artemis')
-=======
-	angular.module('SmartMirror')
->>>>>>> evancohen/master
         .controller('Theme', themeController);
 
 } (window.angular));

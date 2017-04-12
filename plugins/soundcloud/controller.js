@@ -19,7 +19,6 @@ function Soundcloud($scope, $http, SoundCloudService, SpeechService, Focus) {
 	});
 
     //SoundCloud stop
-<<<<<<< HEAD
     SpeechService.addCommand('sc_pause', function () {
         SoundCloudService.pause();
         Focus.change("default");
@@ -31,17 +30,6 @@ function Soundcloud($scope, $http, SoundCloudService, SpeechService, Focus) {
         Focus.change("sc");
     });
 
-=======
-	SpeechService.addCommand('sc_pause', function () {
-		SoundCloudService.pause();
-		Focus.change("default");
-	});
-    //SoundCloud resume
-	SpeechService.addCommand('sc_resume', function () {
-		SoundCloudService.play();
-		Focus.change("sc");
-	});
->>>>>>> evancohen/master
     //SoundCloud replay
 	SpeechService.addCommand('sc_replay', function () {
 		SoundCloudService.replay();

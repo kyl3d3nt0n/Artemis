@@ -190,7 +190,6 @@
             "voice": "Show remote (QR code) (QR) (link)",
             "description": "Show the local IP of the Remote App URL"
         },
-<<<<<<< HEAD
         "open_app": {
           "text": "Open _______",
           "voice": "Open *app app",
@@ -200,7 +199,7 @@
           "text": "Close _______",
           "voice": "Close *app app",
           "description": "Close current application"
-=======
+        },
         "todoist_show": {
             "text": "Show (my) ________ list",
             "voice": "Show (my) *project list",
@@ -215,7 +214,6 @@
             "text": "Remove ________ from (my) ________ list",
             "voice": "Remove *element from (my) *project list",
             "description": "Remove item from requested list."
->>>>>>> evancohen/master
         }
     },
     "fitbit": {

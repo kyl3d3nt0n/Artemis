@@ -170,34 +170,6 @@
 			}
 		}
 
-<<<<<<< HEAD
-        /*
-        function updateHyperion(i, index, setting) {
-=======
-		function updateHyperion(i, index, setting) {
->>>>>>> evancohen/master
-            // Convert color and brightness
-			for (var j = 0; j < setting['colorRGB'].length; j++) {
-				setting['colorRGB'][j] = Math.round(setting['colorRGB'][j] * setting['brightness']);
-			}
-            // Connect to the configured Hyperion client
-<<<<<<< HEAD
-            var hyperion = new Hyperion(config.light.setup[index].targets[i].ip, config.light.setup[index].targets[i].port);
-
-            hyperion.on('connect', function () {
-                if (setting['on']) {
-                    hyperion.setColor(setting['colorRGB']);
-                }
-                else {
-                    hyperion.clearall();
-                }
-            });
-
-            hyperion.on('error', function (error) {
-                console.error('error:', error);
-            });
-        }*/
-
         function updateHue(i, index, setting) {
             var update = {};
             update["transitiontime"] = 10;
@@ -211,7 +183,7 @@
             }
 
             $http.put('http://' + config.light.settings.hueIp + '/api/' + config.light.settings.hueUsername + "/groups/" + config.light.setup[index].targets[i].id + "/action", update)
-=======
+
 			var hyperion = new Hyperion(config.light.setup[index].targets[i].ip, config.light.setup[index].targets[i].port);
 
 			hyperion.on('connect', function () {
@@ -240,7 +212,6 @@
 			}
 
 			$http.put('http://' + config.light.settings.hueIp + '/api/' + config.light.settings.hueUsername + "/groups/" + config.light.setup[index].targets[i].id + "/action", update)
->>>>>>> evancohen/master
                 .success(function (data, status) {
 	console.log(status, data);
 })
@@ -249,11 +220,7 @@
 		return service;
 	}
 
-<<<<<<< HEAD
     angular.module('Artemis')
-=======
-	angular.module('SmartMirror')
->>>>>>> evancohen/master
         .factory('LightService', LightService);
 
 } ());

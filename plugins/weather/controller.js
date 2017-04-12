@@ -21,7 +21,6 @@ function Weather($scope, $interval, $http, GeolocationService) {
 	}
 
     //Returns the current forecast along with high and low tempratures for the current day
-<<<<<<< HEAD
     weather.currentForecast = function () {
         if (weather.forecast === null) {
             return null;
@@ -43,18 +42,6 @@ function Weather($scope, $interval, $http, GeolocationService) {
         };
         return weather.forecast.data.currently;
     }
-=======
-	weather.currentForecast = function () {
-		if (weather.forecast === null) {
-			return null;
-		}
-		weather.forecast.data.currently.day = moment.unix(weather.forecast.data.currently.time).format('ddd');
-		weather.forecast.data.currently.temperature = parseFloat(weather.forecast.data.currently.temperature).toFixed(0);
-		weather.forecast.data.currently.wi = "wi-forecast-io-" + weather.forecast.data.currently.icon;
-		weather.forecast.data.currently.iconAnimation = weather.forecast.data.currently.icon;
-		return weather.forecast.data.currently;
-	}
->>>>>>> evancohen/master
 
 	weather.weeklyForecast = function () {
 		if (weather.forecast === null) {

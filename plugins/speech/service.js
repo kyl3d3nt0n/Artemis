@@ -8,57 +8,14 @@ const {ipcRenderer} = require('electron');
 		var callbacks = {}
 		var commandList = []
 
-<<<<<<< HEAD
-        service.init = function (cb) {
-            // workaround so we can trigger requests at any time
-            annyang.isListening = () => { return true }
-=======
 		service.init = function (cb) {
-            // workaround so we can trigger requests at any time 
+            // workaround so we can trigger requests at any time
 			annyang.isListening = () => { return true }
->>>>>>> evancohen/master
             // Set lenguage and debug state
 			annyang.setLanguage((typeof config.general.language != 'undefined') ? config.general.language : 'en-US')
 			annyang.debug(false)
 
             // add specified callback functions
-<<<<<<< HEAD
-            if (isCallback(cb.listening)) {
-                callbacks.listening = function (bool) {
-                    $rootScope.$apply(cb.listening(bool))
-                }
-            }
-            if (isCallback(cb.partialResult)) {
-                callbacks.partialResult = function (data) {
-                    $rootScope.$apply(cb.partialResult(data))
-                }
-            }
-            if (isCallback(cb.finalResult)) {
-                callbacks.finalResult = function (data) {
-                    $rootScope.$apply(cb.finalResult(data))
-                }
-            }
-            if (isCallback(cb.error)) {
-                callbacks.error = function (data) {
-                    $rootScope.$apply(cb.error(data))
-                }
-            }
-
-            ipcRenderer.on('hotword', () => {
-                callbacks.listening(true)
-            })
-
-            ipcRenderer.on('partial-results', (event, text) => {
-                callbacks.partialResult(text)
-            })
-
-            ipcRenderer.on('final-results', (event, text) => {
-                callbacks.finalResult(text)
-                annyang.trigger(text)
-                callbacks.listening(false)
-            })
-        }
-=======
 			if (isCallback(cb.listening)) {
 				callbacks.listening = function (bool) {
 					$rootScope.$apply(cb.listening(bool))
@@ -95,7 +52,6 @@ const {ipcRenderer} = require('electron');
 			})
 
 		}
->>>>>>> evancohen/master
 
         // Ensure callback is a valid function
 		function isCallback(callback) {
@@ -126,16 +82,9 @@ const {ipcRenderer} = require('electron');
 			angular.extend(service.commands, command)
 
             // Add the commands to annyang
-<<<<<<< HEAD
-            annyang.addCommands(service.commands)
-            //Uncomment to show commands in debug console
-            //console.debug('added command "' + phrase + '"', service.commands)
-        }
-=======
 			annyang.addCommands(service.commands)
-			console.debug('added command "' + phrase + '"', service.commands)
+			//console.debug('added command "' + phrase + '"', service.commands)
 		}
->>>>>>> evancohen/master
 
 		service.getCommands = function () {
 			return commandList;
@@ -144,11 +93,7 @@ const {ipcRenderer} = require('electron');
 		return service;
 	}
 
-<<<<<<< HEAD
-    angular.module('Artemis')
-=======
-	angular.module('SmartMirror')
->>>>>>> evancohen/master
+	angular.module('Artemis')
         .factory('SpeechService', SpeechService)
 
 } (window.annyang));

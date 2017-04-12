@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 function Traffic($rootScope, $scope, $http, $interval, $q, TimeboxService) {
 var BING_MAPS = "http://dev.virtualearth.net/REST/V1/Routes/"
-=======
-function Traffic($scope, $http, $interval, $q, TimeboxService) {
-	var BING_MAPS = "http://dev.virtualearth.net/REST/V1/Routes/"
->>>>>>> evancohen/master
 
 	var getDurationForTrips = function () {
 		var deferred = $q.defer();
@@ -57,7 +52,6 @@ function Traffic($scope, $http, $interval, $q, TimeboxService) {
 	}
 
     // Depending on the mode of transport different paramaters are required.
-<<<<<<< HEAD
     function getEndpoint(trip) {
         var waypoints = 1;
         var intermediateGoal = "";
@@ -74,24 +68,6 @@ function Traffic($scope, $http, $interval, $q, TimeboxService) {
             endpoint += "&optmz=distance";
         }
         endpoint += "&key=" + config.traffic.key;
-=======
-	function getEndpoint(trip) {
-		var waypoints = 1;
-		var intermediateGoal = "";
-		if (typeof trip.via !== 'undefined' && trip.via != "") {
-			waypoints = 2;
-			intermediateGoal = "&wp.1=" + trip.via;
-		}
-		var endpoint = BING_MAPS + trip.mode + "?wp.0=" + trip.origin + intermediateGoal + "&wp." + waypoints + "=" + trip.destination;
-		if (trip.mode == "Driving") {
-			endpoint += "&avoid=minimizeTolls";
-		} else if (trip.mode == "Transit") {
-			endpoint += "&timeType=Departure&dateTime=" + moment().lang("en").format('h:mm:ssa').toUpperCase();
-		} else if (trip.mode == "Walking") {
-			endpoint += "&optmz=distance";
-		}
-		endpoint += "&key=" + config.traffic.key;
->>>>>>> evancohen/master
 
 		return endpoint;
 	}
@@ -105,14 +81,8 @@ function Traffic($scope, $http, $interval, $q, TimeboxService) {
 		});
 	}
 
-<<<<<<< HEAD
     refreshTrafficData();
     $interval(refreshTrafficData, config.traffic.refreshInterval * 60000 || 900000)
-=======
-	refreshTrafficData()
-	$interval(refreshTrafficData, config.traffic.refreshInterval * 60000 || 900000)
-
->>>>>>> evancohen/master
 }
 
 angular.module('Artemis')

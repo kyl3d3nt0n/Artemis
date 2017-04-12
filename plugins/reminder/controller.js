@@ -54,7 +54,6 @@ function Reminder($scope, SpeechService, $translate, Focus) {
 	}
 
     // Set a reminder
-<<<<<<< HEAD
     SpeechService.addCommand('reminder_insert', function (task) {
         $scope.reminders = remind.insertReminder(task);
 
@@ -74,24 +73,6 @@ function Reminder($scope, SpeechService, $translate, Focus) {
         $scope.reminders = remind.getReminders();
         Focus.change("reminders");
     });
-=======
-	SpeechService.addCommand('reminder_insert', function (task) {
-		$scope.reminders = remind.insertReminder(task);
-		Focus.change("reminders");
-	});
-
-    // Clear reminders
-	SpeechService.addCommand('reminder_clear', function () {
-		$scope.reminders = remind.clearReminder();
-		Focus.change("default");
-	});
-
-    // Clear reminders
-	SpeechService.addCommand('reminder_show', function () {
-		$scope.reminders = remind.getReminders();
-		Focus.change("reminders");
-	});
->>>>>>> evancohen/master
 }
 
 angular.module('Artemis')

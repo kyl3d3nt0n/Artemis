@@ -1,7 +1,6 @@
 (function () {
 	'use strict';
 
-<<<<<<< HEAD
     function Focus($rootScope) {
         var service = {};
         var currentFocus = "default"
@@ -19,11 +18,11 @@
     }
 
     angular.module('Artemis')
-=======
+
 	function Focus($rootScope) {
 		var service = {};
 		var currentFocus = "default"
-        
+
 		service.change = function(newFocus){
 			$rootScope.$broadcast('focus', newFocus, currentFocus)
 			currentFocus = newFocus
@@ -36,8 +35,7 @@
 		return service
 	}
 
-	angular.module('SmartMirror')
->>>>>>> evancohen/master
+	angular.module('Artemis')
         .factory('Focus', Focus)
 
 } (window.annyang));

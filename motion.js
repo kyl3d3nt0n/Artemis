@@ -11,23 +11,13 @@ if (config.motion.enabled == true && require.resolve('johnny-five').length > 0 &
 	var five = require('johnny-five');
 	var Raspi = require("raspi-io");
 	var board = new five.Board({
-<<<<<<< HEAD
-	io: new Raspi()
-  });
-
-	board.on("ready",function() {
-
-			var motion = new five.Motion(config.motion.pin);
-
-=======
 		io: new Raspi()
 	});
 
 	board.on("ready",function() {
-		
+
 		var motion = new five.Motion(config.motion.pin);
-			
->>>>>>> evancohen/master
+
 			// "calibrated" occurs once, at the beginning of a session,
 		motion.on("calibrated", function() {
 			console.log("!c:","calibrated");
@@ -46,5 +36,5 @@ if (config.motion.enabled == true && require.resolve('johnny-five').length > 0 &
 		});
 	});
 } else if ( config.motion.enabled == true){
-	console.error("!E:","Motion Dependencies are missing! Therefore despite my best efforts I'll have to disable motion, Kyle. This is most embarrassing for us both.")
+	console.error("!E:","Motion Dependencies are missing! Therefore despite my best efforts I'll have to disable motion, Dave. This is most embarrassing for us both.")
 }

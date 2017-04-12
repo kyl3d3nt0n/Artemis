@@ -105,65 +105,6 @@ if (config.remote && config.remote.enabled || firstRun) {
 	remote.start()
 
   // Deturmine the local IP address
-<<<<<<< HEAD
-  const interfaces = require('os').networkInterfaces()
-  let addresses = []
-  for (let k in interfaces) {
-    for (let k2 in interfaces[k]) {
-      let address = interfaces[k][k2]
-      if (address.family === 'IPv4' && !address.internal) {
-        addresses.push(address.address)
-      }
-    }
-  }
-  console.log('Remote listening on http://%s:%d', addresses[0], config.remote.port)
-
-  remote.on('command', function (command) {
-    mainWindow.webContents.send('final-results', command)
-  })
-
-  remote.on('connected', function () {
-    mainWindow.webContents.send('connected')
-  })
-
-  remote.on('disconnected', function () {
-    mainWindow.webContents.send('disconnected')
-  })
-
-  remote.on('devtools', function (open) {
-    if (open) {
-      mainWindow.webContents.openDevTools()
-    } else {
-      mainWindow.webContents.closeDevTools()
-    }
-  })
-
-  remote.on('kiosk', function () {
-    if (mainWindow.isKiosk()) {
-      mainWindow.setKiosk(false)
-    } else {
-      mainWindow.setKiosk(true)
-    }
-  })
-
-  remote.on('reload', function () {
-    mainWindow.reload()
-  })
-
-  remote.on('wakeUp', function () {
-    mainWindow.webContents.send('remoteWakeUp', true)
-  })
-
-  remote.on('sleep', function () {
-    mainWindow.webContents.send('remoteSleep', true)
-  })
-
-  remote.on('relaunch', function() {
-    console.log("Relaunching...")
-    app.relaunch()
-    app.quit()
-  })
-=======
 	const interfaces = require('os').networkInterfaces()
 	let addresses = []
 	for (let k in interfaces) {
@@ -207,7 +148,7 @@ if (config.remote && config.remote.enabled || firstRun) {
 	remote.on('reload', function () {
 		mainWindow.reload()
 	})
-    
+
 	remote.on('wakeUp', function () {
 		mainWindow.webContents.send('remoteWakeUp', true)
 	})
@@ -220,7 +161,6 @@ if (config.remote && config.remote.enabled || firstRun) {
 		app.relaunch()
 		app.quit()
 	})
->>>>>>> evancohen/master
 }
 
 // Motion detection
@@ -265,17 +205,10 @@ app.on('window-all-closed', function () {
 
 // No matter how the app is quit, we should clean up after ourselvs
 app.on('will-quit', function () {
-<<<<<<< HEAD
-  if (kwsProcess) {
-    kwsProcess.kill()
-  }
-  // While cleaning up we should turn the screen back on in the event
-=======
 	if (kwsProcess) {
 		kwsProcess.kill()
 	}
-  // While cleaning up we should turn the screen back on in the event 
->>>>>>> evancohen/master
+  // While cleaning up we should turn the screen back on in the event
   // the program exits before the screen is woken up
 	if (mtnProcess) {
 		mtnProcess.kill()

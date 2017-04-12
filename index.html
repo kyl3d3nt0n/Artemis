@@ -83,7 +83,6 @@
       <div ng-include="'plugins/giphy/index.html'"></div>
       <!---TIMER--->
       <div ng-include="'plugins/timer/index.html'"></div>
-<<<<<<< HEAD
 
       <!---GREETING & APPS--->
       <div class="greeting-apps" ng-hide="focus== 'map' || focus == 'video' || focus == 'commands'">
@@ -92,11 +91,6 @@
         <!---APP-BAR--->
         <div ng-include="'plugins/apps/index.html'"></div>
       </div>
-=======
-      <div ng-include="'plugins/todoist/index.html'"></div>
-    </div>
-    <div class="bottom-center">
->>>>>>> evancohen/master
       <!-- Command list -->
       <div ng-include="'plugins/commands/index.html'"></div>
     </div><!---END-OF-MIDDLE-CENTER-------------------------------------------->
@@ -137,30 +131,17 @@
       <div class="error" ng-bind="speechError" ng-show="speechError"></div>
       <div class="partial-result" ng-bind="partialResult" ng-hide="speechError"></div>
     </div>
-<<<<<<< HEAD
   </div><!---END-OF-BOTTOM-BOTTOM-ROW------------------------------------------>
 
 </div><!---END-OF-BOTTOM-CONTAINER--------------------------------------------->
 
 
   <div ng-controller="Maker"></div>
-=======
-    <div class="bottom-left">
-      <div ng-include="'plugins/fitbit/index.html'" ng-if="config.fitbit"></div>
-      <div ng-include="'plugins/scrobbler/index.html'"></div>
-    </div>
-    <div class="bottom-right">
-      <!-- Someday something will live here -->
-    </div>
-    <div ng-controller="Maker"></div>
-  </div>
->>>>>>> evancohen/master
   <!-- Sleep cover -->
   <div ng-controller="AutoSleep"></div>
   <!---SLEEP-COVER--->
   <div ng-show="focus == 'sleep'" class="sleep-cover fade"></div>
 
-<<<<<<< HEAD
   <script>
   //POKEMON BACKGROUND PICS
   document.write('<div class="Pokemon_Pics">');
@@ -172,9 +153,6 @@
 </script>
 
   <!--- Artemis JS
-=======
-  <!-- Smart Mirror JS
->>>>>>> evancohen/master
   ==========================================================================
   The good stuff. --->
 
@@ -205,7 +183,6 @@
   <script src="plugins/autosleep/service.js"></script>
   <script src="plugins/scrobbler/service.js"></script>
   <script src="plugins/timer/service.js"></script>
-  <script src="plugins/todoist/service.js"></script>
 
   <!--- Controllers --->
   <script src="app/js/controller.js"></script>
@@ -231,7 +208,6 @@
   <script src="plugins/calendar/controller.js"></script>
   <script src="plugins/remote/controller.js"></script>
   <script src="plugins/maker/controller.js"></script>
-  <script src="plugins/todoist/controller.js"></script>
 
 </div><!---END OF CONTAINER-FLUID--->
 </body>

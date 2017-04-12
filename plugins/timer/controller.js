@@ -1,4 +1,5 @@
 function Timer($scope, TimerService, SpeechService, Focus) {
+
     // Start timer
 	SpeechService.addCommand('timer_start', function (duration) {
 		console.debug("Starting timer");
@@ -18,17 +19,6 @@ function Timer($scope, TimerService, SpeechService, Focus) {
 	SpeechService.addCommand('timer_show', function () {
 		if (TimerService.running) {
             // Update animation
-<<<<<<< HEAD
-            if (TimerService.paused) {
-                TimerService.start();
-                TimerService.stop();
-            } else {
-                TimerService.start();
-            }
-            Focus.change("timer");
-        }
-    });
-=======
 			if (TimerService.paused) {
 				TimerService.start();
 				TimerService.stop();
@@ -39,7 +29,6 @@ function Timer($scope, TimerService, SpeechService, Focus) {
 			Focus.change("timer");
 		}
 	});
->>>>>>> evancohen/master
 
     // Stop timer
 	SpeechService.addCommand('timer_stop', function () {

@@ -35,10 +35,6 @@
 		return service;
 	}
 
-<<<<<<< HEAD
   angular.module('Artemis')
-=======
-	angular.module('SmartMirror')
->>>>>>> evancohen/master
     .factory('ScrobblerService', ScrobblerService);
 } ());
