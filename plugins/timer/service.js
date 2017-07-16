@@ -154,7 +154,11 @@
 		};
 	};
 
+<<<<<<< HEAD
 	angular.module('Artemis')
+=======
+	angular.module('SmartMirror')
+>>>>>>> evancohen/master
     .factory('TimerService', TimerService)
     .filter('secondsToDateTime', secondsToDateTime)
     .directive('timerCircle', TimerCircle);

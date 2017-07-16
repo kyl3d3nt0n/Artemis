@@ -5,7 +5,11 @@ function Scrobbler($scope, $interval, ScrobblerService) {
 			$scope.track = track;
 		});
 	}
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> evancohen/master
 	if (typeof config.lastfm !== 'undefined' && typeof config.lastfm.key !== 'undefined' && config.lastfm.user !== 'undefined') {
 		$interval(getScrobblingTrack, config.lastfm.refreshInterval * 60000 || 1800000)
 	}

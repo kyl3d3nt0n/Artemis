@@ -20,7 +20,12 @@ function Remote($scope, SpeechService, Focus) {
 		SpeechService.addCommand('show_remoteQR', function () {
 			showRemote()
 		});
+<<<<<<< HEAD
 	}
+=======
+	} 
+    
+>>>>>>> evancohen/master
     // First Run
 	if (config.remote.firstRun) {
 		$scope.firstRun = true;

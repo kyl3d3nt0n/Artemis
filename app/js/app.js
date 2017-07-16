@@ -5,7 +5,11 @@
 	var language = (typeof config.general.language != 'undefined') ? config.general.language.substring(0, 2).toLowerCase() : 'en';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	angular.module('Artemis', ['ngAnimate', 'tmh.dynamicLocale', 'pascalprecht.translate'])
+=======
+	angular.module('SmartMirror', ['ngAnimate', 'tmh.dynamicLocale', 'pascalprecht.translate'])
+>>>>>>> evancohen/master
 =======
 	angular.module('SmartMirror', ['ngAnimate', 'tmh.dynamicLocale', 'pascalprecht.translate'])
 >>>>>>> evancohen/master

@@ -10,7 +10,11 @@ function Search($scope, $http, SpeechService, $rootScope, Focus) {
 				'type': 'video',
 				'videoEmbeddable': 'true',
 				'videoSyndicated': 'true',
+<<<<<<< HEAD
         //Sharing this key in the hopes that it wont be abused
+=======
+                //Sharing this key in the hopes that it wont be abused 
+>>>>>>> evancohen/master
 				'key': config.youtube.key
 			}
 		});

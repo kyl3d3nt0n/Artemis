@@ -10,7 +10,11 @@ const {ipcRenderer} = require('electron');
 		var commandPage = []
 
 		service.init = function (cb) {
+<<<<<<< HEAD
             // workaround so we can trigger requests at any time
+=======
+            // workaround so we can trigger requests at any time 
+>>>>>>> evancohen/master
 			annyang.isListening = () => { return true }
             // Set lenguage and debug state
 			annyang.setLanguage((typeof config.general.language != 'undefined') ? config.general.language : 'en-US')
@@ -84,7 +88,11 @@ const {ipcRenderer} = require('electron');
 
             // Add the commands to annyang
 			annyang.addCommands(service.commands)
+<<<<<<< HEAD
 			//console.debug('added command "' + phrase + '"', service.commands)
+=======
+			console.debug('added command "' + phrase + '"', service.commands)
+>>>>>>> evancohen/master
 		}
 
 
@@ -98,7 +106,11 @@ const {ipcRenderer} = require('electron');
 		return service;
 	}
 
+<<<<<<< HEAD
 	angular.module('Artemis')
+=======
+	angular.module('SmartMirror')
+>>>>>>> evancohen/master
         .factory('SpeechService', SpeechService)
 
 } (window.annyang));

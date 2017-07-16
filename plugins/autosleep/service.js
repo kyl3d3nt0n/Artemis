@@ -46,7 +46,11 @@
 				} else if (config.autoTimer.mode == "tv") {
 					Focus.change('default');
 				} else if (config.autoTimer.mode == "energy") {
+<<<<<<< HEAD
 					Focus.change('default');
+=======
+					focus.change('default')
+>>>>>>> evancohen/master
 					// if the timer was running
 					if (energyStarTimer != null) {
 						// stop it
@@ -70,7 +74,11 @@
 			$interval.cancel(energyStarTimerStop)
 			// cancel to long timer
 			$interval.cancel(energyStarTimer)
+<<<<<<< HEAD
 			// restart it, so we don't drift towards 0 delay
+=======
+			// restart it, so we don't drift towards 0 delay 
+>>>>>>> evancohen/master
 			energyStarTimer = $interval(bleep, energyStarDelay);
 			// restart the main sleep timer
 			service.startAutoSleepTimer();
@@ -99,7 +107,11 @@
 					energyStarTimer = $interval(bleep, energyStarDelay);
 				}
 			} else {
+<<<<<<< HEAD
 				Focus.change("sleep");
+=======
+				Focus.change("default");
+>>>>>>> evancohen/master
 			}
 		};
 
@@ -142,7 +154,15 @@
 
 		return service;
 	}
+<<<<<<< HEAD
 	angular.module('Artemis')
 		.factory('AutoSleepService', AutoSleepService);
 
 } ());
+=======
+
+	angular.module('SmartMirror')
+		.factory('AutoSleepService', AutoSleepService);
+
+} ());
+>>>>>>> evancohen/master

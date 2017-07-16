@@ -63,7 +63,11 @@ function Traffic($scope, $http, $interval, $q, TimeboxService) {
 		if (trip.mode == "Driving") {
 			endpoint += "&avoid=minimizeTolls";
 		} else if (trip.mode == "Transit") {
+<<<<<<< HEAD
 			endpoint += "&timeType=Departure&dateTime=" + moment().locale("en").format('h:mm:ssa').toUpperCase();
+=======
+			endpoint += "&timeType=Departure&dateTime=" + moment().lang("en").format('h:mm:ssa').toUpperCase();
+>>>>>>> evancohen/master
 		} else if (trip.mode == "Walking") {
 			endpoint += "&optmz=distance";
 		}

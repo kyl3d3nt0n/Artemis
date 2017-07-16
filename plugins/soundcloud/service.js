@@ -109,7 +109,11 @@
 		canvasCtx.stroke();
 	}
 
+<<<<<<< HEAD
 	angular.module('Artemis')
+=======
+	angular.module('SmartMirror')
+>>>>>>> evancohen/master
     .factory('SoundCloudService', SoundCloudService);
 
 } ());

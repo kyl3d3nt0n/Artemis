@@ -30,7 +30,11 @@
 
 			} else {
 				if (geoloc !== null) {
+<<<<<<< HEAD
 					//console.log("Cached Geolocation", geoloc);
+=======
+					console.log("Cached Geolocation", geoloc);
+>>>>>>> evancohen/master
 					return (geoloc);
 				}
 
@@ -52,7 +56,11 @@
 		return service;
 	}
 
+<<<<<<< HEAD
 	angular.module('Artemis')
+=======
+	angular.module('SmartMirror')
+>>>>>>> evancohen/master
         .factory('GeolocationService', GeolocationService);
 
 } ());

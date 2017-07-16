@@ -242,6 +242,10 @@
 		return service;
 	}
 
+<<<<<<< HEAD
 	angular.module('Artemis')
+=======
+	angular.module('SmartMirror')
+>>>>>>> evancohen/master
     .factory('CalendarService', CalendarService);
 } ());

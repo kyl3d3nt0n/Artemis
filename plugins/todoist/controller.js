@@ -46,5 +46,9 @@ function Todoist($scope, TodoistService, SpeechService, Focus) {
 	}
 }
 
+<<<<<<< HEAD
 angular.module('Artemis')
+=======
+angular.module('SmartMirror')
+>>>>>>> evancohen/master
     .controller('Todoist', Todoist);

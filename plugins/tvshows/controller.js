@@ -5,17 +5,26 @@ function TVShows($scope, $http, $interval) {
 
 	function getTVShows() {
 		$scope.tvshows = [];
+<<<<<<< HEAD
+=======
+
+>>>>>>> evancohen/master
 		if (config.tvshows) {
             // for each show in config, create http request
 			angular.forEach(config.tvshows.shows, function (show) {
 				$http.get('http://epguides.frecar.no/show/' + show.replace(/\s|\./g, '') + '/next/')
                     .catch(function () { // if no response for a show add blank response, log error
+<<<<<<< HEAD
 	//console.log("No response for show: " + show);
+=======
+	console.log("No response for show: " + show);
+>>>>>>> evancohen/master
 	return "";
 })
                     .then(function (response) {
 	if (response != "") {
 		$scope.tvshows.push(response)
+<<<<<<< HEAD
 		//console.log($scope.tvshows);
 		//Date of show
 		//console.log(response.data.episode.release_date);
@@ -24,6 +33,8 @@ function TVShows($scope, $http, $interval) {
 		//Title of episode
 		//console.log(response.data.episode.title);
 		//console.log(response);
+=======
+>>>>>>> evancohen/master
 	}
 })
 			});

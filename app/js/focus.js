@@ -4,6 +4,7 @@
 	function Focus($rootScope) {
 		var service = {};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		var currentFocus = "default";
 		console.log("Current Focus is: " + currentFocus);
 
@@ -22,6 +23,8 @@
 
 	angular.module('Artemis')
 =======
+=======
+>>>>>>> evancohen/master
 		var currentFocus = "default"
         
 		service.change = function(newFocus){
@@ -37,6 +40,9 @@
 	}
 
 	angular.module('SmartMirror')
+<<<<<<< HEAD
+>>>>>>> evancohen/master
+=======
 >>>>>>> evancohen/master
         .factory('Focus', Focus)
 

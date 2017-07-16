@@ -31,7 +31,11 @@
 		};
 
         /**
+<<<<<<< HEAD
          * Get today's date in the format YYYY-MM-DD. The date is used to
+=======
+         * Get today's date in the format YYYY-MM-DD. The date is used to 
+>>>>>>> evancohen/master
          */
 		service.getToday = function () {
 			var today = new Date();
@@ -66,7 +70,11 @@
 			});
 
             /*
+<<<<<<< HEAD
                 Callback service parsing the authorization token and asking for the access token.
+=======
+                Callback service parsing the authorization token and asking for the access token. 
+>>>>>>> evancohen/master
                 This endpoint is refered to in config.fitbit.authorization_uri.redirect_uri.
              */
 			app.get('/fitbit_auth_callback', function (req, res, next) {
@@ -83,10 +91,17 @@
 			});
 
             /*
+<<<<<<< HEAD
                 Call an API. fitbit.request() mimics nodejs request() library,
                 automatically adding the required oauth2 header. The callback
                 is a bit different, called with (err, body, token). If token is
                 non-null, this means a refresh has happened and you should
+=======
+                Call an API. fitbit.request() mimics nodejs request() library, 
+                automatically adding the required oauth2 header. The callback 
+                is a bit different, called with (err, body, token). If token is 
+                non-null, this means a refresh has happened and you should 
+>>>>>>> evancohen/master
                 persist the new token.
             */
 			app.get('/fb-profile', function (req, res, next) {
@@ -334,7 +349,11 @@
 		return service;
 	}
 
+<<<<<<< HEAD
 	angular.module('Artemis')
+=======
+	angular.module('SmartMirror')
+>>>>>>> evancohen/master
 		.factory('FitbitService', FitbitService);
 
 } ());

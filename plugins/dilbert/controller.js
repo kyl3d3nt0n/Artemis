@@ -23,7 +23,11 @@ function Dilbert($scope, $http, $q, SpeechService, Focus) {
 		getDilbertFeed().then(function(feed){
 			$scope.dilbert = feed.entries[0]
 			Focus.change("dilbert");
+<<<<<<< HEAD
 		})
+=======
+		})  
+>>>>>>> evancohen/master
 	});
 
 }

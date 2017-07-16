@@ -93,6 +93,7 @@
 					SaidParameter['colorHSV'] = [0, 255, 254];
 					SaidParameter['brightness'] = 0.1
 				}
+<<<<<<< HEAD
 
         // colorloop
         if($translate.instant('lights.action.colorloop').includes(spokenWords[i])) {
@@ -102,6 +103,8 @@
         } else {
           SaidParameter['effect'] = 'none';
         }
+=======
+>>>>>>> evancohen/master
 
                 // reset all LED
 				if ($translate.instant('lights.action.reset').includes(spokenWords[w])) {
@@ -163,6 +166,7 @@
 			}
 		}
 
+<<<<<<< HEAD
 
   function updateHue(i, index, setting) {
       var update = {};
@@ -220,6 +224,51 @@
 		return service;
 	}
     angular.module('Artemis')
+=======
+		function updateHyperion(i, index, setting) {
+            // Convert color and brightness
+			for (var j = 0; j < setting['colorRGB'].length; j++) {
+				setting['colorRGB'][j] = Math.round(setting['colorRGB'][j] * setting['brightness']);
+			}
+            // Connect to the configured Hyperion client
+			var hyperion = new Hyperion(config.light.setup[index].targets[i].ip, config.light.setup[index].targets[i].port);
+
+			hyperion.on('connect', function () {
+				if (setting['on']) {
+					hyperion.setColor(setting['colorRGB']);
+				}
+				else {
+					hyperion.clearall();
+				}
+			});
+
+			hyperion.on('error', function (error) {
+				console.error('error:', error);
+			});
+		}
+
+		function updateHue(i, index, setting) {
+			var update = {};
+			update["transitiontime"] = 10;
+
+			update['on'] = setting['on'];
+			if (setting['on']) {
+				update['hue'] = setting['colorHSV'][0];
+				update['sat'] = setting['colorHSV'][1];
+				update['bri'] = Math.round(setting['colorHSV'][2] * setting['brightness']);
+			}
+
+			$http.put('http://' + config.light.settings.hueIp + '/api/' + config.light.settings.hueUsername + "/groups/" + config.light.setup[index].targets[i].id + "/action", update)
+                .success(function (data, status) {
+	console.log(status, data);
+})
+		}
+
+		return service;
+	}
+
+	angular.module('SmartMirror')
+>>>>>>> evancohen/master
         .factory('LightService', LightService);
 
 } ());
