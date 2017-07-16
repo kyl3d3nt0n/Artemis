@@ -12,6 +12,7 @@ function Search($scope, $http, SpeechService, $rootScope, Focus) {
 				'videoSyndicated': 'true',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         //Sharing this key in the hopes that it wont be abused
 =======
                 //Sharing this key in the hopes that it wont be abused 
@@ -19,6 +20,9 @@ function Search($scope, $http, SpeechService, $rootScope, Focus) {
 =======
                 //Sharing this key in the hopes that it wont be abused 
 >>>>>>> evancohen/master
+=======
+                //Sharing this key in the hopes that it wont be abused
+>>>>>>> parent of 09f3615... Merge remote-tracking branch 'evancohen/master'
 				'key': config.youtube.key
 			}
 		});

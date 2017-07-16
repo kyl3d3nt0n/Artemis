@@ -48,6 +48,7 @@
 				} else if (config.autoTimer.mode == "energy") {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					Focus.change('default');
 =======
 					focus.change('default')
@@ -55,6 +56,9 @@
 =======
 					focus.change('default')
 >>>>>>> evancohen/master
+=======
+					Focus.change('default')
+>>>>>>> parent of 09f3615... Merge remote-tracking branch 'evancohen/master'
 					// if the timer was running
 					if (energyStarTimer != null) {
 						// stop it
@@ -67,6 +71,7 @@
 					}
 				}
 			}
+
 		};
 
 		// used by the energystar override function

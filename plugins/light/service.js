@@ -96,6 +96,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 
+<<<<<<< HEAD
         // colorloop
         if($translate.instant('lights.action.colorloop').includes(spokenWords[i])) {
           SaidParameter['effect'] = 'colorloop';
@@ -108,6 +109,16 @@
 >>>>>>> evancohen/master
 =======
 >>>>>>> evancohen/master
+=======
+                // colorloop
+                if($translate.instant('lights.action.colorloop').includes(spokenWords[i])) {
+                  SaidParameter['effect'] = 'colorloop';
+                } else if($translate.instant('lights.action.back').includes(spokenWords[i])) {
+                  SaidParameter['effect'] = 'none';
+                } else {
+                  SaidParameter['effect'] = 'none';
+                }
+>>>>>>> parent of 09f3615... Merge remote-tracking branch 'evancohen/master'
 
                 // reset all LED
 				if ($translate.instant('lights.action.reset').includes(spokenWords[w])) {

@@ -36,7 +36,11 @@
 	}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> parent of 09f3615... Merge remote-tracking branch 'evancohen/master'
 	angular.module('Artemis')
 =======
 
