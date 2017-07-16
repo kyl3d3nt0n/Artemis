@@ -1,5 +1,5 @@
-function Traffic($rootScope, $scope, $http, $interval, $q, TimeboxService) {
-var BING_MAPS = "http://dev.virtualearth.net/REST/V1/Routes/"
+function Traffic($scope, $http, $interval, $q, TimeboxService) {
+	var BING_MAPS = "http://dev.virtualearth.net/REST/V1/Routes/"
 
 	var getDurationForTrips = function () {
 		var deferred = $q.defer();
@@ -52,22 +52,22 @@ var BING_MAPS = "http://dev.virtualearth.net/REST/V1/Routes/"
 	}
 
     // Depending on the mode of transport different paramaters are required.
-    function getEndpoint(trip) {
-        var waypoints = 1;
-        var intermediateGoal = "";
-        if (typeof trip.via !== 'undefined' && trip.via != "") {
-            waypoints = 2;
-            intermediateGoal = "&wp.1=" + trip.via;
-        }
-        var endpoint = BING_MAPS + trip.mode + "?wp.0=" + trip.origin + intermediateGoal + "&wp." + waypoints + "=" + trip.destination;
-        if (trip.mode == "Driving") {
-            endpoint += "&avoid=minimizeTolls";
-        } else if (trip.mode == "Transit") {
-            endpoint += "&timeType=Departure&dateTime=" + moment().locale("en").format('h:mm:ssa').toUpperCase();
-        } else if (trip.mode == "Walking") {
-            endpoint += "&optmz=distance";
-        }
-        endpoint += "&key=" + config.traffic.key;
+	function getEndpoint(trip) {
+		var waypoints = 1;
+		var intermediateGoal = "";
+		if (typeof trip.via !== 'undefined' && trip.via != "") {
+			waypoints = 2;
+			intermediateGoal = "&wp.1=" + trip.via;
+		}
+		var endpoint = BING_MAPS + trip.mode + "?wp.0=" + trip.origin + intermediateGoal + "&wp." + waypoints + "=" + trip.destination;
+		if (trip.mode == "Driving") {
+			endpoint += "&avoid=minimizeTolls";
+		} else if (trip.mode == "Transit") {
+			endpoint += "&timeType=Departure&dateTime=" + moment().locale("en").format('h:mm:ssa').toUpperCase();
+		} else if (trip.mode == "Walking") {
+			endpoint += "&optmz=distance";
+		}
+		endpoint += "&key=" + config.traffic.key;
 
 		return endpoint;
 	}
@@ -81,8 +81,9 @@ var BING_MAPS = "http://dev.virtualearth.net/REST/V1/Routes/"
 		});
 	}
 
-    refreshTrafficData();
-    $interval(refreshTrafficData, config.traffic.refreshInterval * 60000 || 900000)
+	refreshTrafficData()
+	$interval(refreshTrafficData, config.traffic.refreshInterval * 60000 || 900000)
+
 }
 
 angular.module('Artemis')

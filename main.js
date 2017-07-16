@@ -14,7 +14,7 @@ const powerSaveBlocker = electron.powerSaveBlocker
 powerSaveBlocker.start('prevent-display-sleep')
 
 // Launching the mirror in dev mode
-const DevelopmentMode = process.argv[2] === "dev"
+const DevelopmentMode = process.argv.includes("dev")
 
 // Load the smart mirror config
 let config
@@ -23,7 +23,7 @@ try {
 	config = require("./config.json")
 } catch (e) {
 	let error = "Unknown Error"
-	config = require("./config.default.json")
+	config = require("./remote/.config.default.json")
 	firstRun = true
 	if (typeof e.code !== 'undefined' && e.code === 'MODULE_NOT_FOUND') {
 		error = "'config.json' not found. \nYou can configure your mirror at the remote address below..."
@@ -148,7 +148,7 @@ if (config.remote && config.remote.enabled || firstRun) {
 	remote.on('reload', function () {
 		mainWindow.reload()
 	})
-
+    
 	remote.on('wakeUp', function () {
 		mainWindow.webContents.send('remoteWakeUp', true)
 	})
@@ -208,7 +208,7 @@ app.on('will-quit', function () {
 	if (kwsProcess) {
 		kwsProcess.kill()
 	}
-  // While cleaning up we should turn the screen back on in the event
+  // While cleaning up we should turn the screen back on in the event 
   // the program exits before the screen is woken up
 	if (mtnProcess) {
 		mtnProcess.kill()

@@ -1,0 +1,11 @@
+.traffic-block {
+  float: right;
+  clear: both;
+  width: 20em;
+}
+.traffic-information {
+  font-size: 20px;
+}
+.time-to {
+    font-weight: bold;
+}

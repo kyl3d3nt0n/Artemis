@@ -1,5 +1,5 @@
 <!---CALENDAR------------------------------------------------------------------>
-<div class="calendar-block app fade-away" ng-show="focus =='calendar'">
+<div class="calendar-block app fade-away">
   <ul ng-controller="Calendar" class="calendar fade-away" ng-class="config.calendar.showCalendarNames ? 'show-calendar-names' : ''">
       <h2>Calendar</h2>
       <li class="event day-marker" ng-repeat="event in calendar" ng-class="(calendar[$index - 1].label != event.label) ? 'day-marker' : ''">

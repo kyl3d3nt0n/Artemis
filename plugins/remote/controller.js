@@ -16,11 +16,12 @@ function Remote($scope, SpeechService, Focus) {
 		Focus.change("remote");
 	}
 
-    if (config.remote && config.remote.enabled) {
-        SpeechService.addCommand('show_remoteQR', function () {
-            showRemote()
-        });
-    }
+	if (config.remote && config.remote.enabled) {
+		SpeechService.addCommand('show_remoteQR', function () {
+			showRemote()
+		});
+	}
+
     // First Run
 	if (config.remote.firstRun) {
 		$scope.firstRun = true;

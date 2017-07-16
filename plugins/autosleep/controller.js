@@ -1,5 +1,9 @@
-function AutoSleep($http, $q, SpeechService,AutoSleepService, Focus) {
+function AutoSleep($http, $q, SpeechService,AutoSleepService) {
 
+	SpeechService.addCommand('wake', function () {
+		console.debug("Waking Up!");
+		AutoSleepService.wake();
+	});
 
     // Hide everything and "sleep"
 	SpeechService.addCommand('sleep', function () {
@@ -7,10 +11,6 @@ function AutoSleep($http, $q, SpeechService,AutoSleepService, Focus) {
 		AutoSleepService.sleep();
 	});
 
-    SpeechService.addCommand('wake_up', function () {
-        console.debug("Waking Up!");
-        AutoSleepService.wake();
-    });
 }
 
 angular.module('Artemis')

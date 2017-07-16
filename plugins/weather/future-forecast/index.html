@@ -1,15 +1,6 @@
-<div class="weather" ng-controller="Weather">
-
-  <div class="weather-block temperature-block fade-away">
-    <div class="weather-today">
-        <!---<span class="icon dimmed wi {{currentForecast.wi}}"></span>--->
-        <canvas id="icon_weather_current" width="130"></canvas>
-        <span class="temperature" ng-show="currentForecast.temperature" ng-bind="currentForecast.temperature + '&deg;'"></span>
-    </div>
-  </div>
-
+<div class="weather" ng-controller="FutureForecast">
 <!---WEATHER------------------------------------------------------------------->
-    <div class="weather-block app fade-away" ng-show="focus == 'weather'">
+    <div class="weather-block app fade-away">
       <h2>Weather</h2>
         <div class="weather-week-descriptor">
             <span id='minutely' ng-bind="minutelyForecast.summary"></span>

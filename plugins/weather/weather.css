@@ -1,0 +1,80 @@
+.weather-block {
+  margin-left: auto;
+  display: inline-block;
+  width: 20em;
+  float: right;
+  margin-right: 5%;
+}
+.temperature-block {
+  width: 30em;
+}
+.weather-today .temperature {
+  font-size: 100px;
+  vertical-align: text-bottom;
+}
+.weather-today {
+  text-align: right;
+}
+.weather-week-descriptor {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+.weather-week {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: .3em;
+}
+.weather-week .day {
+  display: inline-block;
+  margin-left: 10%;
+  width: 20%;
+}
+.weather-week .temperature {
+  display: inline-block;
+  width: 50px;
+  margin-left: 5%;
+}
+
+.icon {
+  font-size: 125px;
+  margin-right: 10%;
+  vertical-align: bottom;
+}
+/*
+#icon_weather_current {
+  margin-right: 5%;
+}*/
+/*.weather-block .weather-today canvas,
+.weather-block .weather-week-day canvas {
+  display: none;
+}
+.icon {
+  position: relative;
+  display: inline-block;
+  font-size: 55px;
+  padding-right: .2em;
+  font-weight: 100;
+  margin-right: .2em;
+}
+.icon-small {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  padding-left: 0px;
+  padding-right: -10px;
+  font-weight: 100;
+  width: 22px;
+}
+.icon {
+  position: relative;
+  display: inline-block;
+  font-size: 55px;
+  padding-right: .2em;
+  font-weight: 100;
+  margin-right: .2em;
+}*/

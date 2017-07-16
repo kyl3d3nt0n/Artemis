@@ -1,36 +1,36 @@
 <!---APPS---------------------------------------------------------------------->
 <div ng-controller="Apps" class="row fade-away">
   <div class="app_bar col-sm-8 col-sm-offset-2">
-    <ul class="app_list">
+    <ul class="app_list slider-nav">
+      <!---WEATHER--->
+      <li id="weather" class='weather_app app_icon fade-away'>
+        <img src="./img/Apps/weather_white.png" alt="Weather"/>
+        <span>Weather</span>
+      </li>
       <!---STOCKS--->
-      <li class='stocks_app app_icon'>
-        <img ng-src= "{{focus == 'stocks' && './img/Apps/stocks_black.png' || './img/Apps/stocks_white.png'}}" alt="Stocks"/>
+      <li id="stocks" class='stocks_app app_icon'>
+        <img src="./img/Apps/stocks_white.png" alt="Stocks"/>
         <span>Stocks</span>
       </li>
       <!---TV-SHOWS--->
-      <li class='shows_app app_icon'>
-        <img ng-src= "{{focus == 'shows' && './img/Apps/tv_black.png' || './img/Apps/tv_white.png'}}" alt="TV Shows"/>
+      <li id="shows" class='shows_app app_icon'>
+        <img src="./img/Apps/shows_white.png" alt="TV Shows"/>
         <span>Shows</span>
       </li>
-      <!---REMINDERS--->
-      <li class='reminders_app app_icon'>
-        <img ng-src= "{{focus == 'reminders' && './img/Apps/reminders_black.png' || './img/Apps/reminders_white.png'}}" alt="Reminders"/>
-        <span>Reminders</span>
-      </li>
       <!---TRAFFIC--->
-      <li class='traffic_app app_icon'>
-        <img ng-src= "{{focus == 'traffic' && './img/Apps/traffic_black.png' || './img/Apps/traffic_white.png'}}" alt="Traffic"/>
+      <li id="traffic" class='traffic_app app_icon'>
+        <img src="./img/Apps/traffic_white.png" alt="Traffic"/>
         <span>Traffic</span>
       </li>
-      <!---WEATHER--->
-      <li class='weather_app app_icon fade-away'>
-        <img ng-src= "{{focus == 'weather' && './img/Apps/weather_black.png' || './img/Apps/weather_white.png'}}" alt="Weather"/>
-        <span>Weather</span>
-      </li>
       <!---CALENDAR--->
-      <li class='calendar_app app_icon'>
-        <img ng-src= "{{focus == 'calendar' && './img/Apps/calendar_black.png' || './img/Apps/calendar_white.png'}}" alt="Calendar"/>
+      <li id="calendar" class='calendar_app app_icon'>
+        <img src="./img/Apps/calendar_white.png" alt="Calendar"/>
         <span>Calendar</span>
+      </li>
+      <!---REMINDERS--->
+      <li id="reminders" class='reminders_app app_icon'>
+        <img src="./img/Apps/reminders_white.png" alt="Reminders"/>
+        <span>Reminders</span>
       </li>
     </ul>
 </div>

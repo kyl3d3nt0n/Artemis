@@ -242,6 +242,6 @@
 		return service;
 	}
 
-  angular.module('Artemis')
+	angular.module('Artemis')
     .factory('CalendarService', CalendarService);
 } ());

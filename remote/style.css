@@ -12,15 +12,6 @@ body {
 nav {
   height:20px;
 }
-button {
-  margin-top: 3%;
-}
-
-.btn-default {
-  font-size: 18px;
-  border-radius: 1.2em;
-  transition: all ease .4s;
-}
 
 .footer {
   position: absolute;
@@ -28,16 +19,10 @@ button {
   left:0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 5em;
+  height: 50px;
   background-color: #f5f5f5;
   text-align: center;
   vertical-align: middle;
-  line-height: 5em;
-}
-
-.footer p {
-  margin:0;
-  font-size: 25px;
 }
 
 .navbar-header {
@@ -60,10 +45,6 @@ body > .container {
 }
 .container .text-muted {
   margin: 15px 0;
-}
-
-.body-content {
-  padding-top: 5em;
 }
 
 .footer > .container {
@@ -149,38 +130,17 @@ form.jsonform-hasrequired:after {
   border: none;
   background-color: inherit;
 }
-.commands {
-  height: 15em;
-  position: relative;
-  padding: 0;
-}
-
-#command-bttn, #speak {
-  position: absolute;
-  bottom: 0;
-}
-#command-bttn, #speak, #command-box {
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-.input-lg {
-  height: 50px;
-}
-p.lead {
-  margin-top: 0;
-}
 
 .command_icons {
   display: block;
   width: 2.5em;
   margin: auto;
 }
-#command {
-  width: 90%;
+#connection-bar {
+  height: 8em;
 }
 #connection-text {
-  margin: 0;
+  line-height: 4.5em;
 }
 
 @media (max-width: 768px) {
@@ -191,14 +151,5 @@ p.lead {
   }
   .command_text {
     display: none;
-  }
-  .commands {
-    height: 12em;
-  }
-  .speak-commands {
-    height: 10em;
-  }
-  .text_speech_form {
-    margin: auto;
   }
 }

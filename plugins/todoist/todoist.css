@@ -1,0 +1,10 @@
+.todoist-container {
+    width: 250px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.todoist {
+    padding: 10px 10px 10px 80px;
+}

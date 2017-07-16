@@ -30,7 +30,7 @@
 
 			} else {
 				if (geoloc !== null) {
-					console.log("Cached Geolocation", geoloc);
+					//console.log("Cached Geolocation", geoloc);
 					return (geoloc);
 				}
 
@@ -52,7 +52,7 @@
 		return service;
 	}
 
-    angular.module('Artemis')
+	angular.module('Artemis')
         .factory('GeolocationService', GeolocationService);
 
 } ());

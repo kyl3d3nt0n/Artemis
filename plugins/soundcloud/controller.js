@@ -19,17 +19,15 @@ function Soundcloud($scope, $http, SoundCloudService, SpeechService, Focus) {
 	});
 
     //SoundCloud stop
-    SpeechService.addCommand('sc_pause', function () {
-        SoundCloudService.pause();
-        Focus.change("default");
-    });
-
+	SpeechService.addCommand('sc_pause', function () {
+		SoundCloudService.pause();
+		Focus.change("default");
+	});
     //SoundCloud resume
-    SpeechService.addCommand('sc_resume', function () {
-        SoundCloudService.play();
-        Focus.change("sc");
-    });
-
+	SpeechService.addCommand('sc_resume', function () {
+		SoundCloudService.play();
+		Focus.change("sc");
+	});
     //SoundCloud replay
 	SpeechService.addCommand('sc_replay', function () {
 		SoundCloudService.replay();

@@ -54,25 +54,22 @@ function Reminder($scope, SpeechService, $translate, Focus) {
 	}
 
     // Set a reminder
-    SpeechService.addCommand('reminder_insert', function (task) {
-        $scope.reminders = remind.insertReminder(task);
-
-        var active_app = angular.element(document.getElementsByClassName('reminders' + '_app'));
-        active_app.addClass('active_app');
-        Focus.change("reminders");
-    });
+	SpeechService.addCommand('reminder_insert', function (task) {
+		$scope.reminders = remind.insertReminder(task);
+		Focus.change("reminders");
+	});
 
     // Clear reminders
-    SpeechService.addCommand('reminder_clear', function () {
-        $scope.reminders = remind.clearReminder();
-        //Focus.change("default");
-    });
+	SpeechService.addCommand('reminder_clear', function () {
+		$scope.reminders = remind.clearReminder();
+		Focus.change("default");
+	});
 
-    // Show reminders
-    SpeechService.addCommand('reminder_show', function () {
-        $scope.reminders = remind.getReminders();
-        Focus.change("reminders");
-    });
+    // Clear reminders
+	SpeechService.addCommand('reminder_show', function () {
+		$scope.reminders = remind.getReminders();
+		Focus.change("reminders");
+	});
 }
 
 angular.module('Artemis')

@@ -19,13 +19,12 @@ function Dilbert($scope, $http, $q, SpeechService, Focus) {
 	};
 
     // Show Dilbert comic
-    SpeechService.addCommand('image_comic_dilbert', function () {
-        getDilbertFeed().then(function(feed){
-            $scope.dilbert = feed.entries[0]
-            Focus.change("dilbert");
-        })
-    });
-
+	SpeechService.addCommand('image_comic_dilbert', function () {
+		getDilbertFeed().then(function(feed){
+			$scope.dilbert = feed.entries[0]
+			Focus.change("dilbert");
+		})
+	});
 
 }
 

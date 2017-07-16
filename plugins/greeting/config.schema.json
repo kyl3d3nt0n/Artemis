@@ -14,7 +14,14 @@
                   },
                 "allDay": {
                     "type": "array",
-                    "title": "All Day Greeting",
+                    "title": "Night Greeting",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "night": {
+                    "type": "array",
+                    "title": "Night Greeting",
                     "items": {
                         "type": "string"
                     }
@@ -33,23 +40,9 @@
                         "type": "string"
                     }
                 },
-                "afternoon": {
-                    "type": "array",
-                    "title": "Afternoon Greeting",
-                    "items": {
-                        "type": "string"
-                    }
-                },
                 "evening": {
                     "type": "array",
                     "title": "Evening Greeting",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "night": {
-                    "type": "array",
-                    "title": "Night Greeting",
                     "items": {
                         "type": "string"
                     }
@@ -88,7 +81,7 @@
                         }
                     ]
                   },
-                  {
+                  { 
                     "type":"section",
                     "items":[
                           {
@@ -122,22 +115,6 @@
                                       ]
                                     }
                                   ]
-                          },
-                          {
-                              "type":"tabarray",
-                              "title":"Afternoon Greetings",
-                              "items":[
-                                  {
-                                    "type":"section",
-                                    "legend":"{{value}}",
-                                    "items":[
-                                      {
-                                        "key":"greeting.afternoon[]",
-                                        "valueInLegend": true
-                                      }
-                                    ]
-                                  }
-                                ]
                           },
                           {
                                 "type":"tabarray",
@@ -189,13 +166,14 @@
         "Time to sleep"
       ],
       "morning": [
-        "Time for coffee!"
+        "Good Morning"
       ],
       "midday": [
-        "Hey!"
+        "Hey!",
+        "Hello"
       ],
       "evening": [
-        "Good evening!"
+        "Good evening"
       ]
     }
   }
