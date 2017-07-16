@@ -142,7 +142,6 @@
 
 		return service;
 	}
-
 	angular.module('Artemis')
 		.factory('AutoSleepService', AutoSleepService);
 

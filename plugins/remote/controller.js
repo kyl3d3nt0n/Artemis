@@ -21,7 +21,6 @@ function Remote($scope, SpeechService, Focus) {
 			showRemote()
 		});
 	}
-
     // First Run
 	if (config.remote.firstRun) {
 		$scope.firstRun = true;

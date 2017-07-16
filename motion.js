@@ -14,7 +14,6 @@ if (config.motion.enabled == true && require.resolve('johnny-five').length > 0 &
 	});
 
 	board.on("ready",function() {
-
 		var motion = new five.Motion(config.motion.pin);
 			// "calibrated" occurs once, at the beginning of a session,
 		motion.on("calibrated", function() {

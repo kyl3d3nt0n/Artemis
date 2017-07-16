@@ -1,7 +1,11 @@
 (function (angular) {
 	'use strict';
 
+<<<<<<< HEAD
 	function ArtemisCtrl(
+=======
+	function MirrorCtrl(
+>>>>>>> evancohen/master
 		Focus,
 		SpeechService,
 		AutoSleepService,
@@ -14,8 +18,12 @@
 		$scope.debug = false;
 		$scope.commands = [];
 		$scope.partialResult = $translate.instant('home.commands');
+<<<<<<< HEAD
 		$scope.layoutName = config.general.layout;
 		console.log("The CSS Stylesheet being loaded is: " + config.general.layout + (".css"));
+=======
+		$scope.layoutName = 'main';
+>>>>>>> evancohen/master
 		$scope.config = config;
 
 		// Set up our Focus
@@ -100,9 +108,12 @@
 
 			var defaultView = function () {
 				console.debug("Ok, going to default view...");
+<<<<<<< HEAD
 				//Adjust background color off app icons
 				var non_active_app = angular.element(document.getElementsByClassName('app_icon'));
 				non_active_app.removeClass('active_app');
+=======
+>>>>>>> evancohen/master
 				Focus.change("default");
 			}
 			// List commands
@@ -176,6 +187,7 @@
 		_this.init();
 	}
 
+<<<<<<< HEAD
 	angular.module('Artemis')
 		.controller('ArtemisCtrl', ArtemisCtrl);
 
@@ -184,6 +196,16 @@
 	}
 
 	angular.module('Artemis')
+=======
+	angular.module('SmartMirror')
+		.controller('MirrorCtrl', MirrorCtrl);
+
+	function themeController($scope) {
+		$scope.layoutName = (typeof config.layout !== 'undefined' && config.layout) ? config.layout : 'main';
+	}
+
+	angular.module('SmartMirror')
+>>>>>>> evancohen/master
 		.controller('Theme', themeController);
 
 } (window.angular));

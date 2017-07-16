@@ -4,9 +4,7 @@ function TVShows($scope, $http, $interval) {
 	$interval(getTVShows, (config.tvshows ? config.tvshows.refreshInterval * 60000 : 7200000));
 
 	function getTVShows() {
-
 		$scope.tvshows = [];
-
 		if (config.tvshows) {
             // for each show in config, create http request
 			angular.forEach(config.tvshows.shows, function (show) {

@@ -4,7 +4,11 @@
 
 	var language = (typeof config.general.language != 'undefined') ? config.general.language.substring(0, 2).toLowerCase() : 'en';
 
+<<<<<<< HEAD
 	angular.module('Artemis', ['ngAnimate', 'tmh.dynamicLocale', 'pascalprecht.translate'])
+=======
+	angular.module('SmartMirror', ['ngAnimate', 'tmh.dynamicLocale', 'pascalprecht.translate'])
+>>>>>>> evancohen/master
         .config(function (tmhDynamicLocaleProvider) {
 	console.log(config)
 	tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_' + language + '.js');
