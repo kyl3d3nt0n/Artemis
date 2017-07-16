@@ -1,0 +1,40 @@
+.app_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-top: 2px solid white;
+  margin-top: 2%;
+  padding-top: 1%;
+}
+.app_list li {
+  font-size: 16px;
+  margin-left: 1%;
+  margin-right: 1%;
+  display: inline-block;
+  transition: all .5s;
+  width: 6.5em;
+  height: 6.5em;
+  text-align: center;
+  margin-top: 1em;
+  border: 2px solid white;
+  border-radius: 1em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+.app_list li img {
+  width: 4em;
+  height: 3.8em;
+  margin: auto;
+  margin-bottom: .5em;
+}
+.active_app {
+  transition: all .5s;
+  background-color: white;
+  color: black;
+}
+.app h2 {
+  font-size: 40px;
+}
+.app_list span {
+  font-weight: 600;
+}

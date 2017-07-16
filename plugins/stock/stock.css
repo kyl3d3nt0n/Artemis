@@ -1,0 +1,14 @@
+.stocks-block {
+  float: right;
+  clear: both;
+  width: 20em;
+}
+.stock-information {
+  font-size: 20px;
+}
+.stock-change-positive {
+    color: green;
+}
+.stock-change-negative {
+    color: red;
+}

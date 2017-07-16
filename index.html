@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html ng-app="Artemis">
+
+<head ng-controller="Theme">
+  <meta charset="utf-8">
+  <title>Artemis</title>
+  <script>
+    const annyang = require('annyang')
+    const fs = require('fs')
+    let config
+    try{
+      config = require('./config.json')
+    } catch (e){
+      config = require('./remote/.config.default.json')
+    }
+    // Error logging
+    window.onerror = function (errorMsg, url, lineNumber) {
+        fs.appendFileSync('./smart-mirror.log', '['+ new Date().toString() + '] '
+        + errorMsg + '| Script: ' + url + ' Line: ' + lineNumber + '\n');
+    }
+  </script>
+
+  <!--- jQUERY-AND-BOOTSTRAP --->
+   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+   <!--- Latest compiled and minified CSS --->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!--- Styles and Resources --->
+  <link rel="shortcut icon" href="Artemis.ico" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" ng-href="app/css/{{ layoutName }}.css" />
+  <link rel="stylesheet" href="app/css/weather-icons.css">
+
+  <!--- SLICK --->
+  <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+
+  <!--- Plugin Stylesheets --->
+  <link rel="stylesheet" href="plugins/sun-moon/sun-moon.css">
+  <link rel="stylesheet" href="plugins/search/search.css">
+  <link rel="stylesheet" href="plugins/calendar/calendar.css">
+  <link rel="stylesheet" href="plugins/datetime/datetime.css">
+  <link rel="stylesheet" href="plugins/apps/apps.css">
+  <link rel="stylesheet" href="plugins/weather/weather.css">
+  <link rel="stylesheet" href="plugins/soundcloud/soundcloud.css">
+  <link rel="stylesheet" href="plugins/timer/timer.css">
+  <link rel="stylesheet" href="plugins/traffic/traffic.css">
+  <link rel="stylesheet" href="plugins/stock/stock.css">
+  <link rel="stylesheet" href="plugins/tvshows/tvshows.css">
+  <link rel="stylesheet" href="plugins/reminder/reminder.css">
+  <link rel="stylesheet" href="plugins/todoist/todoist.css">
+  <link rel="stylesheet" href="plugins/rss/rss.css">
+  <link rel="stylesheet" href="plugins/commands/commands.css">
+  <link rel="stylesheet" href="plugins/map/map.css">
+  <link rel="stylesheet" href="plugins/giphy/giphy.css">
+  <link rel="stylesheet" href="plugins/remote/remote.css">
+  <link rel="stylesheet" href="plugins/xkcd/xkcd.css">
+</head>
+
+<body ng-controller="ArtemisCtrl" ng-cloak>
+  <div class="container-fluid fade-away" ng-hide="focus == 'sleep'">
+<!---TOP----------------------------------------------------------------------->
+  <div class="top row">
+<!---TOP-LEFT------------------------------------------------------------------>
+    <div class="top-left col-sm-8">
+      <!---DATE & TIME---><div ng-include="'plugins/datetime/index.html'"></div>
+    </div><!---END-OF-TOP-LEFT------------------------------------------------->
+
+    <div class="top-right col-sm-4">
+      <div ng-include="'plugins/weather/current-forecast/index.html'"></div>
+    </div><!---END-OF-TOP-RIGHT------------------------------------------------>
+  </div><!---END-OF-TOP-------------------------------------------------------->
+
+<!---TOP-RIGHT----------------------------------------------------------------->
+    <div class="top-right col-sm-5 col-sm-offset-7" ng-show="focus == 'default'">
+      <section class="slider-for">
+        <div><!---WEATHER-----><div ng-include="'plugins/weather/future-forecast/index.html'"></div></div>
+        <div><!---STOCKS------><div ng-include="'plugins/stock/index.html'"></div></div>
+        <div><!---TV-SHOWS----><div ng-include="'plugins/tvshows/index.html'"></div></div>
+        <div><!---TRAFFIC-----><div ng-include="'plugins/traffic/index.html'"></div></div>
+        <div><!---CALENDAR----><div ng-include="'plugins/calendar/index.html'"></div></div>
+        <div><!---REMINDERS---><div ng-include="'plugins/reminder/index.html'"></div></div>
+      </section>
+    </div><!---END-OF-TOP-RIGHT------------------------------------------------>
+
+<!---FULL-SCREEN-CONTAINER----------------------------------------------------->
+  <div class="middle-container" ng-class="(listening == true)?'listening':'not-listening'">
+
+<!---MIDDLE-CENTER------------------------------------------------------------->
+    <div class="middle-center">
+      <!---REMOTE-------><div ng-include="'plugins/remote/index.html'"></div>
+      <!---SOUNDCLOUD---><div ng-include="'plugins/soundcloud/index.html'"></div>
+      <!---MAP----------><div ng-include="'plugins/map/index.html'"></div>
+      <!---XKCD---------><div ng-include="'plugins/xkcd/index.html'"></div>
+      <!---DILBERT-------><div ng-include="'plugins/dilbert/index.html'"></div>
+      <!---SEARCH-------><div ng-include="'plugins/search/index.html'"></div>
+      <!---GIPHY---------><div ng-include="'plugins/giphy/index.html'"></div>
+      <!---TIMER---------><div ng-include="'plugins/timer/index.html'"></div>
+
+      <!---GREETING & APPS--->
+      <div class="greeting-apps" ng-hide="focus== 'map' || focus == 'video' || focus == 'commands'">
+        <!---GREETING---><h1 ng-controller="Greeting" ng-bind="greeting" ng-cloak></h1>
+        <!---APP-BAR----><div ng-show="focus == 'default'" ng-include="'plugins/apps/index.html'"></div>
+      </div>
+
+      <!--- Command list ---><div ng-include="'plugins/commands/index.html'"></div>
+
+    </div><!---END-OF-MIDDLE-CENTER-------------------------------------------->
+  </div><!---END-OF-MIDDLE-CONTAINER------------------------------------------->
+
+<!---BOTTOM-CONTAINER---------------------------------------------------------->
+<div class="bottom row navbar-fixed-bottom">
+<!---TOP-BOTTOM-ROW------------------------------------------------------------>
+<div class="top-bottom row">
+
+<!---TOP-BOTTOM-LEFT----------------------------------------------------------->
+    <div class="top-bottom-left col-sm-3">
+      <!---FITBIT------><div ng-include="'plugins/fitbit/index.html'" ng-if="fitbit"></div>
+      <!---SCROBBLER---><div ng-include="'plugins/scrobbler/index.html'"></div>
+    </div><!---END-OF-MIDDLE-BOTTOM-LEFT--------------------------------------->
+
+<!---TOP-BOTTOM-CENTER--------------------------------------------------------->
+    <div class="top-bottom-center col-sm-6 fade-away" ng-hide="focus== 'map'">
+      <!---SUN-MOON---><div ng-include="'plugins/sun-moon/index.html'"></div>
+    </div><!---END-OF-TOP-BOTTOM-CENTER---------------------------------------->
+
+<!---TOP-BOTTOM-RIGHT---------------------------------------------------------->
+    <div class="top-bottom-right col-sm-3">
+      <!--- Someday something will live here --->
+      <div ng-include="'plugins/networkmap/index.html'"></div>
+    </div><!---END-OF-TOP-BOTTOM-RIGHT----------------------------------------->
+
+</div><!---END-OF-TOP-BOTTOM-ROW----------------------------------------------->
+
+<!---BOTTOM-BOTTOM-CONTAINER--------------------------------------------------->
+  <div class="bottom-bottom row">
+
+    <div class="col-sm-12">
+      <!---RSS-FEED---------><div ng-include="'plugins/rss/index.html'"></div>
+      <!---ERROR-MESSAGES---><div class="error" ng-bind="speechError" ng-show="speechError"></div>
+      <!---ERROR-MESSAGES---><div class="partial-result" ng-bind="partialResult" ng-hide="speechError"></div>
+    </div>
+  </div><!---END-OF-BOTTOM-BOTTOM-ROW------------------------------------------>
+
+</div><!---END-OF-BOTTOM-CONTAINER--------------------------------------------->
+
+
+  <!---MAKER---------><div ng-controller="Maker"></div>
+  <!---SLEEP-COVER---><div ng-controller="AutoSleep"></div>
+  <!---SLEEP-COVER---><div ng-show="focus == 'sleep'" class="sleep-cover fade"></div>
+
+  <script>
+      //POKEMON BACKGROUND PICS
+      document.write('<div class="Pokemon_Pics">');
+      for (i = 1; i <= 649; i++) {
+        var source = "img/Pokemon_Pics/" + i + ".png";
+        document.write('<img class="Pokemon" src=' + '"' + source + '"' + "width='56'" + '/>');
+      }
+      document.write('</div>');
+  </script>
+
+  <!--- Artemis JS
+  ==============================================================================
+  The good stuff. --->
+
+  <!--- bower:js --->
+  <script src="bower_components/moment/min/moment-with-locales.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+  <script src="bower_components/angular-translate/angular-translate.js"></script>
+  <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+  <script src="bower_components/rrule/lib/rrule.js"></script>
+  <script src="bower_components/skycons/skycons.js"></script>
+  <!--- endbower --->
+  <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+
+  <!--- App --->
+  <script src="app/js/app.js"></script>
+  <script src="app/js/focus.js"></script>
+  <script src="app/js/controller.js"></script>
+
+  <!--- Services --->
+  <script src="plugins/calendar/service.js"></script>
+  <script src="plugins/timebox/service.js"></script>
+  <script src="plugins/soundcloud/service.js"></script>
+  <script src="plugins/speech/service.js"></script>
+  <script src="plugins/light/service.js"></script>
+  <script src="plugins/geolocation/service.js"></script>
+  <script src="plugins/fitbit/service.js"></script>
+  <script src="plugins/autosleep/service.js"></script>
+  <script src="plugins/scrobbler/service.js"></script>
+  <script src="plugins/timer/service.js"></script>
+
+  <!--- Controllers --->
+  <div class="controllers"></div>
+  <script src="plugins/weather/future-forecast/controller.js"></script>
+  <script src="plugins/weather/current-forecast/controller.js"></script>
+
+<script>
+/*---CONTROLLERS--------------------------------------------------------------*/
+  var controllers = [
+    "apps", "soundcloud", "sun-moon", "search", "xkcd",
+    "dilbert", "map", "giphy", "timer", "traffic", "fitbit",
+    "reminder", "rss", "tvshows", "stock", "autosleep",
+    "scrobbler", "greeting", "calendar", "remote",
+    "maker", "networkmap"
+  ]
+
+  var j = 0;
+  var c_value = 0;
+  controllers.forEach(function(c_value, j) {
+    var ControllerSrc = "plugins/" + controllers[j] + "/controller.js";
+    //console.log(ControllerSrc);
+    var ControllerTags = document.createElement('script');
+    var ControllerScript = ControllerTags.setAttribute('src', ControllerSrc);
+    $('.controllers').append(ControllerTags);
+  });
+</script>
+
+</div><!---END OF CONTAINER-FLUID--->
+</body>
+</html>

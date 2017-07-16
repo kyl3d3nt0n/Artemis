@@ -1,0 +1,11 @@
+<!---TVSHOWS------------------------------------------------------------------->
+<div ng-controller="TVShows" class="shows-block app fade-away">
+    <h2>TV Shows</h2>
+    <div class="tv-information time-to" ng-repeat="show in tvshows | orderBy: 'show.data.episode.release_date'" ng-if="$index <= 5">
+          <span><i class="fa fa-rss fade"></i></span>
+          <span class="shows_date" ng-bind="show.data.episode.release_date"></span>
+          <br/>
+          <span fade><span style="font-weight: bold" ng-bind="show.data.episode.show.title"></span> -
+          <span fade><span style="font-weight: bold" ng-bind="show.data.episode.title"></span>
+    </div>
+</div>
