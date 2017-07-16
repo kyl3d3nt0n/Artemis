@@ -34,7 +34,7 @@
 
 		return service;
 	}
-
+	
 	angular.module('Artemis')
     .factory('ScrobblerService', ScrobblerService);
 } ());

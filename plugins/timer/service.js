@@ -154,6 +154,7 @@
 		};
 	};
 
+<<<<<<< HEAD
 	angular.module('Artemis')
     .factory('TimerService', TimerService)
     .filter('secondsToDateTime', secondsToDateTime)

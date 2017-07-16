@@ -94,14 +94,14 @@
 					SaidParameter['brightness'] = 0.1
 				}
 
-                // colorloop
-                if($translate.instant('lights.action.colorloop').includes(spokenWords[i])) {
-                  SaidParameter['effect'] = 'colorloop';
-                } else if($translate.instant('lights.action.back').includes(spokenWords[i])) {
-                  SaidParameter['effect'] = 'none';
-                } else {
-                  SaidParameter['effect'] = 'none';
-                }
+        // colorloop
+        if($translate.instant('lights.action.colorloop').includes(spokenWords[i])) {
+          SaidParameter['effect'] = 'colorloop';
+        } else if($translate.instant('lights.action.back').includes(spokenWords[i])) {
+          SaidParameter['effect'] = 'none';
+        } else {
+          SaidParameter['effect'] = 'none';
+        }
 
                 // reset all LED
 				if ($translate.instant('lights.action.reset').includes(spokenWords[w])) {

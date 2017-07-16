@@ -77,12 +77,13 @@
 <!---TOP-RIGHT----------------------------------------------------------------->
     <div class="top-right col-sm-5 col-sm-offset-7" ng-show="focus == 'default'">
       <section class="slider-for">
-        <div><!---WEATHER-----><div ng-include="'plugins/weather/future-forecast/index.html'"></div></div>
-        <div><!---STOCKS------><div ng-include="'plugins/stock/index.html'"></div></div>
-        <div><!---TV-SHOWS----><div ng-include="'plugins/tvshows/index.html'"></div></div>
-        <div><!---TRAFFIC-----><div ng-include="'plugins/traffic/index.html'"></div></div>
-        <div><!---CALENDAR----><div ng-include="'plugins/calendar/index.html'"></div></div>
-        <div><!---REMINDERS---><div ng-include="'plugins/reminder/index.html'"></div></div>
+        <div><!---WEATHER------><div ng-include="'plugins/weather/future-forecast/index.html'"></div></div>
+        <div><!---STOCKS-------><div ng-include="'plugins/stock/index.html'"></div></div>
+        <div><!---TV-SHOWS-----><div ng-include="'plugins/tvshows/index.html'"></div></div>
+        <div><!---TRAFFIC------><div ng-include="'plugins/traffic/index.html'"></div></div>
+        <div><!---CALENDAR-----><div ng-include="'plugins/calendar/index.html'"></div></div>
+        <div><!---REMINDERS----><div ng-include="'plugins/reminder/index.html'"></div></div>
+        <div><!---HAD-DISPLAY---><div ng-include="'plugins/ha-display/index.html'"></div></div>
       </section>
     </div><!---END-OF-TOP-RIGHT------------------------------------------------>
 
@@ -91,12 +92,12 @@
 
 <!---MIDDLE-CENTER------------------------------------------------------------->
     <div class="middle-center">
-      <!---REMOTE-------><div ng-include="'plugins/remote/index.html'"></div>
-      <!---SOUNDCLOUD---><div ng-include="'plugins/soundcloud/index.html'"></div>
-      <!---MAP----------><div ng-include="'plugins/map/index.html'"></div>
-      <!---XKCD---------><div ng-include="'plugins/xkcd/index.html'"></div>
+      <!---REMOTE--------><div ng-include="'plugins/remote/index.html'"></div>
+      <!---SOUNDCLOUD----><div ng-include="'plugins/soundcloud/index.html'"></div>
+      <!---MAP-----------><div ng-include="'plugins/map/index.html'"></div>
+      <!---XKCD----------><div ng-include="'plugins/xkcd/index.html'"></div>
       <!---DILBERT-------><div ng-include="'plugins/dilbert/index.html'"></div>
-      <!---SEARCH-------><div ng-include="'plugins/search/index.html'"></div>
+      <!---SEARCH--------><div ng-include="'plugins/search/index.html'"></div>
       <!---GIPHY---------><div ng-include="'plugins/giphy/index.html'"></div>
       <!---TIMER---------><div ng-include="'plugins/timer/index.html'"></div>
 
@@ -194,6 +195,7 @@
   <script src="plugins/autosleep/service.js"></script>
   <script src="plugins/scrobbler/service.js"></script>
   <script src="plugins/timer/service.js"></script>
+  <script src="plugins/todoist/service.js"></script>
 
   <!--- Controllers --->
   <div class="controllers"></div>
