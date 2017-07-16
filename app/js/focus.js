@@ -5,6 +5,7 @@
 		var service = {};
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		var currentFocus = "default";
 		console.log("Current Focus is: " + currentFocus);
 
@@ -25,6 +26,8 @@
 =======
 =======
 >>>>>>> evancohen/master
+=======
+>>>>>>> evancohen/master
 		var currentFocus = "default"
         
 		service.change = function(newFocus){
@@ -41,6 +44,9 @@
 
 	angular.module('SmartMirror')
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> evancohen/master
+=======
 >>>>>>> evancohen/master
 =======
 >>>>>>> evancohen/master

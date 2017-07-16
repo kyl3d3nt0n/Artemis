@@ -11,7 +11,11 @@ function Search($scope, $http, SpeechService, $rootScope, Focus) {
 				'videoEmbeddable': 'true',
 				'videoSyndicated': 'true',
 <<<<<<< HEAD
+<<<<<<< HEAD
         //Sharing this key in the hopes that it wont be abused
+=======
+                //Sharing this key in the hopes that it wont be abused 
+>>>>>>> evancohen/master
 =======
                 //Sharing this key in the hopes that it wont be abused 
 >>>>>>> evancohen/master

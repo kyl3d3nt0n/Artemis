@@ -32,7 +32,11 @@
 
         /**
 <<<<<<< HEAD
+<<<<<<< HEAD
          * Get today's date in the format YYYY-MM-DD. The date is used to
+=======
+         * Get today's date in the format YYYY-MM-DD. The date is used to 
+>>>>>>> evancohen/master
 =======
          * Get today's date in the format YYYY-MM-DD. The date is used to 
 >>>>>>> evancohen/master
@@ -71,7 +75,11 @@
 
             /*
 <<<<<<< HEAD
+<<<<<<< HEAD
                 Callback service parsing the authorization token and asking for the access token.
+=======
+                Callback service parsing the authorization token and asking for the access token. 
+>>>>>>> evancohen/master
 =======
                 Callback service parsing the authorization token and asking for the access token. 
 >>>>>>> evancohen/master
@@ -92,15 +100,21 @@
 
             /*
 <<<<<<< HEAD
+<<<<<<< HEAD
                 Call an API. fitbit.request() mimics nodejs request() library,
                 automatically adding the required oauth2 header. The callback
                 is a bit different, called with (err, body, token). If token is
                 non-null, this means a refresh has happened and you should
 =======
+=======
+>>>>>>> evancohen/master
                 Call an API. fitbit.request() mimics nodejs request() library, 
                 automatically adding the required oauth2 header. The callback 
                 is a bit different, called with (err, body, token). If token is 
                 non-null, this means a refresh has happened and you should 
+<<<<<<< HEAD
+>>>>>>> evancohen/master
+=======
 >>>>>>> evancohen/master
                 persist the new token.
             */
@@ -350,7 +364,11 @@
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	angular.module('Artemis')
+=======
+	angular.module('SmartMirror')
+>>>>>>> evancohen/master
 =======
 	angular.module('SmartMirror')
 >>>>>>> evancohen/master

@@ -67,5 +67,8 @@ function Map($scope, $http, GeolocationService, SpeechService, Focus) {
 angular.module('Artemis')
 =======
 angular.module('SmartMirror')
+<<<<<<< HEAD
+>>>>>>> evancohen/master
+=======
 >>>>>>> evancohen/master
     .controller('Map', Map);

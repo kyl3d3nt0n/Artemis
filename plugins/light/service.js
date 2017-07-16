@@ -94,6 +94,7 @@
 					SaidParameter['brightness'] = 0.1
 				}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         // colorloop
         if($translate.instant('lights.action.colorloop').includes(spokenWords[i])) {
@@ -103,6 +104,8 @@
         } else {
           SaidParameter['effect'] = 'none';
         }
+=======
+>>>>>>> evancohen/master
 =======
 >>>>>>> evancohen/master
 
@@ -165,6 +168,7 @@
 				}
 			}
 		}
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 
@@ -182,6 +186,9 @@
 
       $http.put('http://' + config.light.settings.hueIp + '/api/' + config.light.settings.hueUsername + "/groups/" + config.light.setup[index].targets[i].id + "/action", update)
 
+=======
+
+>>>>>>> evancohen/master
 		function updateHyperion(i, index, setting) {
             // Convert color and brightness
 			for (var j = 0; j < setting['colorRGB'].length; j++) {
@@ -220,6 +227,7 @@
 	console.log(status, data);
 })
 		}
+<<<<<<< HEAD
 
 		return service;
 	}
@@ -263,11 +271,16 @@
 	console.log(status, data);
 })
 		}
+=======
+>>>>>>> evancohen/master
 
 		return service;
 	}
 
 	angular.module('SmartMirror')
+<<<<<<< HEAD
+>>>>>>> evancohen/master
+=======
 >>>>>>> evancohen/master
         .factory('LightService', LightService);
 

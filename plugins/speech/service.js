@@ -11,7 +11,11 @@ const {ipcRenderer} = require('electron');
 
 		service.init = function (cb) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             // workaround so we can trigger requests at any time
+=======
+            // workaround so we can trigger requests at any time 
+>>>>>>> evancohen/master
 =======
             // workaround so we can trigger requests at any time 
 >>>>>>> evancohen/master
@@ -89,7 +93,11 @@ const {ipcRenderer} = require('electron');
             // Add the commands to annyang
 			annyang.addCommands(service.commands)
 <<<<<<< HEAD
+<<<<<<< HEAD
 			//console.debug('added command "' + phrase + '"', service.commands)
+=======
+			console.debug('added command "' + phrase + '"', service.commands)
+>>>>>>> evancohen/master
 =======
 			console.debug('added command "' + phrase + '"', service.commands)
 >>>>>>> evancohen/master
@@ -107,7 +115,11 @@ const {ipcRenderer} = require('electron');
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	angular.module('Artemis')
+=======
+	angular.module('SmartMirror')
+>>>>>>> evancohen/master
 =======
 	angular.module('SmartMirror')
 >>>>>>> evancohen/master

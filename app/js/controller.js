@@ -3,7 +3,11 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	function ArtemisCtrl(
+=======
+	function MirrorCtrl(
+>>>>>>> evancohen/master
 =======
 	function MirrorCtrl(
 >>>>>>> evancohen/master
@@ -24,8 +28,12 @@
 		$scope.partialResult = $translate.instant('home.commands');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$scope.layoutName = config.general.layout;
 		console.log("The CSS Stylesheet being loaded is: " + config.general.layout + (".css"));
+=======
+		$scope.layoutName = 'main';
+>>>>>>> evancohen/master
 =======
 		$scope.layoutName = 'main';
 >>>>>>> evancohen/master
@@ -118,9 +126,12 @@
 				console.debug("Ok, going to default view...");
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				//Adjust background color off app icons
 				var non_active_app = angular.element(document.getElementsByClassName('app_icon'));
 				non_active_app.removeClass('active_app');
+=======
+>>>>>>> evancohen/master
 =======
 >>>>>>> evancohen/master
 =======
@@ -200,6 +211,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	angular.module('Artemis')
 		.controller('ArtemisCtrl', ArtemisCtrl);
 
@@ -211,6 +223,8 @@
 =======
 =======
 >>>>>>> evancohen/master
+=======
+>>>>>>> evancohen/master
 	angular.module('SmartMirror')
 		.controller('MirrorCtrl', MirrorCtrl);
 
@@ -220,6 +234,9 @@
 
 	angular.module('SmartMirror')
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> evancohen/master
+=======
 >>>>>>> evancohen/master
 =======
 >>>>>>> evancohen/master

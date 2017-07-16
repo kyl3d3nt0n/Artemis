@@ -24,7 +24,11 @@ function Dilbert($scope, $http, $q, SpeechService, Focus) {
 			$scope.dilbert = feed.entries[0]
 			Focus.change("dilbert");
 <<<<<<< HEAD
+<<<<<<< HEAD
 		})
+=======
+		})  
+>>>>>>> evancohen/master
 =======
 		})  
 >>>>>>> evancohen/master

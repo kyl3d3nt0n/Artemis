@@ -6,7 +6,11 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	angular.module('Artemis', ['ngAnimate', 'tmh.dynamicLocale', 'pascalprecht.translate'])
+=======
+	angular.module('SmartMirror', ['ngAnimate', 'tmh.dynamicLocale', 'pascalprecht.translate'])
+>>>>>>> evancohen/master
 =======
 	angular.module('SmartMirror', ['ngAnimate', 'tmh.dynamicLocale', 'pascalprecht.translate'])
 >>>>>>> evancohen/master

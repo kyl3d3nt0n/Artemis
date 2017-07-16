@@ -64,7 +64,11 @@ function Traffic($scope, $http, $interval, $q, TimeboxService) {
 			endpoint += "&avoid=minimizeTolls";
 		} else if (trip.mode == "Transit") {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			endpoint += "&timeType=Departure&dateTime=" + moment().locale("en").format('h:mm:ssa').toUpperCase();
+=======
+			endpoint += "&timeType=Departure&dateTime=" + moment().lang("en").format('h:mm:ssa').toUpperCase();
+>>>>>>> evancohen/master
 =======
 			endpoint += "&timeType=Departure&dateTime=" + moment().lang("en").format('h:mm:ssa').toUpperCase();
 >>>>>>> evancohen/master

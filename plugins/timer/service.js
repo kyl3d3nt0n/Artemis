@@ -155,7 +155,11 @@
 	};
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	angular.module('Artemis')
+=======
+	angular.module('SmartMirror')
+>>>>>>> evancohen/master
 =======
 	angular.module('SmartMirror')
 >>>>>>> evancohen/master

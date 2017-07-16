@@ -21,8 +21,11 @@ function Remote($scope, SpeechService, Focus) {
 			showRemote()
 		});
 <<<<<<< HEAD
+<<<<<<< HEAD
 	}
 =======
+=======
+>>>>>>> evancohen/master
 	} 
     
 >>>>>>> evancohen/master

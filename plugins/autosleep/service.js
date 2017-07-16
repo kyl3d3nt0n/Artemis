@@ -47,7 +47,11 @@
 					Focus.change('default');
 				} else if (config.autoTimer.mode == "energy") {
 <<<<<<< HEAD
+<<<<<<< HEAD
 					Focus.change('default');
+=======
+					focus.change('default')
+>>>>>>> evancohen/master
 =======
 					focus.change('default')
 >>>>>>> evancohen/master
@@ -75,7 +79,11 @@
 			// cancel to long timer
 			$interval.cancel(energyStarTimer)
 <<<<<<< HEAD
+<<<<<<< HEAD
 			// restart it, so we don't drift towards 0 delay
+=======
+			// restart it, so we don't drift towards 0 delay 
+>>>>>>> evancohen/master
 =======
 			// restart it, so we don't drift towards 0 delay 
 >>>>>>> evancohen/master
@@ -108,7 +116,11 @@
 				}
 			} else {
 <<<<<<< HEAD
+<<<<<<< HEAD
 				Focus.change("sleep");
+=======
+				Focus.change("default");
+>>>>>>> evancohen/master
 =======
 				Focus.change("default");
 >>>>>>> evancohen/master
@@ -155,14 +167,21 @@
 		return service;
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	angular.module('Artemis')
 		.factory('AutoSleepService', AutoSleepService);
 
 } ());
 =======
+=======
+>>>>>>> evancohen/master
 
 	angular.module('SmartMirror')
 		.factory('AutoSleepService', AutoSleepService);
 
+<<<<<<< HEAD
+} ());
+>>>>>>> evancohen/master
+=======
 } ());
 >>>>>>> evancohen/master

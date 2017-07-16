@@ -6,7 +6,11 @@ function Scrobbler($scope, $interval, ScrobblerService) {
 		});
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> evancohen/master
 =======
     
 >>>>>>> evancohen/master

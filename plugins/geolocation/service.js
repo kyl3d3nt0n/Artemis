@@ -31,7 +31,11 @@
 			} else {
 				if (geoloc !== null) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 					//console.log("Cached Geolocation", geoloc);
+=======
+					console.log("Cached Geolocation", geoloc);
+>>>>>>> evancohen/master
 =======
 					console.log("Cached Geolocation", geoloc);
 >>>>>>> evancohen/master
@@ -57,7 +61,11 @@
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	angular.module('Artemis')
+=======
+	angular.module('SmartMirror')
+>>>>>>> evancohen/master
 =======
 	angular.module('SmartMirror')
 >>>>>>> evancohen/master
